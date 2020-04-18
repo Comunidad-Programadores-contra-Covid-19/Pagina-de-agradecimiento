@@ -1,6 +1,5 @@
 .DS_Store
 node_modules/
 logs/
-config/
-src/config
+src/config/private.json
 .idea/

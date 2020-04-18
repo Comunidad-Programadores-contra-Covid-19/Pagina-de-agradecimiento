@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const db = require('./src/config/database');
+const path = require('path');
+const db = require('./src/config/dbInit');
 const hbs = require('express-handlebars')
 const routes = require('./src/routes');
-// require('./relations');
 
 // Init database
 db.authenticate()
@@ -14,14 +14,19 @@ db.authenticate()
 
 // Handlebars config
 app.engine('.hbs', hbs({
-  defaultLayout: 'default',
   extname:'.hbs',
+  defaultLayout: 'default',
+  layoutsDir: path.join(__dirname,'/src/views/layouts'),
 }));
+app.set('views',path.join(__dirname,'/src/views'))
 app.set('view engine','.hbs');
 
 
+// Start the bodyParser, used for req.body as json
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
+
+
 // Init Routes
 app.use('/',routes);
 
