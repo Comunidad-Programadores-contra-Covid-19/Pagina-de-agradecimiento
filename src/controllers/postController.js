@@ -42,10 +42,9 @@ exports.new_post = function (req,res) {
 
 
 exports.new_post_from_twitter = function (req,res) {
- /*   T.get('statuses/show/',function(err, data, response) {
-    console.log(data)}*/
+    const tweet_id = req.body.id
 
-    T.get('statuses/show/:id', { id: '1252322959659798537' }, function(err, data, response) {
+    T.get('statuses/show/:id', { id: tweet_id }, function(err, data, response) {
         try{
             Post.create({
                 text: data.text,
