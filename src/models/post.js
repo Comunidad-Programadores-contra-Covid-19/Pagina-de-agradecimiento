@@ -1,25 +1,35 @@
+const config = require('../config/config');
+
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Post = sequelize.define('Post', {
+    id: {allowNull: false, autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER},
     text: DataTypes.TEXT,
     likes: DataTypes.INTEGER,
-    dislikes: DataTypes.INTEGER,
     imgPath: DataTypes.STRING,
     author: DataTypes.STRING,
-    originalLink: DataTypes.STRING,
     shares: DataTypes.INTEGER,
     font: DataTypes.STRING,
     color: DataTypes.STRING,
-    isActive: DataTypes.BOOLEAN
+    isActive: DataTypes.BOOLEAN,
+
+    BackgroundId: DataTypes.INTEGER,
+    TweetId: DataTypes.INTEGER
+
   }, {
     freezeTableName: true,
   });
   Post.associate = function(models) {
-    // associations can be defined here
-    Post.belongsToMany(models.Tag, {as: 'tags', through: 'Post_Tag'});
-    Post.hasMany(models.Report, {as: 'reports', foreignKey: 'id'});
-    Post.hasMany(models.DedicatedTo, {as: 'dedicatedsTo', foreignKey: 'id'});
-    Post.hasOne(models.Background, {as: 'background', foreignKey: 'id'});
+    Post.belongsToMany(models.Tag, {as: 'Tag', through: 'Post_Tag', foreignKey: 'postId'});
+    Post.hasMany(models.Report, {as: 'Report', foreignKey: 'postId'});
+    Post.hasMany(models.DedicatedTo, {as: 'DedicatedTo', foreignKey: 'postId'});
+    Post.belongsTo(models.Background,);
+    Post.belongsTo(models.Tweet,);
   };
+
+  Post.prototype.url = function () {
+    return config.domain.concat('/post/', this.id);
+  }
+
   return Post;
 };

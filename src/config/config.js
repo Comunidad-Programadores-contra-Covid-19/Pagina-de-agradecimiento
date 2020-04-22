@@ -16,6 +16,7 @@ module.exports = {
   	access_token_secret:configTwitter.access_token_secret,
 
     // App constants
+    domain:'localhost:8000',
     firstNPosts: 20,
     fonts: ["Arial","Verdana"],
 }

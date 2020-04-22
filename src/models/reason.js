@@ -6,8 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true,
   });
   Reason.associate = function(models) {
-    // associations can be defined here
-    // Reason.belongsTo(models.Report, {as: 'report', foreignKey: 'id'});
+    Reason.hasMany(models.Report, {as: 'Report', foreignKey: 'reasonId'});
   };
   return Reason;
 };

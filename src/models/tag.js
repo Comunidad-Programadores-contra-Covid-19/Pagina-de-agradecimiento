@@ -7,8 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true,
   });
   Tag.associate = function(models) {
-    // associations can be defined here
-    Tag.belongsToMany(models.Post, {through: 'Post_Tag'});
+    Tag.belongsToMany(models.Post, {as: 'Post', through: 'Post_Tag', foreignKey: 'tagId'});
   };
   return Tag;
 };

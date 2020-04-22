@@ -1,7 +1,7 @@
 const Post = require('../models/').Post;
-const postValidator = require('../validators/postValidators');
+const postValidator = require('../validators/postValidator');
 const config = require('../config/config.js');
-var Twit = require('twit')
+var Twit = require('twit');
 
 var T = new Twit({
     consumer_key:config.consumer_key,  
@@ -22,22 +22,18 @@ exports.new_post = function (req,res) {
             font: font,
             color: color
         });
+        Post.create({
+            text,
+            imgpath,
+            author,
+            font,
+            color
+        })
+            .then(post => res.status(200).send(post.url()));
     }
     catch(error){
         res.status(500).send(error.message);
-        return;
     }
-
-    Post.create({
-        text,
-        imgpath,
-        author,
-        font,
-        color
-    })
-        .then(post => console.log(post));
-
-    res.sendStatus(200)
 }
 
 
@@ -60,18 +56,4 @@ exports.new_post_from_twitter = function (req,res) {
     })
 
     res.sendStatus(200)
-/*
-    let { text, imgpath, author, font, color} =  req.body;
-
-    
-
-    Post.create({
-        text,
-        imgpath,
-        author,
-        font,
-        color
-    })
-        .then(post => console.log(post));
-*/
 }

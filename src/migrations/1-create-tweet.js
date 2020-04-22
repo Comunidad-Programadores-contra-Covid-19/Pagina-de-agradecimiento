@@ -1,19 +1,20 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('DedicatedTo', {
+    return queryInterface.createTable('Tweet', {
       id: {allowNull: false, autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER},
 
-      emailAddress: {type: Sequelize.STRING, allowNull: false,},
-      name: {type: Sequelize.STRING, allowNull: false,},
-
-      postId: {type: Sequelize.INTEGER, references: {model: 'Post', key: 'id'}},
+      tweetId: {type: Sequelize.INTEGER},
+      tweetLikes: {type: Sequelize.INTEGER},
+      tweetLink: {type: Sequelize.STRING},
+      tweetDate: {type: Sequelize.DATE},
+      tweetAuthor: {type: Sequelize.STRING},
 
       createdAt: {allowNull: false, type: Sequelize.DATE},
       updatedAt: {allowNull: false, type: Sequelize.DATE}
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('DedicatedTo',{});
+    return queryInterface.dropTable('Tweet',{});
   }
 };
