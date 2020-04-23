@@ -16,4 +16,7 @@ router.post('/post/from-twitter', postController.new_post_from_twitter);
 // Report a post
 router.post('/report', reportController.new_report);
 
+// Like a post
+router.post('/like/:postId', postController.likePost);
+
 module.exports = router;

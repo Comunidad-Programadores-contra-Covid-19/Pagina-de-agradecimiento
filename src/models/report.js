@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true ,
   });
   Report.associate = function(models) {
-    Report.belongsTo(models.Post);
-    Report.belongsTo(models.Reason);
+    Report.belongsTo(models.Post,{foreignKey: 'postId'});
+    Report.belongsTo(models.Reason,{foreignKey: 'reasonId'});
   };
   return Report;
 };

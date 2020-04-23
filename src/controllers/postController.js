@@ -1,4 +1,6 @@
+const Sequelize = require("sequelize");
 const Post = require('../models/').Post;
+const Tweet = require('../models/').Tweet;
 const postValidator = require('../validators/postValidator');
 const config = require('../config/config.js');
 var Twit = require('twit');
@@ -56,4 +58,14 @@ exports.new_post_from_twitter = function (req,res) {
     })
 
     res.sendStatus(200)
+}
+
+exports.likePost = function (req,res) {
+    Post.findByPk(req.params.postId,)
+        .then(function (likedPost) {
+            if(!likedPost) throw new Error('No existe el post que se intenta likear')
+
+            likedPost.update({likes: Sequelize.literal('likes + 1')})
+                .then(res.status(200).send())
+        }).catch(err => res.status(500).send(err.message))
 }

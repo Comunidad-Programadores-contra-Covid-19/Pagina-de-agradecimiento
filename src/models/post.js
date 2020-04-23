@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     color: DataTypes.STRING,
     isActive: DataTypes.BOOLEAN,
 
-    BackgroundId: DataTypes.INTEGER,
-    TweetId: DataTypes.INTEGER
+    backgroundId: DataTypes.INTEGER,
+    tweetId: DataTypes.INTEGER
 
   }, {
     freezeTableName: true,
@@ -23,8 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     Post.belongsToMany(models.Tag, {as: 'Tag', through: 'Post_Tag', foreignKey: 'postId'});
     Post.hasMany(models.Report, {as: 'Report', foreignKey: 'postId'});
     Post.hasMany(models.DedicatedTo, {as: 'DedicatedTo', foreignKey: 'postId'});
-    Post.belongsTo(models.Background,);
-    Post.belongsTo(models.Tweet,);
+    Post.belongsTo(models.Background,{foreignKey: 'backgroundId'});
+    Post.belongsTo(models.Tweet,{foreignKey: 'tweetId'});
   };
 
   Post.prototype.url = function () {
