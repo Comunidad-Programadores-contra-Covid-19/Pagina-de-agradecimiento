@@ -39,7 +39,8 @@ exports.new_post = function (req,res) {
 }
 
 
-exports.new_post_from_twitter = function (req,res) {
+
+exports.new_post_from_tweet = function (req,res) {
     const tweet_id = req.body.id
 
     T.get('statuses/show/:id', { id: tweet_id }, function(err, data, response) {
@@ -64,8 +65,29 @@ exports.likePost = function (req,res) {
     Post.findByPk(req.params.postId,)
         .then(function (likedPost) {
             if(!likedPost) throw new Error('No existe el post que se intenta likear')
-
             likedPost.update({likes: Sequelize.literal('likes + 1')})
                 .then(res.status(200).send())
         }).catch(err => res.status(500).send(err.message))
+}
+
+exports.new_post_from_tweet = function (req,res) {
+    let hashtag = req.body.hashtag
+    if hashtag.charAt(0) === '#' { hashtag = hashtag.slice(1) }
+
+    T.get('/search/tweets/', { q: hashtag, count: 5 }, function(err, data, response) {
+        try{
+            Post.create({
+                text: data.text,
+                imgpath: 'test/path',
+                author: 'testAuthor'
+            })
+        .then(post => console.log(post));
+        }
+        catch(error){
+            res.status(500).send(error.message);
+        return;
+        }     
+    })
+
+    res.sendStatus(200)
 }

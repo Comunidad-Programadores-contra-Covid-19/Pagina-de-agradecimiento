@@ -11,12 +11,16 @@ router.get('/', rootController.root);
 router.post('/post', postController.new_post);
 
 // Create post from a tweet
-router.post('/post/from-twitter', postController.new_post_from_twitter);
+router.post('/post/from-twitter', postController.new_post_from_tweet);
 
 // Report a post
 router.post('/report', reportController.new_report);
 
 // Like a post
 router.post('/like/:postId', postController.likePost);
+
+// Create posts from a hashtag
+router.post('/post/from-twitter-hashtag', postController.new_post_from_hashtag);
+
 
 module.exports = router;
