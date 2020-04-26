@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch src/views/static/scss -o src/views/static/css & nodemon index.js"
+    "scss": "node-sass --watch src/views/static/scss -o src/views/static/css"
   },
   "author": "",
   "license": "ISC",
