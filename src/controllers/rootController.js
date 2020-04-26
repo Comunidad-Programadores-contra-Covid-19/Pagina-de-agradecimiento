@@ -4,10 +4,9 @@ const config = require('../config/config.js');
 exports.root = function (req,res) {
     Post.findAll({
         order: [
-            ['likes', 'DESC']
+            ['likes', 'DESC'],
         ],
-        // limit: TODO ver que hacemos con estos o el slice
+        limit: config.firstNPosts
     })
-        .then(posts => posts.slice(0,config.firstNPosts))
         .then(posts => res.render('index', {title:'Home page',posts}));
 }
