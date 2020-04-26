@@ -1,5 +1,5 @@
 const Tweet = require('../models/').Tweet;
-const postValidator = require('../validators/postValidator');
+const Post = require('../models/').Post;
 const config = require('../config/config.js');
 var Twit = require('twit');
 
@@ -14,22 +14,32 @@ var T = new Twit({
 exports.new_post_from_tweet = function (req,res) {
     const tweet_id = req.body.id
 
-    T.get('statuses/show/:id', { id: tweet_id }, function(err, data, response) {
+    T.get('statuses/show/:id', { id: tweet_id, tweet_mode:'extended' }, async function(err, data, response) {
         try{
-            Post.create({
-                text: data.text,
-                imgpath: 'test/path',
-                author: 'testAuthor'
+            let tweet = await Tweet.create({
+                tweetId: data.id_str,
+                tweetLikes: data.favorite_count,
+                tweetDate: data.created_at,
+                tweetLink: `https://twitter.com/${data.user.screen_name}/status/${data.id_str}`                
             })
-        .then(post => console.log(post));
+            let post = await Post.create({
+                text: data.full_text,
+                likes: data.favorite_count,
+                imgPath:  data.entities.media ? data.entities.media[0].media_url : '',
+                author: '@'+data.user.screen_name
+            })
+            res.json({
+                tweet,
+                post
+            })
+            
         }
         catch(error){
-            res.status(500).send(error.message);
-        return;
+            res.status(500).send(error.message)
+            return
         }     
     })
-
-    res.sendStatus(200)
+    //res.sendStatus(200)
 }
 
 

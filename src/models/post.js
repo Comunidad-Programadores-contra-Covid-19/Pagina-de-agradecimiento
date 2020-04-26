@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     font: DataTypes.STRING,
     color: DataTypes.STRING,
     isActive: DataTypes.BOOLEAN,
-
     backgroundId: DataTypes.INTEGER,
     tweetId: DataTypes.INTEGER
 
@@ -23,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     Post.belongsToMany(models.Tag, {as: 'Tag', through: 'Post_Tag', foreignKey: 'postId'});
     Post.hasMany(models.Report, {as: 'Report', foreignKey: 'postId'});
     Post.hasMany(models.DedicatedTo, {as: 'DedicatedTo', foreignKey: 'postId'});
-    Post.belongsTo(models.Background,{foreignKey: 'backgroundId'});
+    /*Post.belongsTo(models.Background,{foreignKey: 'backgroundId'});*/
     Post.belongsTo(models.Tweet,{foreignKey: 'tweetId'});
   };
 
