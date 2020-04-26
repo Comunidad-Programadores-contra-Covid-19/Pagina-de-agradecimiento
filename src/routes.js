@@ -3,7 +3,7 @@ const router = express.Router();
 let rootController = require('./controllers/rootController');
 let postController = require('./controllers/postController')
 let reportController = require('./controllers/reportController');
-let twitterController = require('./controllers/twitterController');
+let twitterController = require('./controllers/twitterController'); 
 
 // Index page
 router.get('/', rootController.root);
