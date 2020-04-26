@@ -4,8 +4,7 @@ const config = require('../config/config.js');
 exports.root = function (req,res) {
     Post.findAll({
         order: [
-            ['likes', 'DESC'],
-            ['dislikes', 'ASC']
+            ['likes', 'DESC']
         ],
         // limit: TODO ver que hacemos con estos o el slice
     })
