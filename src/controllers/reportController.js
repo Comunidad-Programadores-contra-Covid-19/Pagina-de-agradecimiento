@@ -1,5 +1,5 @@
-const Post = require('../models/').Post;
-const Report = require('../models').Report;
+const Post = require('../models/post');
+const Report = require('../models/report');
 const reportValidator = require('../validators/reportValidator');
 const config = require('../config/config.js');
 

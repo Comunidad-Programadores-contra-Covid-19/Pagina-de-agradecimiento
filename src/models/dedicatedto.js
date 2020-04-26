@@ -1,8 +1,9 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
-  const DedicatedTo = sequelize.define('DedicatedTo', {
-    emailAddress: DataTypes.STRING,
-    name: DataTypes.STRING
+module.exports = (Sequelize, DataTypes) => {
+  const DedicatedTo = Sequelize.define('DedicatedTo', {
+    //id: {allowNull: false, autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER},
+    emailAddress: {type: DataTypes.STRING, allowNull: false,},
+    name: {type: DataTypes.STRING, allowNull: false,}
   }, {
     freezeTableName: true,
   });

@@ -1,5 +1,5 @@
-const Tweet = require('../models/').Tweet;
-const Post = require('../models/').Post;
+const Tweet = require('../models/tweet');
+const Post = require('../models/post');
 const config = require('../config/config.js');
 var Twit = require('twit');
 
@@ -17,7 +17,7 @@ exports.new_post_from_tweet = function (req,res) {
     T.get('statuses/show/:id', { id: tweet_id, tweet_mode:'extended' }, async function(err, data, response) {
         try{
             let tweet = await Tweet.create({
-                tweetId: data.id_str,
+                idFromTwitter: data.id_str,
                 tweetLikes: data.favorite_count,
                 tweetDate: data.created_at,
                 tweetLink: `https://twitter.com/${data.user.screen_name}/status/${data.id_str}`                
@@ -25,8 +25,9 @@ exports.new_post_from_tweet = function (req,res) {
             let post = await Post.create({
                 text: data.full_text,
                 likes: data.favorite_count,
-                imgPath:  data.entities.media ? data.entities.media[0].media_url : '',
-                author: '@'+data.user.screen_name
+                imgPath:  data.entities.media ? data.entities.media[0].media_url : null,
+                author: '@'+data.user.screen_name,
+                tweetId: tweet.id
             })
             res.json({
                 tweet,

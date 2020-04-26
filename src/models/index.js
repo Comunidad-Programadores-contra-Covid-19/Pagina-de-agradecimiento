@@ -35,7 +35,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 /* DROPS all tables and sync db with models */
-/*db.sequelize.sync({ force: true,logging: console.log }) */ 
+sequelize.sync({ force: true ,logging: console.log }) 
 
 module.exports = db;
 

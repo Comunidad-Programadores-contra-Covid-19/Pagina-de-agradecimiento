@@ -1,13 +1,15 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
-  const Report = sequelize.define('Report', {
-    details: DataTypes.STRING
+module.exports = (Sequelize, DataTypes) => {
+  const Report = Sequelize.define('Report', {
+    id: {allowNull: false, autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER},
+    details: {type:DataTypes.STRING, allowNull: true,},
+
   }, {
     freezeTableName: true ,
   });
   Report.associate = function(models) {
-    Report.belongsTo(models.Post,{foreignKey: 'postId'});
-    Report.belongsTo(models.Reason,{foreignKey: 'reasonId'});
+    Report.belongsTo(models.Post);
+    Report.belongsTo(models.Reason);
   };
   return Report;
 };

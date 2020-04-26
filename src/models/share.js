@@ -1,7 +1,8 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
-  const Share = sequelize.define('Share', {
-    init: DataTypes.STRING
+module.exports = (Sequelize, DataTypes) => {
+  const Share = Sequelize.define('Share', {
+    id: {allowNull: false, autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER},
+  	init: {type: DataTypes.STRING},
   }, {
     freezeTableName: true,
   });

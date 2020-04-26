@@ -1,13 +1,16 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
-  const Tweet = sequelize.define('Tweet', {
-    tweetId: DataTypes.STRING,
-    tweetLikes: DataTypes.INTEGER,
-    tweetLink: DataTypes.STRING,
-    tweetDate: DataTypes.DATE
-  }, {});
+module.exports = (Sequelize, DataTypes) => {
+  const Tweet = Sequelize.define('Tweet', {
+    id: {allowNull: false, autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER},
+    tweetId: {type: DataTypes.STRING},
+    tweetLikes: {type: DataTypes.INTEGER},
+    tweetLink: {type: DataTypes.STRING},
+    tweetDate: {type: DataTypes.DATE}
+  }, {
+    freezeTableName: true,
+  });
   Tweet.associate = function(models) {
-    Tweet.hasOne(models.Post, {as:'Post', foreignKey:'tweetId'});
+    Tweet.hasOne(models.Post);
   };
   return Tweet;
 };

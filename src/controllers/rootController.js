@@ -1,4 +1,4 @@
-const Post = require('../models').Post;
+const Post = require('../models/post');
 const config = require('../config/config.js');
 
 exports.root = function (req,res) {
