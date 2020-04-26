@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch src/views/static/scss -o src/views/static/css & nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "node-sass": "^4.14.0",
     "pg": "^8.0.2",
     "pg-hstore": "^2.3.3",
     "sequelize": "^4.43.1",

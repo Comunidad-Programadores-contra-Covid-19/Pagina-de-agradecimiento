@@ -9,6 +9,4 @@ exports.root = function (req,res) {
         limit: config.firstNPosts
     })
         .then(posts => res.render('index', {title:'Home page',posts}));
-
-
 }
