@@ -70,9 +70,9 @@ exports.likePost = function (req,res) {
         }).catch(err => res.status(500).send(err.message))
 }
 
-exports.new_post_from_tweet = function (req,res) {
+exports.new_post_from_hashtag = function (req,res) {
     let hashtag = req.body.hashtag
-    if hashtag.charAt(0) === '#' { hashtag = hashtag.slice(1) }
+    if (hashtag.charAt(0) === '#') { hashtag = hashtag.slice(1) }
 
     T.get('/search/tweets/', { q: hashtag, count: 5 }, function(err, data, response) {
         try{

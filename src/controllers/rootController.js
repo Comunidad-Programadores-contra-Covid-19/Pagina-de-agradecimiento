@@ -11,6 +11,4 @@ exports.root = function (req,res) {
     })
         .then(posts => posts.slice(0,config.firstNPosts))
         .then(posts => res.render('index', {title:'Home page',posts}));
-
-
 }
