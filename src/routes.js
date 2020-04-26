@@ -7,6 +7,9 @@ let reportController = require('./controllers/reportController');
 // Index page
 router.get('/', rootController.root);
 
+// Get list of posts
+router.get('/posts/:page',postController.get_posts)
+
 // Create new post
 router.post('/post', postController.new_post);
 

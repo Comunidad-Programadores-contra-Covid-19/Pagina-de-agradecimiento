@@ -69,3 +69,22 @@ exports.likePost = function (req,res) {
                 .then(res.status(200).send())
         }).catch(err => res.status(500).send(err.message))
 }
+
+exports.get_posts = function (req,res) {
+    let { tags } = req.body;
+    // TODO filtrar por tags tambien
+
+    Post.findAll({
+        where: {
+            isActive: true,
+        },
+        order: [
+            ['likes', 'DESC'],
+        ],
+        limit: config.firstNPosts,
+        offset: (req.params.page * config.firstNPosts),
+    })
+        .then(function (posts) {
+            res.status(200).send(posts)
+        })
+}
