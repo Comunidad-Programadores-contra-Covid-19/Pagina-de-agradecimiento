@@ -7,22 +7,7 @@
 
 <hr>
 <div class="container" id='container'>
-  <div class="item width2">
-    item1
-  </div>
-  <div class="item height2">
-    item2
-  </div>
-  <div class="item height2 width2">
-    item3
-  </div>
-  <div class="item">
-    item4
-  </div>
-  <div class="item">
-    item5
-  </div>
-  <div class="item">
-    item6
-  </div>
+	{{#each posts as |post|}}
+		{{> post}}
+	{{/each }}
 </div>

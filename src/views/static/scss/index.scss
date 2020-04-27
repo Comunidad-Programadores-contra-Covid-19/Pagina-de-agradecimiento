@@ -2,25 +2,24 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit,150px);
-  grid-template-rows: repeat(auto-fit,150px));
-  grid-gap: 25px;
+  grid-template-columns: repeat(auto-fit,$grid-unit);
+  grid-template-rows: repeat(auto-fit,$grid-unit);
+  grid-gap: $grid-gap;
   justify-content: center;
   width: 100%;
   margin: 0 auto;
   list-style: none;
 	grid-auto-flow: row dense;
-  max-width: 900px;
+  max-width: 1200px;
 }
 
 .container>.item {
 	display: flex;
-  background-color: gray;
-  min-width: 150px;
-  min-height: 150px;
+	min-width: $grid-unit;
+	min-height: $grid-unit;
 	border: 1px solid black;
-	justify-content: center;
-	align-items: center;
+	padding: 10px;
+	border-radius: 10px;
 }
 
 .width2 {
@@ -29,7 +28,7 @@
 
 .height2 {
 	grid-row: span 2;
-	height:325px;
+	height:$grid-unit*2+$grid-gap;
 }
 
 .button{
@@ -53,4 +52,25 @@
 	 width: 40px;
 	 margin-right: 15px;
 }
+
+.light-green{
+	background-color: #a3e4a0;
+}
+
+.light-pink{
+	background-color: #eba293;
+}
+
+.cyan{
+	background-color: #6dd3c4;
+}
+
+.light-orange{
+	background-color: #f3b163;
+}
+
+.light-purple{
+	background-color: #c0a5d6;
+}
+
 
