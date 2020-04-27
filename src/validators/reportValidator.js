@@ -1,5 +1,5 @@
-const Post = require('../models/post');
-const Reason = require('../models/reason');
+const Post = require('../models').Post;
+const Reason = require('../models').Reason;
 
 let validators = [
     reportReasonIdValidate,

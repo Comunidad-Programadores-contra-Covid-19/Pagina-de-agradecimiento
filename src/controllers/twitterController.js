@@ -1,5 +1,5 @@
-const Tweet = require('../models/tweet');
-const Post = require('../models/post');
+const Tweet = require('../models').Tweet;
+const Post = require('../models').Post;
 const config = require('../config/config.js');
 var Twit = require('twit');
 

@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const Post = require('../models/post');
+const Post = require('../models').Post;
 const postValidator = require('../validators/postValidator');
 const config = require('../config/config.js');
 
