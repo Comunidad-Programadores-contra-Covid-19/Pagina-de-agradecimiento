@@ -4,11 +4,10 @@ module.exports = {
     return queryInterface.createTable('Tweet', {
       id: {allowNull: false, autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER},
 
-      tweetId: {type: Sequelize.INTEGER},
+      tweetId: {type: Sequelize.STRING},
       tweetLikes: {type: Sequelize.INTEGER},
       tweetLink: {type: Sequelize.STRING},
-      tweetDate: {type: Sequelize.DATE},
-      tweetAuthor: {type: Sequelize.STRING},
+      tweetDate: {type: Sequelize.DATE}
 
       createdAt: {allowNull: false, type: Sequelize.DATE},
       updatedAt: {allowNull: false, type: Sequelize.DATE}

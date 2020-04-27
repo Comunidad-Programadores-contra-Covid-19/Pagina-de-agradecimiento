@@ -3,20 +3,33 @@ const router = express.Router();
 let rootController = require('./controllers/rootController');
 let postController = require('./controllers/postController')
 let reportController = require('./controllers/reportController');
+let twitterController = require('./controllers/twitterController'); 
 
 // Index page
 router.get('/', rootController.root);
 
+/***Post***/
+// Get list of posts
+router.get('/posts/:page',postController.get_posts)
+
 // Create new post
 router.post('/post', postController.new_post);
 
-// Create post from a tweet
-router.post('/post/from-twitter', postController.new_post_from_twitter);
+// Like a post
+router.post('/like/:postId', postController.likePost);
+
+/***Report***/
 
 // Report a post
 router.post('/report', reportController.new_report);
 
-// Like a post
-router.post('/like/:postId', postController.likePost);
+
+/***Twitter***/
+
+// Create posts from a hashtag
+router.post('/twitter/byHashtag7Days', twitterController.new_post_from_hashtag);
+
+// Create post from a tweet
+router.post('/twitter/byID', twitterController.new_post_from_tweet);
 
 module.exports = router;

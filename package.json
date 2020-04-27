@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch src/views/static/scss -o src/views/static/css",
+    "migrate": "node src/models/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,10 +15,11 @@
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "jquery": "^3.5.0",
-    "pg": "^8.0.2",
     "pg-hstore": "^2.3.3",
     "popper.js": "^1.16.1",
-    "sequelize": "^4.43.1",
+    "node-sass": "^4.14.0",
+    "pg": "^8.0.2",
+    "sequelize": "^5.15.1",
     "twit": "^2.2.11"
   },
   "devDependencies": {

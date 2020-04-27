@@ -1,13 +1,14 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
-  const Tag = sequelize.define('Tag', {
-    name: DataTypes.STRING,
-    description: DataTypes.TEXT
+module.exports = (Sequelize, DataTypes) => {
+  const Tag = Sequelize.define('Tag', {
+    id: {allowNull: false, autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER},
+    name: {type: DataTypes.TEXT, allowNull: false},
+    description: {type: DataTypes.TEXT, allowNull: false},
   }, {
     freezeTableName: true,
   });
   Tag.associate = function(models) {
-    Tag.belongsToMany(models.Post, {as: 'Post', through: 'Post_Tag', foreignKey: 'tagId'});
+    Tag.belongsToMany(models.Post, {as: 'Post', through: 'Post_Tag'});
   };
   return Tag;
 };
