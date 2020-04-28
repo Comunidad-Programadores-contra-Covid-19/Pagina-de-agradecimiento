@@ -40,7 +40,6 @@ exports.new_post_from_tweet = function (req,res) {
             return
         }     
     })
-    //res.sendStatus(200)
 }
 
 

@@ -2,15 +2,15 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit,$grid-unit-width);
-  grid-template-rows: repeat(auto-fit,$grid-unit-height);
+  grid-template-columns: repeat(auto-fit,minmax($grid-unit-width,$grid-unit-width));
+  grid-template-rows: repeat(auto-fit,minmax($grid-unit-height,$grid-unit-height));
   grid-gap: $grid-gap;
   justify-content: center;
-  width: 100%;
+
   margin: 0 auto;
   list-style: none;
 	grid-auto-flow: row dense;
-	max-width: 100%;
+	max-width: 95%;
   padding: 0px;
 }
  
@@ -19,8 +19,7 @@
 	min-width: $grid-unit-width;
 	min-height: $grid-unit-height;
 	border: 1px solid rgba(0,0,0,0.4);
-	border-radius: 10px;	
-	font-size: 20px;
+	border-radius: 10px;
 }
 
 .item > span {
@@ -32,6 +31,7 @@
 .item > img {
   padding:0px;
   width:100%;
+  border-radius: 10px;
 }
 
 
@@ -45,6 +45,7 @@
 	height:$grid-unit-height*2+$grid-gap;
 }
 
+
 .width {
 	max-width: $grid-unit-width;
 }
@@ -52,6 +53,7 @@
 .height {
 	max-height: $grid-unit-height;
 }
+
 
 .button{
 	background-color: green;
