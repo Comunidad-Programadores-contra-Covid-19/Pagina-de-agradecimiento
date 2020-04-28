@@ -1,5 +1,5 @@
-post('http://localhost:8000/twitter/byID',data={'id':'428691366282268672'})
+post('http://localhost:8000/twitter/byID',data={'id':'1254770631465250821'})
 
-get('http://localhost:8000')
+get('http://localhost:8000/twitter/byID')
 
  

@@ -1,3 +1,7 @@
 <div class="item {{color}} {{height}} {{width}}">
-	{{text}}
+	{{#if imagepath}}
+		<img class='image' src="{{imagepath}}" width:210px height:150px">
+	{{else}}
+		<span>{{text}}</span>
+	{{/if}}
 </div>

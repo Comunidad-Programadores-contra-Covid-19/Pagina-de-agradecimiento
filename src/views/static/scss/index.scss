@@ -2,25 +2,39 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit,$grid-unit);
-  grid-template-rows: repeat(auto-fit,$grid-unit);
+  grid-template-columns: repeat(auto-fit,$grid-unit-width);
+  grid-template-rows: repeat(auto-fit,$grid-unit-height);
   grid-gap: $grid-gap;
   justify-content: center;
   width: 100%;
   margin: 0 auto;
   list-style: none;
 	grid-auto-flow: row dense;
-  max-width: 1200px;
+	max-width: 100%;
+  padding: 0px;
 }
-
+ 
 .container>.item {
 	display: flex;
-	min-width: $grid-unit;
-	min-height: $grid-unit;
-	border: 1px solid black;
-	padding: 10px;
-	border-radius: 10px;
+	min-width: $grid-unit-width;
+	min-height: $grid-unit-height;
+	border: 1px solid rgba(0,0,0,0.4);
+	border-radius: 10px;	
+	font-size: 20px;
 }
+
+.item > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+  }
+
+.item > img {
+  padding:0px;
+  width:100%;
+}
+
+
 
 .width2 {
 	grid-column: span 2
@@ -28,7 +42,15 @@
 
 .height2 {
 	grid-row: span 2;
-	height:$grid-unit*2+$grid-gap;
+	height:$grid-unit-height*2+$grid-gap;
+}
+
+.width {
+	max-width: $grid-unit-width;
+}
+
+.height {
+	max-height: $grid-unit-height;
 }
 
 .button{
