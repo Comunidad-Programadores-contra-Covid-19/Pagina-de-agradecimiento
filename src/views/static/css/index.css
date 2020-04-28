@@ -73,3 +73,21 @@
 
 .light-purple {
   background-color: #c0a5d6; }
+
+.font-poppins{
+  font-family: 'Poppins', sans-serif;
+}
+.font-patrick-hand{
+  font-family: 'Patrick Hand', cursive;
+}
+.font-mali{
+  font-family: 'Mali', cursive;
+}
+.font-adobe-garamond-pro{
+  font-family: adobe-garamond-pro, serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.font-quicksand{
+  font-family: 'Quicksand', sans-serif;
+}
