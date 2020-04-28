@@ -1,11 +1,4 @@
 <h1>Pagina de inicio</h1>
-<div class="header">
-	<button type="button" onclick="addItem()"class = "button">Add item</button>
-	Width (1 or 2): <input type="text" class = "input" id='inputWidth'>
-	Height (1 or 2): <input type="text" class = "input" id='inputHeight'>
-</div>
-
-<hr>
 <div class="container" id='container'>
 	{{#each posts as |post|}}
 		{{> post}}

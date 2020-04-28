@@ -12,33 +12,34 @@ exports.root = function (req,res) {
         limit: config.firstNPosts
     })
     .then(posts => {
-    	
-        for(const post of posts){
-    		post.color = testColors[Math.floor(Math.random() * testColors.length)]
-            post.height = 'height'
-            post.width = 'width'
-    		if (Math.random() < 0.4){
-                post.imagepath = testImages[Math.floor(Math.random() * testImages.length)]
-                if (Math.random() < 0.3)
+      for(const post of posts){
+        post.height = 'height'
+        post.width = 'width'
+        console.log(post.imgPath)
+        if (!post.imgPath){
+            if(post.text.length > 175){
+               if (Math.random() < 0.5)
                     post.height = 'height2'
-                if (Math.random() < 0.3)
+                else
                     post.width = 'width2'
             }
-            else{
-                post.imagepath = null
-                if(post.text.length > 175){
-                   if (Math.random() < 0.5)
-                        post.height = 'height2'
-                    else
-                        post.width = 'width2'
-                }
-                if(post.text.length > 350){
-                    post.text = post.text.substring(1, 350) + '...';
-                }    
+            if(post.text.length > 350){
+                post.text = post.text.substring(1, 350) + '...';
+            }    
+        } else{
+          if(post.imgWidth > 1000 && post.imgHeight > 1000 ){
+            post.height = 'height2'
+            post.width = 'width2'
+          } else{
+            if(post.imgWidth > 1.6 * post.imgHeight){
+              post.width = 'width2'
             }
-        } 
-        
-
+            if(post.imgHeight > 1.6 * post.imgWidth){
+              post.height = 'height2'
+            }  
+          }
+        }
+      }    
     	res.render('index', {title:'Home page',posts})
     });
     

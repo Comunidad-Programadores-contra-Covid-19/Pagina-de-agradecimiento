@@ -14,8 +14,8 @@
   display: flex;
   min-width: 210px;
   min-height: 150px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  border-radius: 10px; }
+  border-radius: 10px;
+  position: relative; }
 
 .item > span {
   overflow: hidden;
@@ -23,9 +23,27 @@
   padding: 10px; }
 
 .item > img {
-  padding: 0px;
   width: 100%;
   border-radius: 10px; }
+
+.overlayFade {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ff946bbd; }
+
+.overlay {
+  position: absolute;
+  opacity: 0;
+  transition: all .3s ease;
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center; }
+
+.item:hover .overlay, .item:hover .overlayFade {
+  opacity: 0.90; }
 
 .width2 {
   grid-column: span 2; }
@@ -73,21 +91,3 @@
 
 .light-purple {
   background-color: #c0a5d6; }
-
-.font-poppins{
-  font-family: 'Poppins', sans-serif;
-}
-.font-patrick-hand{
-  font-family: 'Patrick Hand', cursive;
-}
-.font-mali{
-  font-family: 'Mali', cursive;
-}
-.font-adobe-garamond-pro{
-  font-family: adobe-garamond-pro, serif;
-  font-weight: 400;
-  font-style: italic;
-}
-.font-quicksand{
-  font-family: 'Quicksand', sans-serif;
-}

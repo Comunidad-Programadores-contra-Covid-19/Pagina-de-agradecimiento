@@ -2,7 +2,7 @@
 module.exports = (Sequelize, DataTypes) => {
   const Tweet = Sequelize.define('Tweet', {
     id: {allowNull: false, autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER},
-    tweetId: {type: DataTypes.STRING},
+    idFromTwitter: {type: DataTypes.STRING},
     tweetLikes: {type: DataTypes.INTEGER},
     tweetLink: {type: DataTypes.STRING},
     tweetDate: {type: DataTypes.DATE}

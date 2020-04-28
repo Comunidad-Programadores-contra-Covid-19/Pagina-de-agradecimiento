@@ -1,7 +1,10 @@
 <div class="item {{color}} {{height}} {{width}}">
-	{{#if imagepath}}
-		<img class='image {{height}} {{width}}' src="{{imagepath}}">
+	{{#if imgPath}}
+		<img class='image {{height}} {{width}}' src="{{imgPath}}">
 	{{else}}
 		<span>{{text}}</span>
 	{{/if}}
+	<div class="overlay overlayFade {{color}}">
+		<div class="overlay-content">De: {{author}} </div>
+	</div>
 </div>

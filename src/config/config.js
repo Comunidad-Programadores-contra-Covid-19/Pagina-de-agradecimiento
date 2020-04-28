@@ -17,6 +17,6 @@ module.exports = {
 
     // App constants
     domain:'localhost:8000',
-    firstNPosts: 20,
+    firstNPosts: 40,
     fonts: ["Arial","Verdana"],
 }
