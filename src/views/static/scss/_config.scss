@@ -1,12 +1,23 @@
-//colors
-$light-green: #a3e4a0;
-$light-pink: #eba293;
-$cyan: #6dd3c4;
-$light-orange: #f3b163;
-$light-purple: #c0a5d6;
-$light-black: #263238;
+// fonts
+$general:           'Poppins', sans-serif;
+$card1:             'Patrick Hand', cursive;
+$card2:             'Mali', sans-serif;
+$card3:             'Quicksand', sans-serif;
+//$card4: TODO garamond no se que hacemos
 
 //sizes
 $grid-unit-width: 210px;
 $grid-unit-height: 150px;
 $grid-gap: 8px; 
+
+// colors
+$light-green:       #a3e4a0;
+$dark-green:        #96D293;
+$translucid-green:  rgba(152,255,143,0.25);
+$grey:              rgba(156,156,156,0.6);
+$light-pink:        #eba293;
+$cyan:              #6dd3c4;
+$light-orange:      #f3b163;
+$light-purple:      #c0a5d6;
+$light-black:       #263238;
+

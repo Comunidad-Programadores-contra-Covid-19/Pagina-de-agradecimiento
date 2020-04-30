@@ -80,3 +80,6 @@ exports.new_post_from_hashtag = function (req,res) {
     res.sendStatus(200)
 }
 
+exports.create_post_page = function (req,res) {
+    res.render('create_post',{url: config.domain.concat('/post')});
+}

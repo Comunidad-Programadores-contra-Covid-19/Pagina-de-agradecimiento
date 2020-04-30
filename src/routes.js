@@ -8,6 +8,15 @@ let twitterController = require('./controllers/twitterController');
 // Index page
 router.get('/', rootController.root);
 
+// Create post page
+router.get('/nueva_carta/', postController.create_post_page);
+
+router.get('/quienes_somos',rootController.quienes_somos);
+
+router.get('/dona',rootController.dona);
+
+router.get('/faq',rootController.faq);
+
 /***Post***/
 // Get list of posts
 router.get('/posts/:page',postController.get_posts)
