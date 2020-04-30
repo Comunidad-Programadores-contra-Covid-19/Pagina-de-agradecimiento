@@ -1,20 +1,47 @@
-.footer {
-  height: 80px; }
-  .footer .navbar-brand {
-    margin-left: 40px;
-    background-color: #98E18F; }
-  .footer .navigate-links .footer-pages li a {
-    padding-top: 12px;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    color: #263238; }
-  .footer .navigate-links .copyright li a {
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18.6667px !important;
-    line-height: 28px !important;
-    color: #263238 !important; }
+@media (max-width: 768px) {
+  .footer {
+    display: none; }
+  .responsive-footer {
+    background-color: #a3e4a0; }
+    .responsive-footer .row .faq {
+      margin-top: 17px; }
+    .responsive-footer .row p {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 18px;
+      color: #263238; }
+    .responsive-footer .row a {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 21px;
+      color: #263238; } }
+
+@media (min-width: 769px) {
+  .footer {
+    height: 80px; }
+    .footer .navbar-brand {
+      margin-left: 40px; }
+      .footer .navbar-brand img {
+        width: 160px;
+        height: 45px; }
+    .footer .navigate-links .footer-pages li a {
+      padding-top: 12px;
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: #263238; }
+    .footer .navigate-links .copyright li a {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18.6667px !important;
+      line-height: 28px !important;
+      color: #263238 !important; }
+  .responsive-footer {
+    display: none; } }
