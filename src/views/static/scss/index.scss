@@ -3,21 +3,18 @@
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax($grid-unit-width,$grid-unit-width));
-  grid-template-rows: repeat(auto-fit,minmax($grid-unit-height,$grid-unit-height));
   grid-gap: $grid-gap;
   justify-content: center;
-
   margin: 0 auto;
-  list-style: none;
 	grid-auto-flow: row dense;
-	max-width: 95%;
+	min-width: 95vw;
   padding: 0px;
+  grid-auto-rows: $grid-unit-height;
+  line-height: 1.1;
 }
  
 .container>.item {
 	display: flex;
-	min-width: $grid-unit-width;
-	min-height: $grid-unit-height;
 	border-radius: 10px;
 	position: relative;
 }
@@ -61,10 +58,9 @@
 
 .height2 {
 	grid-row: span 2;
-	height:$grid-unit-height*2+$grid-gap;
 }
 
-
+/*
 .width {
 	max-width: $grid-unit-width;
 }
@@ -72,7 +68,7 @@
 .height {
 	max-height: $grid-unit-height;
 }
-
+*/
 
 .button{
 	background-color: green;
