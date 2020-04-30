@@ -1,0 +1,67 @@
+@import "config";
+
+.faq{
+  margin-top: 65px;
+  img{
+    width: 94px;
+    height: 94px;
+  }
+  h1{
+    font-family: $general;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 60px;
+    color: $light-black;
+  }
+  .questions{
+    margin-top: 63px;
+    .qa{
+      margin-bottom: 45px;
+      h5{
+        font-family: $general;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        color: $light-black;
+      }
+      p{
+        font-family: $general;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: $light-black;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .faq{
+    margin-top: 33px;
+    img{
+      width: 58px;
+      height: 58px;
+    }
+    h1{
+      font-size: 24px;
+      line-height: 37px;
+    }
+    .questions{
+      margin-top: 31px;
+      .qa{
+        margin-bottom: 45px;
+        h5{
+          font-size: 17px;
+          line-height: 25px;
+        }
+        p{
+          font-size: 13px;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+}

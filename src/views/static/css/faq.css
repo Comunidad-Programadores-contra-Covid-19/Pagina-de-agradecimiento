@@ -1,0 +1,50 @@
+.faq {
+  margin-top: 65px; }
+  .faq img {
+    width: 94px;
+    height: 94px; }
+  .faq h1 {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 60px;
+    color: #263238; }
+  .faq .questions {
+    margin-top: 63px; }
+    .faq .questions .qa {
+      margin-bottom: 45px; }
+      .faq .questions .qa h5 {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        color: #263238; }
+      .faq .questions .qa p {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #263238; }
+
+@media (max-width: 768px) {
+  .faq {
+    margin-top: 33px; }
+    .faq img {
+      width: 58px;
+      height: 58px; }
+    .faq h1 {
+      font-size: 24px;
+      line-height: 37px; }
+    .faq .questions {
+      margin-top: 31px; }
+      .faq .questions .qa {
+        margin-bottom: 45px; }
+        .faq .questions .qa h5 {
+          font-size: 17px;
+          line-height: 25px; }
+        .faq .questions .qa p {
+          font-size: 13px;
+          line-height: 19px; } }

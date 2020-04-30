@@ -53,3 +53,7 @@ exports.quienes_somos = function (req,res) {
 exports.dona = function (req,res) {
     res.render('dona')
 }
+
+exports.faq = function (req,res) {
+    res.render('faq')
+}
