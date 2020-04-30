@@ -1,0 +1,139 @@
+.container-fluid {
+  text-align: center; }
+  .container-fluid .hand-shake-img img {
+    width: 87px;
+    height: 87px; }
+  .container-fluid h1 {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 60px;
+    color: #263238; }
+  .container-fluid .passion-led-us-img img {
+    width: 100%; }
+  .container-fluid .description p {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 38px;
+    color: #263238; }
+  .container-fluid h2 {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 60px;
+    color: #263238; }
+  .container-fluid .team {
+    text-align: left; }
+    .container-fluid .team h3 {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 35px;
+      line-height: 52px;
+      color: #263238;
+      margin-bottom: 26px;
+      margin-top: 19px; }
+    .container-fluid .team .row .member {
+      text-align: center; }
+      .container-fluid .team .row .member img {
+        width: 172px;
+        height: 172px; }
+      .container-fluid .team .row .member h5 {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 23px;
+        line-height: 34px;
+        color: #263238; }
+      .container-fluid .team .row .member .linkedin {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 33px;
+        color: #263238; }
+      .container-fluid .team .row .member .phrase {
+        font-family: "Poppins", sans-serif;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 119.5%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #263238; }
+
+@media (max-width: 768px) {
+  .container-fluid {
+    text-align: center; }
+    .container-fluid .hand-shake-img img {
+      width: 56px;
+      height: 56px; }
+    .container-fluid h1 {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 39px;
+      color: #263238; }
+    .container-fluid .passion-led-us-img img {
+      width: 90%; }
+    .container-fluid .description {
+      margin-top: 15px; }
+      .container-fluid .description p {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #263238; }
+    .container-fluid h2 {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 39px;
+      color: #263238; }
+    .container-fluid .team {
+      text-align: center; }
+      .container-fluid .team h3 {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 23px;
+        color: #263238; }
+      .container-fluid .team .row .member {
+        text-align: center;
+        margin-top: 22px; }
+        .container-fluid .team .row .member img {
+          width: 90px;
+          height: 90px; }
+        .container-fluid .team .row .member h5 {
+          font-family: "Poppins", sans-serif;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 24px;
+          color: #263238;
+          margin-bottom: 0; }
+        .container-fluid .team .row .member .linkedin {
+          font-family: "Poppins", sans-serif;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 22px;
+          color: #263238;
+          margin-bottom: 5px; }
+        .container-fluid .team .row .member .phrase {
+          font-family: "Poppins", sans-serif;
+          font-style: italic;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 119.5%;
+          text-align: center;
+          letter-spacing: 0.02em;
+          color: #263238; } }

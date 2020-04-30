@@ -45,3 +45,7 @@ exports.root = function (req,res) {
     
 	//res.render('index', {title:'Home page',posts:testPosts})
 }
+
+exports.quienes_somos = function (req,res) {
+    res.render('quienes_somos')
+}
