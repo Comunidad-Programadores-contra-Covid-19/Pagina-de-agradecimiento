@@ -1,7 +1,8 @@
 @import "config";
 
-.container-fluid{
+.quienes-somos{
   text-align: center;
+  margin-top: 110px;
   .hand-shake-img{
     img{
       width: 87px;
@@ -91,7 +92,8 @@
 }
 
 @media (max-width: 768px){
-  .container-fluid{
+  margin-top: 42px;
+  .quienes-somos{
     text-align: center;
     .hand-shake-img{
       img{

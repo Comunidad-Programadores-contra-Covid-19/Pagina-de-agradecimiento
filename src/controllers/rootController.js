@@ -49,3 +49,7 @@ exports.root = function (req,res) {
 exports.quienes_somos = function (req,res) {
     res.render('quienes_somos')
 }
+
+exports.dona = function (req,res) {
+    res.render('dona')
+}
