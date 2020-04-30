@@ -1,0 +1,20 @@
+.footer {
+  height: 80px; }
+  .footer .navbar-brand {
+    margin-left: 40px;
+    background-color: #98E18F; }
+  .footer .navigate-links .footer-pages li a {
+    padding-top: 12px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #263238; }
+  .footer .navigate-links .copyright li a {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18.6667px !important;
+    line-height: 28px !important;
+    color: #263238 !important; }

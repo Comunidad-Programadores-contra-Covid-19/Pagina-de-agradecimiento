@@ -1,0 +1,36 @@
+@import "config";
+
+.footer{
+  height: 80px;
+  .navbar-brand{
+    margin-left: 40px;
+    background-color: $dark-green ;
+  }
+  .navigate-links{
+    .footer-pages{
+      li{
+        a{
+          padding-top: 12px;
+          font-family: $general;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: $light-black;
+        }
+      }
+    }
+    .copyright{
+        li{
+          a{
+            font-family: $general;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18.6667px!important;
+            line-height: 28px!important;
+            color: $light-black!important;
+          }
+        }
+    }
+  }
+}
