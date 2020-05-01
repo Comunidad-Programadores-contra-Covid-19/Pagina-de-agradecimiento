@@ -1,102 +1,75 @@
-<!--fakenavbar  -->
-<!--<div style="height: 86px; background-color: green"></div>-->
-
-
-<div class="container-fluid">
+<div class="container-fluid create-post">
     <div class="row">
-        <div class="col-lg-2 resp-margin"></div>
-        <div class=" col-md-12 col-lg-8">
-            <div class="create-post-section">
-                <div class="create-post-box">
-                    <div class="row">
-                        <div class="col-lg-1"></div>
-                        <div class="col-lg-2 man-clapping">
-                            <img src="window_man_clap.png" class="man-clap-img" height="145px" width="110px">
-                        </div>
-                        <div class="col-lg-8 col-md-12">
-                            <h2 class="title">¡Es hora de agradecer!</h2>
-                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div id="create_post" class="form">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">¿A quién o quienes le queres agradecer? (opcional)</label>
-                                    <input id="destinatario" type="name" class="form-control" placeholder="Escribe aquí">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">¡Dejá tu mensaje!</label>
-                                    <div class="styles-bar">
-                                        <div class="padding">
-                                            <div class="row">
-                                                <div class="col-1">
-                                                    <div class="styles-title"><p>Estilo</p></div>
-                                                </div>
-                                                <div class="col-2">
-                                                    <div class="styles-title">
-                                                        <p class="typo1"id="dropdownMenuButton"
-                                                           data-toggle="dropdown"
-                                                           aria-haspopup="true"
-                                                           aria-expanded="false">Tipografia 1</p>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item typo2" href="#">Tipografia 2</a>
-                                                            <a class="dropdown-item typo3" href="#">Tipografia 3</a>
-                                                            <a class="dropdown-item typo4" href="#">Tipografia 4</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-2"></div>
-                                                <div class="col-1 styles-title"><p>Fondo</p></div>
-                                                <div class="col-2">
-                                                    <div class="styles-title">
-                                                        <select  id="bckcolor">
-                                                            <option class="light-purple" value="1"></option>
-                                                            <option class="light-orange" value="2"></option>
-                                                            <option class="light-pink" value="3"></option>
-                                                            <option class="cyan" value="4"></option>
-                                                        </select>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <textarea id="carta" class="form-control" placeholder="Escribe aquí"></textarea>
-                                        <div class="add-to-post">
-                                            <div class="padding">
-                                                <div class="row">
-                                                    <div class="col-6 styles-title">
-                                                        <p>Agrega a tu publicación</p>
-                                                    </div>
-                                                    <div class="col-1 imgs">
-                                                        <img src="add_photo.jpeg" height="30px" width="30px">
-                                                    </div>
-                                                    <div class="col-1 imgs">
-                                                        <img src="add_gif.png" height="30px" width="30px">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Firmá tu agradecimiento (opcional)</label>
-                                    <input id="firma" type="name" class="form-control" placeholder="Escribe aquí">
-                                </div>
-                                <div class="summit-btn-area">
-                                    <button value="submit" class="btn" onclick="create_post()">
-                                        <p>Enviar agradecimiento</p>
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                        <div class="col-1"></div>
+        <div class="col-lg-2"></div>
+<!--        main section-->
+        <div class="col-lg-8">
+<!--            heading, photo and title-->
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2 man-clapping">
+                    <img src="window_man_clap.png">
                 </div>
+                <div class="col-lg-7 heading-post">
+                    <h1>¡Es hora de agradecer!</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+<!--            end heading, photo and title-->
+<!--            destinatario-->
+            <label>¿A quién o quienes le queres agradecer? (opcional)</label>
+            <input id="destinatario" type="name" placeholder="Escribe aquí">
+            <br>
+
+<!--            mensaje-->
+            <label>¡Dejá tu mensaje!</label>
+            <div class="editor">
+                <div class="styles">
+                    <div class="row ml-1">
+                        <div class="col-lg-1 col-2 estilo">
+                            <p>Estilo</p>
+                        </div>
+                        <div class="col-lg-2 col-2 tipografia">
+                            <p>tipografia</p>
+                        </div>
+                        <div class="col-lg-1 col-2 space"></div>
+                        <div class="col-lg-1 col-2 fondo">
+                            <p>Fondo</p>
+                        </div>
+                        <div class="col-lg-1 col-2 picker">
+                            <p>picker</p>
+                        </div>
+                    </div>
+                </div>
+<!--                bloque de texto-->
+                <textarea id="carta" placeholder="Escribe aquí"></textarea>
+<!--                end bloque de texto-->
+
+<!--                agregar una foto-->
+                <div class="add-photo">
+                    <div class="row ml-1">
+                        <div class="col-lg-3 col-7">
+                            <p>Agrega a tu publicación</p>  
+                        </div>
+                        <div class="col-1">
+                            <img src="add_photo.jpeg">
+                        </div>
+                    </div>
+                </div>
+<!--                end agregar una foto-->
+            </div>
+<!--            end mensaje-->
+
+<!--            firma-->
+            <label>Firmá tu agradecimiento (opcional)</label>
+            <input id="firma" type="name" placeholder="Escribe aquí">
+<!--            end firma-->
+
+            <div class="send-btn">
+                <button type="button" class="btn">Enviar agradecimiento</button>
             </div>
         </div>
-        <div class="col-lg-2 resp-margin"></div>
+<!--        end main section-->
+        <div class="col-lg-2"></div>
     </div>
-
 </div>

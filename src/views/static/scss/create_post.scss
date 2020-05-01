@@ -1,217 +1,164 @@
 @import "config";
 
-p,h2, label,input::placeholder, textarea::placeholder{
-  font-family: $general;
-}
-
-
-.light-purple, .light-orange, .light-pink, .cyan{
-  margin-left: 7px;
-  border-radius: 5px;
-  width: 27px;
-  height: 27px;
-}
-.light-purple{background-color: $light-purple;}
-.light-orange{background-color: $light-orange;}
-.cyan{background-color: $cyan;}
-.light-pink{background-color: $light-pink;}
-
-
-.typo1, .typo2, .typo3, .typo4{
-  margin: 0;
-  padding: 5px 0 0 15px;
-  font-family: $card1;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 17px;
-  color: $light-black;
-}
-
-.typo2{
-  font-family: $card2;
-  font-style: normal;
-}
-.typo3{
-  font-family: $card3;
-  font-style: normal;
-}
-.dropdown-menu{
-  width: 50px!important;
-}
-
-@media (max-width: 768px){
-  .typo1, .typo2, .typo3, .typo4{
-    width: 50px;
-    margin-left:10px!important;
-  }
-  .container-fluid {
-    padding-left: 24px!important;
-    padding-right: 24px!important;
-    .create-post-section {
-      .create-post-box {
-        height: 100vh;
-        padding: 0 !important;
-        .man-clapping {
-          display: none;
-        }
-
-        .title {
-          font-size: 21.46px !important;
-          line-height: 32px !important;
-          text-align: left;
-          width: 100%;
-        }
-
-        .description {
-          font-size: 12px !important;
-          line-height: 18px !important;
-          margin-bottom: 17.3px !important;
-        }
-
-        .form {
-          margin-top: 0 !important;
-
-          input {
-            width: 100% !important;
-          }
-            .add-to-post {
-              .padding {
-                margin-left: 23px!important;
-                .styles-title {
-                  p{
-                    padding-top: 10px!important;
-                  }
-                }
-
-                .imgs{
-                  padding: 0;
-                  margin-left: 0px;
-                  margin-right: 10px;
-                }
-              }
-            }
-          .summit-btn-area {
-            padding-top: 18px !important;
-            padding-bottom: 20px !important;
-            text-align: center !important;
-          }
-        }
-      }
+.create-post{
+  margin-top: 30px;
+  .man-clapping{
+    padding-top: 5px;
+    img{
+      height: 135px;
+      width: 105px;
     }
   }
-}
-
-.create-post-section{
-  .main-margin{
-    height: 10vh;
-  }
-  .create-post-box{
-    height: 100vh;
-    padding: 30px 69px;
-    .title{
-      text-align: left!important;
+  .heading-post{
+    h1{
+      font-family: $general;
       font-style: normal;
       font-weight: normal;
       font-size: 40px;
       line-height: 60px;
-      text-align: center;
       color: $light-black;
     }
-    .description{
-      color: $light-black;
+    p{
+      font-family: $general;
       font-style: normal;
       font-weight: 500;
       font-size: 15px;
       line-height: 22px;
       color: $light-black;
     }
-    .man-clapping{
-      margin-right: 30px;
-    }
-    .form{
-      margin-top:25px;
-      .styles-bar{
-        background-color: $translucid-green;
-        border-width: 3px 3px 0px 3px;
-        border-color: $dark-green;
-        border-style: solid;
-        .padding{
-          padding-left: 23px;
-          padding-top: 10px;
-          .styles-title{
-            p{
-              color: $light-black;
-              font-style: normal;
-              font-weight: normal;
-              font-size: 12px;
-              line-height: 12px;
-              padding: 0;
-              margin: 0;
-            }
-          }
-        }
-      }
-      .add-to-post{
-        border-color: $dark-green;
-        border-width: 0px 3px 3px 3px;
-        border-style: solid;
-        .padding{
-          padding-left: 23px;
-          padding-top: 10px;
-          .styles-title{
-            color: $light-black;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 12px;
-            padding: 0;
-          }
-        }
-      }
-      textarea{
-        height: 150px;
-        border-color: $dark-green;
-        border-radius: 0px;
-        border-width: 0px 3px 0px 3px;
-        resize: none;
-      }
-      textarea:focus{
-        box-shadow: none;
-      }
-      input {
-        margin-top: -10px;
-        padding: 0;
-        width: 400px;
-        outline: 0;
-        border-width: 0 0 2px;
-        border-color: $dark-green;
-      }
-      input::placeholder, textarea::placeholder{
-        color: $grey;
+  }
+  label{
+    margin-top: 24px;
+    font-family: $general;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: $light-black;
+  }
+  input{
+    margin-top: -10px;
+    padding: 0;
+    width: 600px;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: $light-green;
+  }
+  input::placeholder, textarea::placeholder{
+    color: $grey;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .editor{
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: $dark-green;
+    .styles{
+      background-color: $translucid-green;
+      border-style: solid;
+      border-width: 0 0 0.5px 0;
+      border-color: $light-green;
+      p{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        margin: 0;
+        font-family: $general;
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
-        line-height: 21px;
+        font-size: 12px;
+        line-height: 18px;
+        color: $light-black;
       }
-      input:focus {
-        border-color: $dark-green;
-        box-shadow: none;
+    }
+    textarea{
+      width: 100%;
+      height: 150px;
+      border-color: $dark-green;
+      border-radius: 0;
+      border-width: 0;
+      resize: none;
+    }
+    textarea:focus{
+      //TODO no anda..
+      box-shadow: none;
+    }
+    textarea::placeholder{
+      padding: 10px 0 0 15px!important;
+    }
+    .add-photo{
+      img{
+        margin-top: 7px;
+
+        width: 26px;
+        height: 26px;
       }
-      .summit-btn-area{
-        text-align: right;
-        padding-bottom: 40px;
-        .btn{
-          background-color: $dark-green;
-          border-radius: 60px;
-          p{
-            font-style: normal;
-            font-weight: 500;
-            font-size: 17.78px;
-            margin: 0;
-            padding: 0;
-          }
-        }
+      p{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        margin: 0;
+        font-family: $general;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        color: $light-black;
+      }
+    }
+  }
+  .send-btn{
+    margin-top: 19px;
+    margin-bottom: 58px;
+    text-align: right;
+    button{
+      border-radius: 100px;
+      background-color: $dark-green;
+      font-family: $general;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 17.7876px;
+      line-height: 27px;
+      color: $light-black;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .create-post{
+    margin-top: 38px;
+    .man-clapping{
+      display: none;
+    }
+    .heading-post{
+      h1{
+        font-size: 21px;
+        line-height: 32px;
+      }
+      p{
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+    label{
+      margin-top: 17px;
+      font-family: $general;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 18px;
+      color: $light-black;
+    }
+    input{
+      width: 100%;
+    }
+    .send-btn{
+      margin-top: 18px;
+      margin-bottom: 20px;
+      text-align: center;
+      button{
+        font-size: 12px;
+        line-height: 18px;
       }
     }
   }
