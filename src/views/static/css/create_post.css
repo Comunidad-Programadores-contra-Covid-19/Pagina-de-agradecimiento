@@ -169,6 +169,10 @@
       color: #263238; }
     .create-post input {
       width: 100%; }
+    .create-post .editor .styles .typo-picker {
+      padding-left: 30px;
+      margin-top: 10px;
+      width: auto; }
     .create-post .send-btn {
       margin-top: 18px;
       margin-bottom: 20px;
