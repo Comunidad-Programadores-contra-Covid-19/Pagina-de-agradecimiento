@@ -1,19 +1,17 @@
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 210px));
-  grid-template-rows: repeat(auto-fit, minmax(150px, 150px));
-  grid-gap: 13px;
+  grid-gap: 8px;
   justify-content: center;
   margin: 0 auto;
-  list-style: none;
   grid-auto-flow: row dense;
-  max-width: 95%;
-  padding: 0px; }
+  min-width: 95vw;
+  padding: 0px;
+  grid-auto-rows: 150px;
+  line-height: 1.1; }
 
 .container > .item {
   display: flex;
-  min-width: 210px;
-  min-height: 150px;
   border-radius: 10px;
   position: relative; }
 
@@ -49,15 +47,17 @@
   grid-column: span 2; }
 
 .height2 {
-  grid-row: span 2;
-  height: 313px; }
+  grid-row: span 2; }
 
+/*
 .width {
-  max-width: 210px; }
+	max-width: $grid-unit-width;
+}
 
 .height {
-  max-height: 150px; }
-
+	max-height: $grid-unit-height;
+}
+*/
 .button {
   background-color: green;
   border: 1px solid black;
