@@ -1,3 +1,34 @@
+.purple {
+  background-color: #c0a5d6 !important; }
+
+.orange {
+  background-color: #f3b163 !important; }
+
+.pink {
+  background-color: #eba293 !important; }
+
+.cyan {
+  background-color: #6dd3c4 !important; }
+
+.typo {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #263238; }
+
+.typo1 {
+  font-family: "Patrick Hand", cursive;
+  font-style: normal; }
+
+.typo2 {
+  font-family: "Mali", sans-serif;
+  font-style: normal; }
+
+.typo3 {
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-weight: bold !important; }
+
 .create-post {
   margin-top: 30px; }
   .create-post .man-clapping {
@@ -59,6 +90,25 @@
         font-size: 12px;
         line-height: 18px;
         color: #263238; }
+      .create-post .editor .styles .color-picked {
+        border-radius: 7px;
+        margin-top: 7.5px;
+        width: 27px;
+        height: 27px;
+        background-color: #c0a5d6; }
+      .create-post .editor .styles select {
+        margin-left: -45px;
+        width: 50px;
+        background-color: transparent;
+        border: 0;
+        z-index: 2;
+        position: relative; }
+      .create-post .editor .styles select:focus {
+        outline: none; }
+      .create-post .editor .styles .typo-picker {
+        padding-left: 15px;
+        margin-top: 10px;
+        width: auto; }
     .create-post .editor textarea {
       width: 100%;
       height: 150px;
@@ -67,7 +117,7 @@
       border-width: 0;
       resize: none; }
     .create-post .editor textarea:focus {
-      box-shadow: none; }
+      outline: none; }
     .create-post .editor textarea::placeholder {
       padding: 10px 0 0 15px !important; }
     .create-post .editor .add-photo img {
@@ -119,8 +169,6 @@
       color: #263238; }
     .create-post input {
       width: 100%; }
-    .create-post .editor .styles row .col-1 {
-      min-width: 300px !important; }
     .create-post .send-btn {
       margin-top: 18px;
       margin-bottom: 20px;

@@ -1,5 +1,21 @@
 @import "config";
 
+.purple{background-color: $light-purple!important;}
+.orange{background-color: $light-orange!important;}
+.pink{background-color: $light-pink!important;}
+.cyan{background-color: $cyan!important;}
+
+.typo{
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: $light-black;
+}
+.typo1{font-family: $card1; font-style: normal;}
+.typo2{font-family: $card2; font-style: normal;}
+.typo3{font-family: $card3; font-style: normal; font-weight: bold!important;}
+
+
 .create-post{
   margin-top: 30px;
   .man-clapping{
@@ -71,6 +87,28 @@
         line-height: 18px;
         color: $light-black;
       }
+      .color-picked{
+        border-radius: 7px;
+        margin-top: 7.5px;
+        width: 27px;
+        height: 27px;
+        background-color: $light-purple;
+      }
+      select{
+        margin-left: -45px;
+        width: 50px;
+        background-color: transparent;
+        border: 0;
+        z-index: 2;
+        position:relative;
+      }
+      select:focus{outline: none}
+
+      .typo-picker{
+        padding-left: 15px;
+        margin-top: 10px;
+        width: auto;
+      }
     }
     textarea{
       width: 100%;
@@ -80,10 +118,7 @@
       border-width: 0;
       resize: none;
     }
-    textarea:focus{
-      //TODO no anda..
-      box-shadow: none;
-    }
+    textarea:focus{outline: none}
     textarea::placeholder{
       padding: 10px 0 0 15px!important;
     }

@@ -1,27 +1,81 @@
+$('#color-picker').change(function(){
+    if($(this).val() == 'purple'){
+        $('.color-picked').removeClass("orange")
+        $('.color-picked').removeClass("cyan")
+        $('.color-picked').removeClass("pink")
 
+        $('.color-picked').addClass("purple")
+        $('.color-picked').addClass("important")
+    }
+    if($(this).val() == 'orange'){
+        $('.color-picked').removeClass("purple")
+        $('.color-picked').removeClass("pink")
+        $('.color-picked').removeClass("cyan")
 
-function create_post() {
-    console.log(document.getElementById('destinatario').value)
-    console.log(document.getElementById('carta').value)
-    console.log(document.getElementById('firma').value)
-}
+        $('.color-picked').addClass("orange")
+        $('.color-picked').addClass("important")
+    }
+    if($(this).val() == 'pink'){
+        $('.color-picked').removeClass("orange")
+        $('.color-picked').removeClass("purple")
+        $('.color-picked').removeClass("cyan")
 
-function style_bckg(bck){
-    console.log(bck.value);
-    if (bck.value == 'light-purple'){
-        document.getElementById('bckcolor').style["background-color"] = '#c0a5d6';
-        return
+        $('.color-picked').addClass("pink")
+        $('.color-picked').addClass("important");
     }
-    if (bck.value == 'light-orange'){
-        document.getElementById('bckcolor').style["background-color"] = '#f3b163';
-        return;
+    if($(this).val() == 'cyan'){
+        $('.color-picked').removeClass("orange")
+        $('.color-picked').removeClass("purple")
+        $('.color-picked').removeClass("pink")
+
+        $('.color-picked').addClass("cyan")
+        $('.color-picked').addClass("important");
     }
-    if (bck.value == 'light-pink'){
-        document.getElementById('bckcolor').style["background-color"] = '#eba293';
-        return;
+
+});
+
+$('.typo-picker').addClass("typo");
+$('.typo-picker').addClass("typo1");
+$('.typo-picker').addClass("important");
+
+$('#typo-picker').change(function(){
+    if($(this).val() == 'typo1'){
+        $('.typo-picker').removeClass("typo3");
+        $('.typo-picker').removeClass("typo2");
+        $('.typo-picker').removeClass("typo4");
+
+        $('.typo-picker').addClass("typo1");
+        $('.typo-picker').addClass("important");
+        $('.typo-picker').addClass("typo");
+        $('.typo-picker').addClass("important");
     }
-    if (bck.value == 'cyan'){
-        document.getElementById('bckcolor').style["background-color"] = '#6dd3c4';
-        return;
+    if($(this).val() == 'typo2'){
+        $('.typo-picker').removeClass("typo1");
+        $('.typo-picker').removeClass("typo3");
+        $('.typo-picker').removeClass("typo4");
+
+        $('.typo-picker').addClass("typo2");
+        $('.typo-picker').addClass("typo");
+        $('.typo-picker').addClass("important");
     }
-}
+    if($(this).val() == 'typo3'){
+        $('.typo-picker').removeClass("typo2");
+        $('.typo-picker').removeClass("typo1");
+        $('.typo-picker').removeClass("typo4");
+
+        $('.typo-picker').addClass("typo3");
+        $('.typo-picker').addClass("typo");
+        $('.typo-picker').addClass("important");
+    }
+    if($(this).val() == 'typo4'){
+        $('.typo-picker').removeClass("typo1");
+        $('.typo-picker').removeClass("typo2");
+        $('.typo-picker').removeClass("typo3");
+
+        $('.typo-picker').addClass("typo4");
+        $('.typo-picker').addClass("typo");
+        $('.typo-picker').addClass("important");
+    }
+});
+
+// $("#selectBox option[value='White']").remove();
