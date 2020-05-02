@@ -3,9 +3,11 @@ if(!process.env.consumer_key){
 }else{
     const priv = {}
 }
-
-const configTwitter = require('./private/configTwitter.json')
-
+if(!process.env.consumer_key) {
+    const configTwitter = require('./private/configTwitter.json')
+}else{
+    const configTwitter = {}
+}
 module.exports = {
     //node configs
     port: process.env.PORT || 8000,
