@@ -39,5 +39,5 @@ app.use('/',routes);
 
 // Start the app
 app.listen(config.port, () => {
-  console.log('Example app listening on port 8000')
+  console.log('Example app listening on port '.concat(config.port));
 });
