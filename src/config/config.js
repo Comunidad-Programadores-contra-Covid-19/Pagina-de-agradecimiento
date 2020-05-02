@@ -2,6 +2,9 @@ const priv = require('./private/private.json');
 const configTwitter = require('./private/configTwitter.json')
 
 module.exports = {
+    //node configs
+    port: process.env.PORT || 8000,
+
     // Database config
     db_username: priv.db_username,
     db_password: priv.db_password,

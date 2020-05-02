@@ -5,6 +5,8 @@ const path = require('path');
 const db = require('./src/config/dbInit');
 const hbs = require('express-handlebars')
 const routes = require('./src/routes');
+const config = require('./src/config/config');
+
 
 // Init database
 db.authenticate()
@@ -36,6 +38,6 @@ app.use('/',routes);
 
 
 // Start the app
-app.listen(8000, () => {
+app.listen(config.port, () => {
   console.log('Example app listening on port 8000')
 });
