@@ -1,8 +1,11 @@
+let priv = {}
+let configTwitter = {}
 if(!process.env.consumer_key){
-    const priv = require('./private/private.json');
+    priv = require('./private/private.json');
 }
+
 if(!process.env.consumer_key) {
-    const configTwitter = require('./private/configTwitter.json')
+    configTwitter = require('./private/configTwitter.json')
 }
 
 module.exports = {
