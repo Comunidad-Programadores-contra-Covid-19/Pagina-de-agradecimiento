@@ -4,15 +4,16 @@ const config = require('./config');
 //para correr en memoria
 // module.exports = new Sequelize('sqlite::memory:');
 
+let sequelize
 if(process.env.DATABASE_URL){
-    let sequelize = new Sequelize(process.env.DATABASE_URL,{
+    sequelize = new Sequelize(process.env.DATABASE_URL,{
         dialect: "postgres",
         protocol: "postgres",
         logging: true,
     });
 }
 else{
-    let sequelize = new Sequelize(
+    sequelize = new Sequelize(
         config.db_database,
         config.db_username,
         config.db_password,
@@ -23,7 +24,7 @@ else{
     );
 }
 
-return sequelize;
+module.exports = sequelize;
 
 //revisar para produccion lo de abajo, crea un pool de dbs, supongo que es para concurrencia
 // const sequelize = new Sequelize(/* ... */, {
