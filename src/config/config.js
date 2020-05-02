@@ -16,7 +16,7 @@ module.exports = {
   	access_token_secret: process.env.access_token_secret || configTwitter.access_token_secret,
 
     // App constants
-    domain:'http://localhost:8000',
+    domain: process.env.domain || 'http://localhost:8000',
     firstNPosts: 40,
     fonts: ["Arial","Verdana"],
 }

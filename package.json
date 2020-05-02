@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --watch src/views/static/scss -o src/views/static/css",
-    "migrate": "node src/models/index.js"
+    "migrate": "node src/models/index.js",
+    "start": "npm run migrate && node index.js"
   },
   "author": "",
   "license": "ISC",
