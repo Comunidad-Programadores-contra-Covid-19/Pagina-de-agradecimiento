@@ -1,53 +1,38 @@
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 210px));
-  grid-gap: 8px;
-  justify-content: center;
-  margin: 0 auto;
-  grid-auto-flow: row dense;
-  min-width: 95vw;
-  padding: 0px;
-  grid-auto-rows: 150px;
-  line-height: 1.1; }
+.teagradezco .main-section {
+  margin-top: 50px;
+  margin-bottom: 42px;
+  text-align: center; }
+  .teagradezco .main-section h1 {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 54px;
+    color: #263238; }
+  .teagradezco .main-section p {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    color: #263238; }
+  .teagradezco .main-section .btn {
+    width: 280px;
+    height: 56px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 31px;
+    color: #263238;
+    background-color: #96D293;
+    border-radius: 100px; }
 
-.container > .item {
-  display: flex;
-  border-radius: 10px;
-  position: relative; }
-
-.item > span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 10px; }
-
-.item > img {
-  width: 100%;
-  border-radius: 10px; }
-
-.overlayFade {
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: #ff946bbd; }
-
-.overlay {
-  position: absolute;
-  opacity: 0;
-  transition: all .3s ease;
-  display: flex;
-  border-radius: 10px;
-  align-items: center;
-  justify-content: center; }
-
-.item:hover .overlay, .item:hover .overlayFade {
-  opacity: 0.90; }
-
-.width2 {
-  grid-column: span 2; }
-
-.height2 {
-  grid-row: span 2; }
+.teagradezco .main-img {
+  margin-top: 50px; }
+  .teagradezco .main-img img {
+    height: 215px;
+    width: 130px; }
 
 /*
 .width {
