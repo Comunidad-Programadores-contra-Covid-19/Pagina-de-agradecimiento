@@ -32,7 +32,10 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 /* DROPS all tables and sync db with models */
-sequelize.sync({ force: true ,logging: console.log })
+if(process.argv[2] === 'migrate' || process.argv[2] == 'migrate'){
+  sequelize.sync({ force: true ,logging: console.log })
+}
+
 
 module.exports = db;
 
