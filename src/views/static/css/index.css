@@ -44,7 +44,6 @@
       font-size: 18px;
       line-height: 27px; }
     .teagradezco .main-section p {
-      text-align: justify;
       font-size: 12px;
       line-height: 18px; }
     .teagradezco .main-section .button-agradecer .btn {
@@ -53,10 +52,13 @@
       font-size: 12px;
       line-height: 18px; }
   .teagradezco .main-img {
-    text-align: left; }
+    text-align: left;
+    margin-top: 30px; }
     .teagradezco .main-img img {
-      height: 120px;
-      width: 80px; } }
+      height: 100px;
+      width: 70px;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1); } }
 
 /*
 .width {
