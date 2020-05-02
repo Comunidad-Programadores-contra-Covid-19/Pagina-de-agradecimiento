@@ -10,10 +10,10 @@ module.exports = {
     db_dialect: "postgres",
 
     // Twitter config
-  	consumer_key:configTwitter.consumer_key,
- 	consumer_secret:configTwitter.consumer_secret,
-  	access_token:configTwitter.access_token,
-  	access_token_secret:configTwitter.access_token_secret,
+  	consumer_key: process.env.consumer_key || configTwitter.consumer_key,
+ 	consumer_secret: process.env.access_token_secret || configTwitter.consumer_secret,
+  	access_token: process.env.access_token_secret || configTwitter.access_token,
+  	access_token_secret: process.env.access_token_secret || configTwitter.access_token_secret,
 
     // App constants
     domain:'http://localhost:8000',

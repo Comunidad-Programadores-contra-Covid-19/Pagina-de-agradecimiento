@@ -37,35 +37,44 @@ $('#color-picker').change(function(){
 $('.typo-picker').addClass("typo");
 $('.typo-picker').addClass("typo1");
 $('.typo-picker').addClass("important");
+$('textarea').addClass("typo");
+$('textarea').addClass("typo1");
+$('textarea').addClass("important");
 
 $('#typo-picker').change(function(){
     if($(this).val() == 'typo1'){
         $('.typo-picker').removeClass("typo3");
+        $('textarea').removeClass("typo3");
         $('.typo-picker').removeClass("typo2");
+        $('textarea').removeClass("typo2");
         $('.typo-picker').removeClass("typo4");
+        $('textarea').removeClass("typo4");
 
         $('.typo-picker').addClass("typo1");
-        $('.typo-picker').addClass("important");
-        $('.typo-picker').addClass("typo");
-        $('.typo-picker').addClass("important");
+        $('textarea').addClass("typo1");
     }
     if($(this).val() == 'typo2'){
         $('.typo-picker').removeClass("typo1");
+        $('textarea').removeClass("typo1");
         $('.typo-picker').removeClass("typo3");
+        $('textarea').removeClass("typo3");
         $('.typo-picker').removeClass("typo4");
+        $('textarea').removeClass("typo4");
 
         $('.typo-picker').addClass("typo2");
-        $('.typo-picker').addClass("typo");
-        $('.typo-picker').addClass("important");
+        $('textarea').addClass("typo2");
+
     }
     if($(this).val() == 'typo3'){
         $('.typo-picker').removeClass("typo2");
+        $('textarea').removeClass("typo2");
         $('.typo-picker').removeClass("typo1");
+        $('textarea').removeClass("typo1");
         $('.typo-picker').removeClass("typo4");
+        $('textarea').removeClass("typo4");
 
         $('.typo-picker').addClass("typo3");
-        $('.typo-picker').addClass("typo");
-        $('.typo-picker').addClass("important");
+        $('textarea').addClass("typo3");
     }
     if($(this).val() == 'typo4'){
         $('.typo-picker').removeClass("typo1");
@@ -73,8 +82,7 @@ $('#typo-picker').change(function(){
         $('.typo-picker').removeClass("typo3");
 
         $('.typo-picker').addClass("typo4");
-        $('.typo-picker').addClass("typo");
-        $('.typo-picker').addClass("important");
+        $('textarea').addClass("typo4");
     }
 });
 
