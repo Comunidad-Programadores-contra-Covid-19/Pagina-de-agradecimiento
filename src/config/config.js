@@ -1,4 +1,4 @@
-const priv = require('./private/private.json');
+const priv = require('./private/private.json') || null;
 const configTwitter = require('./private/configTwitter.json')
 
 module.exports = {
@@ -6,10 +6,10 @@ module.exports = {
     port: process.env.PORT || 8000,
 
     // Database config
-    db_username: priv.db_username,
-    db_password: priv.db_password,
-    db_database: priv.db_database,
-    db_host: priv.db_host,
+    db_username: priv.db_username || null,
+    db_password: priv.db_password || null,
+    db_database: priv.db_database || null,
+    db_host: priv.db_host || null,
     db_dialect: "postgres",
 
     // Twitter config
