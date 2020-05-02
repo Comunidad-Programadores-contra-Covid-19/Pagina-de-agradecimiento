@@ -1,4 +1,4 @@
-if(process.env.consumer_key){
+if(!process.env.consumer_key){
     const priv = require('./private/private.json');
 }else{
     const priv = {}
