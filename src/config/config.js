@@ -1,22 +1,19 @@
 if(!process.env.consumer_key){
     const priv = require('./private/private.json');
-}else{
-    const priv = {}
 }
 if(!process.env.consumer_key) {
     const configTwitter = require('./private/configTwitter.json')
-}else{
-    const configTwitter = {}
 }
+
 module.exports = {
     //node configs
     port: process.env.PORT || 8000,
 
     // Database config
-    db_username: priv.db_username,
-    db_password: priv.db_password,
-    db_database: priv.db_database,
-    db_host: priv.db_host,
+    db_username: process.env.consumer_key || priv.db_username,
+    db_password: process.env.consumer_key || priv.db_password,
+    db_database: process.env.consumer_key || priv.db_database,
+    db_host: process.env.consumer_key || priv.db_host,
     db_dialect: "postgres",
 
     // Twitter config
