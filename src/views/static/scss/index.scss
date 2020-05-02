@@ -1,5 +1,6 @@
 @import "config";
 
+
 .teagradezco{
 	.main-section{
 		margin-top: 50px;
@@ -39,6 +40,42 @@
 		img{
 			height: 215px;
 			width: 130px;
+		}
+	}
+}
+
+@media (max-width: 768px){
+	.teagradezco{
+		.main-section{
+			margin-top: 32px;
+			margin-bottom: 42px;
+			text-align: left;
+			h1{
+				font-weight: 600;
+				font-size: 18px;
+				line-height: 27px;
+			}
+			p{
+				text-align: justify;
+				font-size: 12px;
+				line-height: 18px;
+			}
+			.button-agradecer{
+				//text-align: right;
+				.btn{
+					width: 145px;
+					height: 32px;
+					font-size: 12px;
+					line-height: 18px;
+				}
+			}
+		}
+		.main-img{
+			text-align: left;
+			img{
+				height: 120px;
+				width: 80px;
+			}
 		}
 	}
 }

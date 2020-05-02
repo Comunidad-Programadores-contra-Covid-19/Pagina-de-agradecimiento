@@ -34,6 +34,30 @@
     height: 215px;
     width: 130px; }
 
+@media (max-width: 768px) {
+  .teagradezco .main-section {
+    margin-top: 32px;
+    margin-bottom: 42px;
+    text-align: left; }
+    .teagradezco .main-section h1 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px; }
+    .teagradezco .main-section p {
+      text-align: justify;
+      font-size: 12px;
+      line-height: 18px; }
+    .teagradezco .main-section .button-agradecer .btn {
+      width: 145px;
+      height: 32px;
+      font-size: 12px;
+      line-height: 18px; }
+  .teagradezco .main-img {
+    text-align: left; }
+    .teagradezco .main-img img {
+      height: 120px;
+      width: 80px; } }
+
 /*
 .width {
 	max-width: $grid-unit-width;
