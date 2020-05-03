@@ -16,13 +16,13 @@
   display: flex;
   border-radius: 10px;
   position: relative;
-  justify-content: center;
-  align-items: center; }
+  justify-content: center; }
 
 .item > span {
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 10px; }
+  padding: 10px;
+  align-self: center; }
 
 .item > img {
   width: 100%;

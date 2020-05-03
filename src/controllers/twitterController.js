@@ -4,88 +4,113 @@ const config = require('../config/config.js');
 var Twit = require('twit');
 
 var T = new Twit({
-    consumer_key:config.consumer_key,  
-    consumer_secret:config.consumer_secret,
-    access_token:config.access_token,
-    access_token_secret:config.access_token_secret
+	consumer_key: config.consumer_key,
+	consumer_secret: config.consumer_secret,
+	access_token: config.access_token,
+	access_token_secret: config.access_token_secret
 })
-const millisecondsInADay = 24*60*60*1000
-const fonts = ['Patrick Hand','Mali','Adobe Garamond Pro','Quicksand bold','Poppins']
-const testColors = ['light-green','light-pink','cyan','light-orange','light-purple']
+const millisecondsInADay = 24 * 60 * 60 * 1000
+const fonts = ['Patrick Hand', 'Mali', 'Adobe Garamond Pro', 'Quicksand bold', 'Poppins']
+const testColors = ['light-green', 'light-pink', 'cyan', 'light-orange', 'light-purple']
 
-exports.new_post_from_tweet = function (req,res) {
-    const tweet_id = req.body.id
+exports.new_post_from_tweet = function(req, res) {
+	const tweet_id = req.body.id
 
-    T.get('statuses/show/:id', { id: tweet_id, tweet_mode:'extended' }, async function(err, data, response) {
-        try{
-            /*let tweet = await Tweet.create({
-                idFromTwitter: data.id_str,
-                tweetLikes: data.favorite_count,
-                tweetDate: data.created_at,
-                tweetLink: `https://twitter.com/${data.user.screen_name}/status/${data.id_str}`                
-            })
-            let post = await Post.create({
-                text: data.full_text,
-                likes: data.favorite_count,
-                imgPath:  data.entities.media ? data.entities.media[0].media_url : null,
-                author: '@'+data.user.screen_name,
-                tweetId: tweet.id
-            })*/
-            res.json({
-              data
-            })
-            
-        }
-        catch(error){
-            res.status(500).send(error.message)
-            return
-        }     
-    })
+	T.get('statuses/show/:id', {
+		id: tweet_id,
+		tweet_mode: 'extended'
+	}, async function(err, data, response) {
+		try {
+			/*let tweet = await Tweet.create({
+					idFromTwitter: data.id_str,
+					tweetLikes: data.favorite_count,
+					tweetDate: data.created_at,
+					tweetLink: `https://twitter.com/${data.user.screen_name}/status/${data.id_str}`                
+			})
+			let post = await Post.create({
+					text: data.full_text,
+					likes: data.favorite_count,
+					imgPath:  data.entities.media ? data.entities.media[0].media_url : null,
+					author: '@'+data.user.screen_name,
+					tweetId: tweet.id
+				})*/
+			res.json({
+				data
+			})
+
+		} catch (error) {
+			res.status(500).send(error.message)
+			return
+		}
+	})
 }
 
 
-exports.new_posts_from_query = function (req,res) {
-    const query = req.body.query
-    const since = req.body.since || new Date(Date.now() - 8*millisecondsInADay).toISOString().substring(0,10) //8 days ago
-    const until = req.body.until || new Date(Date.now() + 1*millisecondsInADay).toISOString().substring(0,10) //tomorrow
+exports.new_posts_from_query = async function(req, res) {
+	const query = req.body.query || '#GraciasPorCuidarnos #GraciasHeroes'
+	const since = req.body.since || new Date(Date.now() - 8 * millisecondsInADay) //8 days ago
+	const until = req.body.until || new Date(Date.now() - 7 * millisecondsInADay)
+	const count = req.body.count || 100
+	let tweet_posts = []
+	for (let days = 0; days < 7; days++) {
+		let tweets = await getTweets(query, since, until,count)
+		if (tweets) {
+			new_tweet_posts = await createPosts(tweets)
+			tweet_posts.push(...new_tweet_posts)
+		}
+		since.setDate(since.getDate() + 1);
+		until.setDate(until.getDate() + 1);
+	}
+	res.status(200).json({count:tweet_posts.length,data:tweet_posts})
+}
 
 
-    T.get('/search/tweets', { q: `${query} -filter:retweets`, count: 100,include_entities:1,tweet_mode:'extended',since:since,until:until }, async function(err, datas, response) {
-        let tweet_posts = []
-        try{
-            for (data of datas.statuses){
-                let tweet = await Tweet.create({
-                    idFromTwitter: data.id_str,
-                    tweetLikes: data.favorite_count,
-                    tweetDate: data.created_at,
-                    tweetLink: `https://twitter.com/${data.user.screen_name}/status/${data.id_str}`
-                })
-                let post = await Post.create({
-                    text: data.full_text,
-                    likes: data.favorite_count,
-                    imgPath:  data.entities.media ? data.entities.media[0].media_url : null,
-                    imgWidth:  data.entities.media ? data.entities.media[0].sizes.large.w : null,
-                    imgHeight:  data.entities.media ? data.entities.media[0].sizes.large.h : null,
-                    author: '@'+data.user.screen_name,
-                    TweetId: tweet.id,
-                    font: fonts[Math.floor(Math.random() * fonts.length)],
-                    color: testColors[Math.floor(Math.random() * testColors.length)]
-                })
-                tweet_posts.push({tweet,post})
-            }            
-            res.json({count:datas.statuses.length,data:tweet_posts})
-        }
-        catch(error){
-            res.status(500).send(error.message);
-            return;
-        }     
-    })
-
-    //res.sendStatus(200)
+async function getTweets(query, since, until,count) {
+	options = {
+		q: `${query} -filter:retweets`,
+		count: count,
+		include_entities: 1,
+		tweet_mode: 'extended',
+		since: since.toISOString().substring(0, 10),
+		until: until.toISOString().substring(0, 10)
+	}
+	try{
+		const response = await T.get('/search/tweets', options)
+		return response.data.statuses
+	}
+	catch{
+		return null
+	}
 }
 
 
 
-
-
-
+async function createPosts(tweets) {
+	let tweet_posts = []
+	try {
+		for (data of tweets){
+				let tweet = await Tweet.create({
+						idFromTwitter: data.id_str,
+						tweetLikes: data.favorite_count,
+						tweetDate: data.created_at,
+						tweetLink: `https://twitter.com/${data.user.screen_name}/status/${data.id_str}`
+				})
+				let post = await Post.create({
+						text: data.full_text,
+						likes: data.favorite_count,
+						imgPath:  data.entities.media ? data.entities.media[0].media_url : null,
+						imgWidth:  data.entities.media ? data.entities.media[0].sizes.large.w : null,
+						imgHeight:  data.entities.media ? data.entities.media[0].sizes.large.h : null,
+						author: '@'+data.user.screen_name,
+						TweetId: tweet.id,
+						font: fonts[Math.floor(Math.random() * fonts.length)],
+						color: testColors[Math.floor(Math.random() * testColors.length)]
+				})
+				tweet_posts.push({tweet,post})
+		}
+		return tweet_posts            
+	} catch (error) {
+		console.log(error)
+		return null
+	}
+}

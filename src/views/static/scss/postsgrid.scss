@@ -20,13 +20,14 @@
 	border-radius: 10px;
 	position: relative;
 	justify-content: center;
-	align-items: center;
+	
 }
 
 .item > span {
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 10px;
+  align-self: center;
   }
 
 .item > img {
