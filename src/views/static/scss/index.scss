@@ -56,12 +56,11 @@
 				line-height: 27px;
 			}
 			p{
-				text-align: justify;
+				//text-align: justify;
 				font-size: 12px;
 				line-height: 18px;
 			}
 			.button-agradecer{
-				//text-align: right;
 				.btn{
 					width: 145px;
 					height: 32px;
@@ -72,9 +71,12 @@
 		}
 		.main-img{
 			text-align: left;
+			margin-top: 30px;
 			img{
-				height: 120px;
-				width: 80px;
+				height: 100px;
+				width: 70px;
+				-webkit-transform: scaleX(-1);
+				transform: scaleX(-1);
 			}
 		}
 	}
