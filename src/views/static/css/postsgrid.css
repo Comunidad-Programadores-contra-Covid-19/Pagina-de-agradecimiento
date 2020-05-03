@@ -6,14 +6,18 @@
   margin: 0 auto;
   grid-auto-flow: row dense;
   min-width: 95vw;
+  max-width: 95vw;
   padding: 0px;
   grid-auto-rows: 150px;
-  line-height: 1.1; }
+  line-height: 1.1;
+  margin-top: 30px; }
 
 .postscontainer > .item {
   display: flex;
   border-radius: 10px;
-  position: relative; }
+  position: relative;
+  justify-content: center;
+  align-items: center; }
 
 .item > span {
   overflow: hidden;
@@ -22,6 +26,7 @@
 
 .item > img {
   width: 100%;
+  object-fit: cover;
   border-radius: 10px; }
 
 .overlayFade {
