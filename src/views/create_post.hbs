@@ -33,7 +33,7 @@
                                 <p>Estilo</p>
                             </div>
                             <div class="col-lg-2 col-2">
-                                <select class="typo-picker" id="typo-picker" name="typo-picker">
+                                <select class="typo-picker" id="typo-picker" name="font">
                                     <option class="typo typo1" value="typo1" selected="selected">Tipografía 1</option>
                                     <option class="typo typo2" value="typo2">Tipografía 2</option>
                                     <option class="typo typo3" value="typo3">Tipografía 3</option>
@@ -47,7 +47,7 @@
                             <div class="col-lg-1 col-2">
                                 <div class="color-picked"></div>
                             </div>
-                            <select id="color-picker" name="color-picker">
+                            <select id="color-picker" name="color">
                                 <option class="purple" value="purple" selected="selected"></option>
                                 <option class="orange" value="orange"></option>
                                 <option class="pink" value="pink"></option>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
     <!--                bloque de texto-->
-                    <textarea id="carta" name="carta" placeholder="Escribe aquí"></textarea>
+                    <textarea id="carta" name="text" placeholder="Escribe aquí"></textarea>
     <!--                end bloque de texto-->
 
     <!--                agregar una foto-->
@@ -76,7 +76,7 @@
 
     <!--            firma-->
                 <label>Firmá tu agradecimiento (opcional)</label>
-                <input id="firma" name="firma" type="name" placeholder="Escribe aquí">
+                <input id="firma" name="author" type="name" placeholder="Escribe aquí">
     <!--            end firma-->
 
                 <div class="send-btn">
@@ -85,15 +85,6 @@
 
                 <!-- ACA TERMINA EL FORM -->  
             </form>
-            <form action="/test" method='post'>
-              <label for="fname">First name:</label><br>
-              <input type="text" id="fname" name="fname" value="John"><br>
-              <label for="lname">Last name:</label><br>
-              <input type="text" id="lname" name="lname" value="Doe"><br><br>
-              <input type="submit" value="Submit">
-            </form> 
-
-
         </div>
 <!--        end main section-->
         <div class="col-lg-2"></div>

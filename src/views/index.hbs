@@ -1,4 +1,4 @@
-<div class="container teagradezco" id='container'>
+<div class="teagradezco">
     <div class="row">
         <div class="col-lg-3 order-lg-1"></div>
         <div class="col-lg-6 order-lg-2 col-8 order-2 main-section">
@@ -18,8 +18,9 @@
         </div>
         <div class="col-lg-1 order-lg-4 col-1 order-3"></div>
     </div>
-
-	{{#each posts as |post|}}
-		{{> post}}
-	{{/each }}
+    <div class="postscontainer">
+    	{{#each posts as |post|}}
+    		{{> post}}
+    	{{/each }}
+    </div>
 </div>

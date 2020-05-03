@@ -48,7 +48,9 @@ exports.new_posts_from_query = function (req,res) {
     const query = req.body.query
     const since = req.body.since || new Date(Date.now() - 8*millisecondsInADay).toISOString().substring(0,10) //8 days ago
     const until = req.body.until || new Date(Date.now() + 1*millisecondsInADay).toISOString().substring(0,10) //tomorrow
-    T.get('/search/tweets', { q: `${query} -filter:retweets`, count: 100,include_entities:1,tweet_mode:'extended',since:'2020-04-22',until:'2020-04-23' }, async function(err, datas, response) {
+
+
+    T.get('/search/tweets', { q: `${query} -filter:retweets`, count: 100,include_entities:1,tweet_mode:'extended',since:since,until:until }, async function(err, datas, response) {
         let tweet_posts = []
         try{
             for (data of datas.statuses){
@@ -81,6 +83,7 @@ exports.new_posts_from_query = function (req,res) {
 
     //res.sendStatus(200)
 }
+
 
 
 
