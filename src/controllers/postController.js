@@ -4,7 +4,11 @@ const postValidator = require('../validators/postValidator');
 const config = require('../config/config.js');
 
 exports.new_post = function (req,res) {
-    let { text, imgpath, author, font, color} =  req.body;
+    console.log(req.body )
+    res.send('hola')
+    res.status(200)
+
+    /*let { text, imgpath, author, font, color} =  req.body;
 
     try{
         postValidator({
@@ -25,7 +29,7 @@ exports.new_post = function (req,res) {
     }
     catch(error){
         res.status(500).send(error.message);
-    }
+    }*/
 }
 
 

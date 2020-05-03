@@ -5,6 +5,8 @@ let postController = require('./controllers/postController')
 let reportController = require('./controllers/reportController');
 let twitterController = require('./controllers/twitterController'); 
 
+router.post('/test', rootController.test);
+
 // Index page
 router.get('/', rootController.root);
 

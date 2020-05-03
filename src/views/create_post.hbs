@@ -17,68 +17,81 @@
             </div>
 <!--            end heading, photo and title-->
 <!--            destinatario-->
-            <label>¿A quién o quienes le queres agradecer? (opcional)</label>
-            <input id="destinatario" type="name" placeholder="Escribe aquí">
-            <br>
+            <form action="/post" method="POST">
+                <label>¿A quién o quienes le queres agradecer? (opcional)</label>
+                <input id="destinatario" name="destinatario" type="name" placeholder="Escribe aquí">
+                <br>
 
-<!--            mensaje-->
-            <label>¡Dejá tu mensaje!</label>
-            <div class="editor">
-                <div class="styles">
-                    <div class="row ml-1">
-                        <div class="col-lg-1 col-2">
-                            <p>Estilo</p>
-                        </div>
-                        <div class="col-lg-2 col-2">
-                            <select class="typo-picker" id="typo-picker">
-                                <option class="typo typo1" value="typo1" selected="selected">Tipografía 1</option>
-                                <option class="typo typo2" value="typo2">Tipografía 2</option>
-                                <option class="typo typo3" value="typo3">Tipografía 3</option>
-                                <option class="typo typo4" value="typo4">Tipografía 4</option>
+    <!--            mensaje-->
+                <label>¡Dejá tu mensaje!</label>
+                <div class="editor">
+                    <div class="styles">
+                        <div class="row ml-1">
+                            <div class="col-lg-1 col-2">
+                                <p>Estilo</p>
+                            </div>
+                            <div class="col-lg-2 col-2">
+                                <select class="typo-picker" id="typo-picker" name="typo-picker">
+                                    <option class="typo typo1" value="typo1" selected="selected">Tipografía 1</option>
+                                    <option class="typo typo2" value="typo2">Tipografía 2</option>
+                                    <option class="typo typo3" value="typo3">Tipografía 3</option>
+                                    <option class="typo typo4" value="typo4">Tipografía 4</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1 col-2"></div>
+                            <div class="col-lg-1 col-2">
+                                <p>Fondo</p>
+                            </div>
+                            <div class="col-lg-1 col-2">
+                                <div class="color-picked"></div>
+                            </div>
+                            <select id="color-picker" name="color-picker">
+                                <option class="purple" value="purple" selected="selected"></option>
+                                <option class="orange" value="orange"></option>
+                                <option class="pink" value="pink"></option>
+                                <option class="cyan" value="cyan"></option>
                             </select>
                         </div>
-                        <div class="col-lg-1 col-2"></div>
-                        <div class="col-lg-1 col-2">
-                            <p>Fondo</p>
-                        </div>
-                        <div class="col-lg-1 col-2">
-                            <div class="color-picked"></div>
-                        </div>
-                        <select id="color-picker">
-                            <option class="purple" value="purple" selected="selected"></option>
-                            <option class="orange" value="orange"></option>
-                            <option class="pink" value="pink"></option>
-                            <option class="cyan" value="cyan"></option>
-                        </select>
                     </div>
-                </div>
-<!--                bloque de texto-->
-                <textarea id="carta" placeholder="Escribe aquí"></textarea>
-<!--                end bloque de texto-->
+    <!--                bloque de texto-->
+                    <textarea id="carta" name="carta" placeholder="Escribe aquí"></textarea>
+    <!--                end bloque de texto-->
 
-<!--                agregar una foto-->
-                <div class="add-photo">
-                    <div class="row ml-1">
-                        <div class="col-lg-3 col-7">
-                            <p>Agrega a tu publicación</p>  
-                        </div>
-                        <div class="col-1">
-                            <img src="add_photo.jpeg">
+    <!--                agregar una foto-->
+                    <div class="add-photo">
+                        <div class="row ml-1">
+                            <div class="col-lg-3 col-7">
+                                <p>Agrega a tu publicación</p>  
+                            </div>
+                            <div class="col-1">
+                                <img src="add_photo.jpeg">
+                            </div>
                         </div>
                     </div>
+    <!--                end agregar una foto-->
                 </div>
-<!--                end agregar una foto-->
-            </div>
-<!--            end mensaje-->
+    <!--            end mensaje-->
 
-<!--            firma-->
-            <label>Firmá tu agradecimiento (opcional)</label>
-            <input id="firma" type="name" placeholder="Escribe aquí">
-<!--            end firma-->
+    <!--            firma-->
+                <label>Firmá tu agradecimiento (opcional)</label>
+                <input id="firma" name="firma" type="name" placeholder="Escribe aquí">
+    <!--            end firma-->
 
-            <div class="send-btn">
-                <button type="button" class="btn">Enviar agradecimiento</button>
-            </div>
+                <div class="send-btn">
+                    <button class="btn" type="submit" value="Submit">Enviar agradecimiento</button>
+                </div>
+
+                <!-- ACA TERMINA EL FORM -->  
+            </form>
+            <form action="/test" method='post'>
+              <label for="fname">First name:</label><br>
+              <input type="text" id="fname" name="fname" value="John"><br>
+              <label for="lname">Last name:</label><br>
+              <input type="text" id="lname" name="lname" value="Doe"><br><br>
+              <input type="submit" value="Submit">
+            </form> 
+
+
         </div>
 <!--        end main section-->
         <div class="col-lg-2"></div>
