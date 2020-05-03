@@ -46,22 +46,26 @@ exports.new_post_from_tweet = function(req, res) {
 }
 
 
-exports.new_posts_from_query = async function(req, res) {
-	const query = req.body.query || '#GraciasPorCuidarnos #GraciasHeroes'
-	const since = req.body.since || new Date(Date.now() - 8 * millisecondsInADay) //8 days ago
-	const until = req.body.until || new Date(Date.now() - 7 * millisecondsInADay)
-	const count = req.body.count || 100
+exports.new_posts_from_query = async function(query,since,until,count) {
+	query = query || '#GraciasPorCuidarnos'
+	since = since || new Date(Date.now() - 8 * millisecondsInADay) //8 days ago
+	until = until || new Date(Date.now() - 7 * millisecondsInADay)
+	count = count || 25
 	let tweet_posts = []
+	let new_tweet_posts = []
 	for (let days = 0; days < 7; days++) {
 		let tweets = await getTweets(query, since, until,count)
 		if (tweets) {
 			new_tweet_posts = await createPosts(tweets)
 			tweet_posts.push(...new_tweet_posts)
 		}
+		console.log(`tweets created in range ${since.toISOString().substring(0, 10)} to ${until.toISOString().substring(0, 10)}: ${new_tweet_posts.length}`)
+		new_tweet_posts = []
 		since.setDate(since.getDate() + 1);
 		until.setDate(until.getDate() + 1);
 	}
-	res.status(200).json({count:tweet_posts.length,data:tweet_posts})
+	console.log({count_created:tweet_posts.length})
+	return 
 }
 
 

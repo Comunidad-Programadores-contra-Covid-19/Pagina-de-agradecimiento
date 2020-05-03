@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --watch src/views/static/scss -o src/views/static/css",
     "migrate": "node src/models/index.js migrate",
-    "start": "node index.js"
+    "start": "node index.js",
+    "createPosts": "node src/test/createPosts.js"
   },
   "author": "",
   "license": "ISC",
