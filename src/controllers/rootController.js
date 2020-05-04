@@ -15,7 +15,6 @@ exports.root = function (req,res) {
       for(const post of posts){
         post.height = 'height'
         post.width = 'width'
-        console.log(post.imgPath)
         if (!post.imgPath){
             if(post.text.length > 175){
                if (Math.random() < 0.5)
