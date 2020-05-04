@@ -49,8 +49,8 @@
   transition:all .3s ease;
   display: grid;
   border-radius: 10px;
-  grid-template-columns: repeat(3, 33%);
-  grid-template-rows: repeat(3, 33%);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 2fr 1fr;
   justify-items: center;
   align-items: center;
 }
@@ -58,24 +58,29 @@
   opacity: 0.96;
 }
 
-.overlay-from-to{
+.overlay-from{
   grid-row-start: 1;
-  grid-column-start: 2;
+  grid-column: 1 / span 5;
 }
-.overlay-form-1{
-  grid-row-start: 3;
-  grid-column-start: 1;
-
-}
-
-.overlay-form-2{
+.overlay-buttons-1{
   grid-row-start: 3;
   grid-column-start: 2;
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+
 }
 
-.overlay-form-3{
+.overlay-buttons-2{
   grid-row-start: 3;
   grid-column-start: 3;
+  align-self: start;
+}
+
+.overlay-buttons-3{
+  grid-row-start: 3;
+  grid-column-start: 4;
+  align-self: start;
 }
 
 .width2 {
@@ -120,4 +125,3 @@
 .light-purple{
   background-color: #c0a5d6;
 }
-

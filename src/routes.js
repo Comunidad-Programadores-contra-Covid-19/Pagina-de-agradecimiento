@@ -25,7 +25,7 @@ router.get('/posts/:page',postController.get_posts)
 router.post('/post', postController.new_post);
 
 // Like a post
-router.post('/like/:postId', postController.likePost);
+router.post('/like', postController.likePost);
 
 /***Report***/
 
