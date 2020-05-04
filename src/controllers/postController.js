@@ -26,7 +26,7 @@ exports.new_post = function(req, res) {
         font,
         color
       })
-      .then(post => res.status(200).send(post.url()));
+      .then(post => res.redirect('/carta_creada/'.concat(post.id.toString())));
   } catch (error) {
     res.status(500).send(error.message);
   }
@@ -96,4 +96,19 @@ exports.create_post_page = function(req, res) {
   res.render('create_post', {
     url: config.domain.concat('/post')
   });
+}
+
+exports.congrats = function (req,res) {
+    // Post.findByPk(parseInt(req.params.id))
+    //     .then(post =>{
+    //         if(!post){} //TODO 404 page
+    //
+    //
+    //     })
+    //     .then(res.render('create_post_congrats'));
+    res.render('create_post_congrats');
+}
+
+exports.test = function (req,res) {
+    res.render('create_post_congrats')
 }

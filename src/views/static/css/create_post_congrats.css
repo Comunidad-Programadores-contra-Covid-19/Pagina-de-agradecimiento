@@ -1,0 +1,66 @@
+.congrats .heading {
+  text-align: center; }
+  .congrats .heading img {
+    height: 108px;
+    width: 108px; }
+  .congrats .heading h1 {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 49.821px;
+    line-height: 75px;
+    text-align: center;
+    color: #263238; }
+  .congrats .heading p {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18.6829px;
+    line-height: 28px;
+    color: #263238; }
+
+.congrats .post-preview {
+  text-align: center; }
+
+.congrats .post-url {
+  text-align: center; }
+
+.congrats .share {
+  text-align: center; }
+  .congrats .share img {
+    width: 39px;
+    height: 39px; }
+
+@media (max-width: 768px) {
+  .congrats {
+    margin-top: 41px; }
+    .congrats .heading {
+      text-align: center; }
+      .congrats .heading img {
+        height: 62px;
+        width: 62px; }
+      .congrats .heading h1 {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 43px;
+        color: #263238; }
+      .congrats .heading p {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        color: #263238; }
+    .congrats .post-preview {
+      text-align: center; }
+    .congrats .post-url {
+      text-align: center; }
+    .congrats .share {
+      margin-top: 39px;
+      margin-bottom: 25px;
+      text-align: center; }
+      .congrats .share img {
+        width: 30px;
+        height: 30px; } }

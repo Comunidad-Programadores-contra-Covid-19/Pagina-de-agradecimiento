@@ -21,7 +21,7 @@ app.engine('.hbs', hbs({
   defaultLayout: 'default',
   layoutsDir: path.join(__dirname,'/src/views/layouts'),
 }));
-app.set('views',path.join(__dirname,'/src/views'))
+app.set('views','src/views/');
 app.set('view engine','.hbs');
 app.set('trust proxy',true);
 
