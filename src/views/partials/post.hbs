@@ -5,6 +5,15 @@
 		<span>{{text}}</span>
 	{{/if}}
 	<div class="overlay overlayFade {{color}}">
-		<div class="overlay-content">De: {{author}} </div>
+		<div class="overlay-from-to">De: {{author}} </div>
+    <form action="/like/{{id}}" class="overlay-form-1" method="POST">
+      <input type="image" class="overlay-buttons-1" src="img/clap.png" onclick="changeImage(this)" alt="Submit" width="48" height="48">
+    </form>
+    <form action="/" class="overlay-form-2">
+      <input type="image" class="overlay-buttons-2"  src="img/clap.png" alt="Submit" width="48" height="48">
+    </form>
+    <form action="/" class="overlay-form-3">
+      <input type="image" class="overlay-buttons-3"  src="img/clap.png" alt="Submit" width="48" height="48">
+    </form>
 	</div>
 </div>

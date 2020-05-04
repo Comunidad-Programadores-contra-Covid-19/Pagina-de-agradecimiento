@@ -29,12 +29,13 @@ exports.new_post = function (req,res) {
 
 
 exports.likePost = function (req,res) {
-    Post.findByPk(req.params.postId,)
-        .then(function (likedPost) {
-            if(!likedPost) throw new Error('No existe el post que se intenta likear')
-            likedPost.update({likes: Sequelize.literal('likes + 1')})
-                .then(res.status(200).send())
-        }).catch(err => res.status(500).send(err.message))
+  console.log('entered like')
+  Post.findByPk(req.params.postId,)
+      .then(function (likedPost) {
+          if(!likedPost) throw new Error('No existe el post que se intenta likear')
+          likedPost.update({likes: Sequelize.literal('likes + 1')})
+              .then(res.status(200).send())
+      }).catch(err => res.status(500).send(err.message))
 }
 
 

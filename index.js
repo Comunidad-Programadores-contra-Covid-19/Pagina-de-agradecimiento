@@ -29,10 +29,6 @@ app.set('view engine','.hbs');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
 
-// Static directory
-app.use(express.static('src/views/assets/img'));
-
-
 // Init Routes
 app.use('/',routes);
 

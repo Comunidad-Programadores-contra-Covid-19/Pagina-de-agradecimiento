@@ -10,7 +10,8 @@
   padding: 0px;
   grid-auto-rows: 150px;
   line-height: 1.1;
-  margin-top: 30px; }
+  margin-top: 30px;
+  margin-bottom: 30px; }
 
 .postscontainer > .item {
   display: flex;
@@ -40,13 +41,31 @@
   position: absolute;
   opacity: 0;
   transition: all .3s ease;
-  display: flex;
+  display: grid;
   border-radius: 10px;
-  align-items: center;
-  justify-content: center; }
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(3, 33%);
+  justify-items: center;
+  align-items: center; }
 
 .item:hover .overlay, .item:hover .overlayFade {
-  opacity: 0.90; }
+  opacity: 0.96; }
+
+.overlay-from-to {
+  grid-row-start: 1;
+  grid-column-start: 2; }
+
+.overlay-form-1 {
+  grid-row-start: 3;
+  grid-column-start: 1; }
+
+.overlay-form-2 {
+  grid-row-start: 3;
+  grid-column-start: 2; }
+
+.overlay-form-3 {
+  grid-row-start: 3;
+  grid-column-start: 3; }
 
 .width2 {
   grid-column: span 2; }
