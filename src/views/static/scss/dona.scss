@@ -17,9 +17,10 @@
     line-height: 60px;
     color:$light-black;
   }
-  .love_your_neighbour-img{
+  .whole-team-img{
     img{
-      width: 100%;
+      width: 847px;
+      height: 474px;
     }
   }
   .description{
@@ -35,13 +36,30 @@
   .to-whom-donate{
     .row{
       margin-bottom: 80px;
-      .donable{
+      .donate-to-us{
+        padding-top: 20px;
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: $dark-green;
+        border-radius: 10px;
+        height: 140px;
         img{
-          width: 132px;
-          height: 132px;
-          margin-bottom: 20px;
+          width: 100px;
+          height: 100px;
+        }
+        p{
+          padding-top: 27px;
+          text-align: left;
+          font-family: $general;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          color: $light-black;
         }
         .btn{
+          margin-top: 20px;
+
           background-color: $dark-green;
           width: 200px;
           height: 62px;
@@ -55,12 +73,62 @@
           color: $light-black;
         }
       }
+      .other-orgs{
+        text-align: left;
+        margin-top: 54px;
+        margin-bottom: 32px;
+      }
+      .donate-to-other{
+        margin-top: 20px;
+        .other{
+          height: 140px;
+          padding-top: 20px;
+
+          border-style: solid;
+          border-width: 2px 2px 2px 2px;
+          border-color: $dark-green;
+          border-radius: 10px;
+          text-align: left;
+          img{
+            width: 100px;
+            height: 100px;
+          }
+          p{
+            padding-left: 10px;
+            text-align: left;
+            font-family: $general;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            color: $light-black;
+          }
+          .btn{
+            //margin-top: 20px;
+
+            background-color: $dark-green;
+            width: 200px;
+            height: 55px;
+            border-radius: 100px;
+
+            font-family: $general;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 40px;
+            color: $light-black;
+          }
+        }
+
+      }
     }
   }
 }
 
 @media (max-width: 768px){
   .donate{
+    //margin-left: 10px;
+    //margin-right: 10px;
     margin-top: 42px;
     text-align: center;
     .hand_hearth-img{
@@ -77,13 +145,16 @@
       line-height: 39px;
       color:$light-black;
     }
-    .love_your_neighbour-img{
+    .whole-team-img{
       img{
-        width: 90%;
+        width: 312px;
+        height: 174px;
       }
     }
     .description{
       p{
+        margin-top: 20px;
+        text-align: left;
         font-family: $general;
         font-style: normal;
         font-weight: normal;
@@ -94,27 +165,101 @@
     }
     .to-whom-donate{
       .row{
-        margin-bottom: 32px;
-        .donable{
-          text-align: center;
-          margin-bottom: 34px;
+        margin-bottom: 80px;
+        .donate-to-us{
+          padding-top: 5px;
+          border-style: solid;
+          border-width: 2px 2px 2px 2px;
+          border-color: $dark-green;
+          border-radius: 10px;
+          height: 110px;
           img{
-            width: 125px;
-            height: 125px;
-            margin-bottom: 17px;
+            text-align: left;
+            width: 56px;
+            height: 56px;
+          }
+          p{
+            margin-left: 30px;
+            padding-top: 0px;
+            text-align: left;
+            font-family: $general;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 18px;
+            color: $light-black;
           }
           .btn{
+            margin-top: 20px;
+            margin-left: -32px;
+
             background-color: $dark-green;
-            width: 133px;
-            height: 41px;
+            width: 108px;
+            height: 39px;
             border-radius: 100px;
 
             font-family: $general;
             font-style: normal;
             font-weight: 500;
-            font-size: 18px;
-            line-height: 27px;
+            font-size: 14px;
+            line-height: 21px;
             color: $light-black;
+          }
+        }
+        .other-orgs{
+          text-align: left;
+          margin-top: 26px;
+          margin-bottom: 16px;
+          h5{
+            font-family: $general;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+        .donate-to-other{
+          margin-top: 0px;
+          .other{
+            height: 71px;
+            padding-top: 5px;
+            margin-bottom: 20px;
+
+            border-style: solid;
+            border-width: 2px 2px 2px 2px;
+            border-color: $dark-green;
+            border-radius: 10px;
+            text-align: left;
+            img{
+              width: 56px;
+              height: 56px;
+            }
+            p{
+              margin-bottom: 0;
+              padding-left: 10px;
+              text-align: left;
+              font-family: $general;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 12px;
+              line-height: 18px;
+              color: $light-black;
+            }
+            .btn{
+              margin-top: 0px;
+
+              background-color: $dark-green;
+              width: 108px;
+              height: 39px;
+              border-radius: 100px;
+
+              font-family: $general;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 18px;
+              color: $light-black;
+            }
           }
         }
       }
