@@ -34,7 +34,11 @@ function like(element,postId) {
 function report(element,postId){
   if(element.src.slice(-5) == '1.png'){
     element.src = 'img/report-filled2.png'
+    overlay = element.parentElement
+    overlay.style.opacity = 1
   }else{
     element.src = 'img/report1.png'
+    overlay = element.parentElement
+    overlay.style.opacity = 0
   }
 }
