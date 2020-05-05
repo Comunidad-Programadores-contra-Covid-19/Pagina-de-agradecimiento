@@ -137,8 +137,8 @@
   font-size: 12px;
   line-height: 1.5;
   position: fixed;
-  left: calc(100vw - #{$btn-circle-width}*2); 
-  bottom: 50px;
+  left: calc(95vw - #{$btn-circle-width}); 
+  bottom: 5vh;
   z-index:2;
   transition: opacity 0.5s ease-in;
 }

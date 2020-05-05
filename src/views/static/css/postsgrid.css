@@ -4634,8 +4634,8 @@ readers do not read off random characters that represent icons */
   font-size: 12px;
   line-height: 1.5;
   position: fixed;
-  left: calc(100vw - 50px*2);
-  bottom: 50px;
+  left: calc(95vw - 50px);
+  bottom: 5vh;
   z-index: 2;
   transition: opacity 0.5s ease-in; }
 

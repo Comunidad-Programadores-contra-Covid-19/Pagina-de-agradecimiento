@@ -2,15 +2,11 @@ let autoScrollButton = document.querySelector(".autoScrollButton");
 let body = document.querySelector("body");
 var autoScrolling = false
 autoScrollButton.addEventListener("click", function(){ 
+  console.log('click')
   autoScrolling = !autoScrolling
   changeIcon(this,autoScrolling)
   setTimeout(() => ToggleVisibility(autoScrollButton,false), 3000)
   pageScroll() 
-});
-
-autoScrollButton.addEventListener("mouseover", function(){ 
-  ToggleVisibility(this,true)
-  setTimeout(() => ToggleVisibility(autoScrollButton,false), 3000)
 });
 
 function pageScroll() {
@@ -20,11 +16,26 @@ function pageScroll() {
   }
 }
 
-body.onwheel = function(){
+autoScrollButton.addEventListener("mouseover", function(){ 
+  ToggleVisibility(this,true)
+  setTimeout(() => ToggleVisibility(autoScrollButton,false), 3000)
+});
+
+
+body.addEventListener("touchmove", function(){
+  scrollEvent()
+})
+
+
+body.addEventListener("wheel", function(){
+  scrollEvent()
+})
+
+function scrollEvent(){
   autoScrolling = false
   ToggleVisibility(autoScrollButton,true)
   changeIcon(autoScrollButton,autoScrolling)
-};
+}
 
 function changeIcon(element,autoScrolling){
   for (const childElem of element.childNodes){
