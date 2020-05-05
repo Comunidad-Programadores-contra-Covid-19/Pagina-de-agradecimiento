@@ -59,26 +59,10 @@ function addDataToDOM(postsData) {
         }
       }
     }
+    
     const postElement = document.createElement('div');
     postElement.classList.add('item',post.color,post.height,post.width);
-    let innerHTML = ''
-     if (post.imgPath) {
-        innerHTML += `<img class='image ${post.height} ${post.width}' src="${post.imgPath}">`
-     } else{
-        innerHTML += `<span>${post.text}</span>`
-     }
-    innerHTML +=
-      `<div class="overlay overlayFade ${post.color}">
-        <div class="overlay-from">De: ${post.author} </div>
-        <div class="overlay-buttons-1" onclick="like(this, ${post.id})">
-          <img src="img/clap1.png" width="35" height="35">
-          <span> ${post.likes}</span>
-        </div>
-        <img class="overlay-buttons-2" src="img/share.png" onclick="share(this, ${post.id})" width="35" height="35">
-        <img class="overlay-buttons-3" src="img/report1.png" onclick="report(this, ${post.id})" width="35" height="35">
-      </div>
-    </div>
-    `
+    const innerHTML = templates.post(post)
     postElement.innerHTML = innerHTML
     postscontainer.appendChild(postElement);  
   }
