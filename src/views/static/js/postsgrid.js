@@ -2,28 +2,29 @@ let postscontainer = document.querySelectorAll(".postscontainer")[0];
 const loader = document.querySelector('.loader');
 let last_known_scroll_position = 0;
 let loading = false
+let page = 1
 
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if(clientHeight + scrollTop >= scrollHeight - 100 && !loading ) {
     loading = true
-    showLoading();
+    showLoading(page);
+    page += 1
   }
   if(clientHeight + scrollTop < scrollHeight - 100) {
     loading = false
   }
 })
 
-function showLoading() {
+function showLoading(page) {
   loader.classList.add('show');
   
   // load more data
-  setTimeout(getPosts, 500)
-  //getPosts()
+  setTimeout(() => getPosts(page), 500)
 }
 
-async function getPosts (){
-  const response = await fetch('/posts/1');
+async function getPosts (page){
+  const response = await fetch(`/posts/${page}`);
   const postsData = await response.json();  
   addDataToDOM(postsData)
 }
