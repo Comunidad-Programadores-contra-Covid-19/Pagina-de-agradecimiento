@@ -2,7 +2,7 @@ let postscontainer = document.querySelector(".postscontainer");
 const loader = document.querySelector('.loader');
 let last_known_scroll_position = 0;
 let loading = false
-let page = 1
+let page = 2
 
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
