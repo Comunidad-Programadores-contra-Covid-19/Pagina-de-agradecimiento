@@ -1,0 +1,82 @@
+@import "config";
+
+.e404{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  .main-img{
+    img{
+      width: 600px;
+      height: 600px;
+    }
+  }
+  .header{
+    text-align: center;
+    img{
+      width: 132px;
+      height: 132px;
+    }
+    h1{
+      font-family: $general;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 120px;
+      line-height: 180px;
+      color: $light-black;
+    }
+    p{
+      font-family: $general;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 47px;
+      line-height: 70px;
+      color: $light-black;
+    }
+    .btn{
+      background-color: $dark-green;
+      width: 234px;
+      height: 72px;
+
+      font-family: $general;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 39px;
+      color: $light-black;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .e404{
+    text-align: center;
+    margin-top: 75px;
+    margin-bottom: 30px;
+    .main-img{
+      img{
+        width: 195px;
+        height: 195px;
+      }
+    }
+    .header{
+      text-align: center;
+      img{
+        display: none;
+      }
+      h1{
+        font-size: 54px;
+        line-height: 82px;
+      }
+      p{
+        font-size: 21px;
+        line-height: 32px;
+      }
+      .btn{
+        width: 115px;
+        height: 32px;
+
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+  }
+}
