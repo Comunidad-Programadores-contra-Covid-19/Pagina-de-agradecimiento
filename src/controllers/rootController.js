@@ -56,11 +56,3 @@ exports.dona = function(req, res) {
 exports.faq = function(req, res) {
   res.render('faq')
 }
-
-
-
-exports.test = function(req, res) {
-  console.log(req.body)
-  res.status(200)
-  res.send('hola mudno')
-}

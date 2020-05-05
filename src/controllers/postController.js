@@ -50,7 +50,7 @@ exports.get_posts = function(req, res) {
     tags
   } = req.body;
   // TODO filtrar por tags tambien
-
+  let page = req.params.page
   Post.findAll({
       where: {
         isActive: true,
@@ -59,7 +59,7 @@ exports.get_posts = function(req, res) {
         ['likes', 'DESC'],
       ],
       limit: config.firstNPosts,
-      offset: (req.params.page * config.firstNPosts),
+      offset: (page * config.firstNPosts),
     })
     .then(function(posts) {
       res.status(200).send(posts)
