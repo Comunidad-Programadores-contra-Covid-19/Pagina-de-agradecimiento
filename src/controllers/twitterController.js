@@ -9,12 +9,6 @@ var T = new Twit({
 	access_token: config.access_token,
 	access_token_secret: config.access_token_secret
 })
-console.log({
-  consumer_key: config.consumer_key,
-  consumer_secret: config.consumer_secret,
-  access_token: config.access_token,
-  access_token_secret: config.access_token_secret
-})
 const millisecondsInADay = 24 * 60 * 60 * 1000
 const fonts = ['Patrick Hand', 'Mali', 'Adobe Garamond Pro', 'Quicksand bold', 'Poppins']
 const testColors = ['light-green', 'light-pink', 'cyan', 'light-orange', 'light-purple']
@@ -90,7 +84,6 @@ async function getTweets(query, since, until,count) {
 	}
 	catch(err){
     console.log(err)
-    console.log(T)
 	}
 }
 
