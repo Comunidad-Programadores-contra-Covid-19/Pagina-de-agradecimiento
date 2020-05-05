@@ -1,4 +1,4 @@
-let postscontainer = document.querySelectorAll(".postscontainer")[0];
+let postscontainer = document.querySelector(".postscontainer");
 const loader = document.querySelector('.loader');
 let last_known_scroll_position = 0;
 let loading = false
@@ -125,6 +125,4 @@ function report(element,postId){
     overlay.style.opacity = 0
   }
 }
-
-
 

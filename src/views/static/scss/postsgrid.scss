@@ -1,4 +1,6 @@
 @import "config"; 
+@import "./fontawesome/fontawesome.scss";
+@import "./fontawesome/solid.scss";
 
 .postscontainer {
   display: grid;
@@ -124,4 +126,26 @@
 
 .light-purple{
   background-color: #c0a5d6;
+}
+
+.btn-circle {
+  width: $grid-unit-width/4;
+  height: $grid-unit-width/4;
+  padding: 6px 0px;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  position: fixed;
+  left: 93vw; 
+  bottom: 50px;
+  z-index:2;
+  transition: opacity 0.5s ease-in;
+}
+
+.btn-circle.show {
+  opacity: 1;
+}
+.btn-circle.hide {
+  opacity: 0;
 }
