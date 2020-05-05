@@ -129,15 +129,15 @@
 }
 
 .btn-circle {
-  width: $grid-unit-width/4;
-  height: $grid-unit-width/4;
+  width: $btn-circle-width;
+  height: $btn-circle-width;
   padding: 6px 0px;
   border-radius: 100%;
   text-align: center;
   font-size: 12px;
   line-height: 1.5;
   position: fixed;
-  left: 93vw; 
+  left: calc(100vw - #{$btn-circle-width}*2); 
   bottom: 50px;
   z-index:2;
   transition: opacity 0.5s ease-in;

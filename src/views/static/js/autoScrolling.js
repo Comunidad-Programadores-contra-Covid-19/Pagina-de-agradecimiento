@@ -41,15 +41,12 @@ function changeIcon(element,autoScrolling){
   }
 }
 
-function ToggleVisibility(autoScrollButton,visible,log){
+function ToggleVisibility(autoScrollButton,visible){
   if(visible){
     autoScrollButton.classList.remove('hide')
     autoScrollButton.classList.add('show')
   }else if (!visible && autoScrolling){
     autoScrollButton.classList.remove('show')
     autoScrollButton.classList.add('hide')
-    console.log(log)
   }
-  
-
 }
