@@ -26,7 +26,7 @@ exports.new_post = function(req, res) {
         font,
         color
       })
-      .then(post => res.redirect('/carta_creada/'.concat(post.id.toString())));
+      .then(post => res.render('create_post_congrats',{card:post,url:post.url()}));
   } catch (error) {
     res.status(500).send(error.message);
   }
@@ -106,7 +106,8 @@ exports.congrats = function (req,res) {
     //
     //     })
     //     .then(res.render('create_post_congrats'));
-    res.render('create_post_congrats');
+    console.log(__dirname);
+    // res.render('create_post_congrats');
 }
 
 exports.test = function (req,res) {

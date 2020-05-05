@@ -86,4 +86,3 @@ $('#typo-picker').change(function(){
     }
 });
 
-// $("#selectBox option[value='White']").remove();

@@ -30,7 +30,7 @@ app.set('trust proxy',true);
 app.use(express.static(path.join(__dirname,'/src/views/static')))
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
-app.use('/post', checkIp.ipChecker); // Check ip for post creating
+// app.use('/post', checkIp.ipChecker); // Check ip for post creating
 app.use('/',routes); // Init Routes
 
 
