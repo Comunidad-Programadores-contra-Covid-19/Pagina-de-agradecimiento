@@ -7,6 +7,7 @@ const hbs = require('express-handlebars')
 const routes = require('./src/routes');
 const config = require('./src/config/config');
 const checkIp = require('./src/middlewares/checkIp')
+const err404 = require('./src/middlewares/404')
 
 
 // Init database
@@ -30,9 +31,9 @@ app.set('trust proxy',true);
 app.use(express.static(path.join(__dirname,'/src/views/static')))
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
-// app.use('/post', checkIp.ipChecker); // Check ip for post creating
+app.use('/post', checkIp.ipChecker); // Check ip for post creating
 app.use('/',routes); // Init Routes
-
+app.use(err404.e404); // 404
 
 // Start the app
 app.listen(config.port, () => {

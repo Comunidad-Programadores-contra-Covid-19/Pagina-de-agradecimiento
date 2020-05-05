@@ -2,6 +2,9 @@ const Requester = require('../models').Requester;
 const config = require('../config/config')
 
 exports.ipChecker = function(req, res, next) {
+    if(!process.env.PORT)
+        return
+
     if(req.method === 'POST'){
        Requester.findOne({
            where: {ip: req.ip.toString()},
