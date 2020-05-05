@@ -1,6 +1,7 @@
 let autoScrollButton = document.querySelector(".autoScrollButton");
 let body = document.querySelector("body");
 var autoScrolling = false
+let timeout
 autoScrollButton.addEventListener("click", function(){ 
   console.log('click')
   autoScrolling = !autoScrolling
@@ -18,7 +19,8 @@ function pageScroll() {
 
 autoScrollButton.addEventListener("mouseover", function(){ 
   ToggleVisibility(this,true)
-  setTimeout(() => ToggleVisibility(autoScrollButton,false), 3000)
+  clearTimeout(timeout);
+  timeout = setTimeout(() => ToggleVisibility(autoScrollButton,false), 3000)
 });
 
 

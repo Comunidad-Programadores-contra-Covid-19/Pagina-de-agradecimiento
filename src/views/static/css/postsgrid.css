@@ -4639,6 +4639,9 @@ readers do not read off random characters that represent icons */
   z-index: 2;
   transition: opacity 0.5s ease-in; }
 
+.btn-circle:focus {
+  box-shadow: none; }
+
 .btn-circle.show {
   opacity: 1; }
 
