@@ -1,0 +1,24 @@
+let partials = {}
+
+
+let templates = {}
+postHTML = 
+`
+{{#if imgPath}}
+  <img class='image {{height}} {{width}}' src="{{imgPath}}">
+{{else}}
+  <span>{{text}}</span>
+{{/if}}
+<div class="overlay overlayFade {{color}}">
+  <div class="overlay-from">De: {{author}} </div>
+  <div class="overlay-buttons-1" onclick="like(this,{{id}})">
+      <img src="img/clap1.png" width="35" height="35">
+      <span>{{likes}}</span>
+  </div>
+  <img class="overlay-buttons-2" src="img/share.png" onclick="share(this,{{id}})" width="35" height="35">
+  <img class="overlay-buttons-3" src="img/report1.png" onclick="report(this,{{id}})" width="35" height="35">
+</div>
+`
+
+templates.post = Handlebars.compile(postHTML)
+
