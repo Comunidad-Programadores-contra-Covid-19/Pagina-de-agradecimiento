@@ -18,7 +18,7 @@ function showLoading() {
   loader.classList.add('show');
   
   // load more data
-  setTimeout(getPosts, 1000)
+  setTimeout(getPosts, 500)
   //getPosts()
 }
 
