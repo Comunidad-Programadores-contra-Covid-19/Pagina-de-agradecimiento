@@ -1,0 +1,90 @@
+@import "config";
+
+.congrats{
+  margin-top: 94px;
+  margin-bottom: 91px;
+  .heading{
+    text-align: center;
+    img{
+      height: 108px;
+      width: 108px;
+    }
+
+    h1{
+      font-family: $general;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 49.821px;
+      line-height: 75px;
+      text-align: center;
+      color: $light-black;
+    }
+    p{
+      font-family: $general;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18.6829px;
+      line-height: 28px;
+      color: $light-black;
+    }
+  }
+  .post-preview{
+    text-align: center;
+  }
+  .post-url{
+    text-align: center;
+    p{}
+  }
+  .share{
+    text-align: center;
+    img{
+      width: 39px;
+      height: 39px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .congrats{
+    margin-top: 41px;
+    .heading{
+      text-align: center;
+      img{
+        height: 62px;
+        width: 62px;
+      }
+      h1{
+        font-family: $general;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 43px;
+        color: $light-black;
+      }
+      p{
+        font-family: $general;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        color: $light-black;
+      }
+    }
+    .post-preview{
+      text-align: center;
+    }
+    .post-url{
+      text-align: center;
+      p{}
+    }
+    .share{
+      margin-top: 39px;
+      margin-bottom: 25px;
+      text-align: center;
+      img{
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

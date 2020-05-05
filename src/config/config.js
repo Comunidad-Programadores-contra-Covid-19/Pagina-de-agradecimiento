@@ -28,5 +28,5 @@ module.exports = {
     // App constants
     domain: process.env.domain || 'http://localhost:8000',
     firstNPosts: 40,
-    fonts: ["Arial","Verdana"],
+    minTimeToCreateAPost: 2 //minutes
 }
