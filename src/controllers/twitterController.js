@@ -9,6 +9,12 @@ var T = new Twit({
 	access_token: config.access_token,
 	access_token_secret: config.access_token_secret
 })
+console.log({
+  consumer_key: config.consumer_key,
+  consumer_secret: config.consumer_secret,
+  access_token: config.access_token,
+  access_token_secret: config.access_token_secret
+})
 const millisecondsInADay = 24 * 60 * 60 * 1000
 const fonts = ['Patrick Hand', 'Mali', 'Adobe Garamond Pro', 'Quicksand bold', 'Poppins']
 const testColors = ['light-green', 'light-pink', 'cyan', 'light-orange', 'light-purple']
@@ -51,11 +57,9 @@ exports.new_posts_from_query = async function(query,since,until,count) {
 	since = since || new Date(Date.now() - 8 * millisecondsInADay) //8 days ago
 	until = until || new Date(Date.now() - 7 * millisecondsInADay)
 	count = count || 25
-  console.log({query,since,until,count})
 	let tweet_posts = []
 	let new_tweet_posts = []
 	for (let days = 0; days < 7; days++) {
-    console.log({days})
 		let tweets = await getTweets(query, since, until,count)
 		if (tweets) {
 			new_tweet_posts = await createPosts(tweets)
@@ -80,14 +84,13 @@ async function getTweets(query, since, until,count) {
 		since: since.toISOString().substring(0, 10),
 		until: until.toISOString().substring(0, 10)
 	}
-  console.log({options})
 	try{
 		const response = await T.get('/search/tweets', options)
 		return response.data.statuses
 	}
 	catch(err){
-    console.log({err})
-		return null
+    console.log(err)
+    console.log(T)
 	}
 }
 
