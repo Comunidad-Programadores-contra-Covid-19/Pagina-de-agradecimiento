@@ -41,6 +41,9 @@
       width: 39px;
       height: 39px;
     }
+    .mobile{
+      display: none;
+    }
   }
 }
 
@@ -81,6 +84,9 @@
       margin-top: 39px;
       margin-bottom: 25px;
       text-align: center;
+      .large{
+        display: none;
+      }
       img{
         width: 30px;
         height: 30px;

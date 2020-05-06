@@ -30,6 +30,8 @@
     .congrats .share img {
       width: 39px;
       height: 39px; }
+    .congrats .share .mobile {
+      display: none; }
 
 @media (max-width: 768px) {
   .congrats {
@@ -61,6 +63,8 @@
       margin-top: 39px;
       margin-bottom: 25px;
       text-align: center; }
+      .congrats .share .large {
+        display: none; }
       .congrats .share img {
         width: 30px;
         height: 30px; } }
