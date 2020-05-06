@@ -6,7 +6,7 @@ let page = 2
 
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-  if(clientHeight + scrollTop >= scrollHeight - 100 && !loading ) {
+  if(clientHeight + scrollTop >= scrollHeight - 300 & !loading ) {
     loading = true
     showLoading(page);
     page += 1
@@ -19,8 +19,7 @@ window.addEventListener('scroll', () => {
 function showLoading(page) {
   loader.classList.add('show');
   
-  // load more data
-  setTimeout(() => getPosts(page), 500)
+  getPosts(page)
 }
 
 async function getPosts (page){
