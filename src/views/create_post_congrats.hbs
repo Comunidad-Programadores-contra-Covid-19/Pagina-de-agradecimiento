@@ -1,4 +1,18 @@
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v7.0&appId=672689373573695&autoLogAppEvents=1"></script>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    {{> basics_styles}}
+    <link rel="stylesheet" href="css/create_post_congrats.css">
+    <link rel="stylesheet" href="css/postsgrid.css">
+</head>
+<body>
+{{> navbar}}
 <div class="container-fluid congrats">
     <div class="heading">
         <img src="img/clap-green-background.png">
@@ -6,7 +20,7 @@
         <p>Tu agradecimiento fue subido exitosamente </p>
     </div>
     <div class="postscontainer">
-            {{> congrats_post card}}
+        {{> congrats_post card}}
     </div>
     <div class="post-url">
         {{url}}
@@ -28,4 +42,10 @@
         <div class="col-lg-4"></div>
     </div>
 </div>
+
+    {{> footer}}
+    <script type="text/javascript" src="js/create_post_congrats.js" defer></script>
+
+</body>
+</html>
 

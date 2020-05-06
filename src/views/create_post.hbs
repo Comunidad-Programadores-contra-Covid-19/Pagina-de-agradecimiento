@@ -1,103 +1,123 @@
-<div class="container-fluid create-post">
-    <div class="row">
-        <div class="col-lg-2"></div>
-<!--        main section-->
-        <div class="col-lg-8">
-<!--            heading, photo and title-->
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-2 man-clapping">
-                    <img src="img/window_man_clap.png">
-                </div>
-                <div class="col-lg-7 heading-post">
-                    <h1>¡Es hora de agradecer!</h1>
-                    <p>
-                        Dale voz a los aplausos a través de una nota, una foto o un gif.
-                    </p>
-                </div>
-                <div class="col-lg-1"></div>
-            </div>
-<!--            end heading, photo and title-->
-<!--            destinatario-->
-            <form action="/post" method="POST">
-                <div class="row">
-                    <div class="col-12">
-                        <label>¿A quién o quienes le queres agradecer? (opcional)</label>
-                    </div>
-                    <div class="col-12">
-                        <input id="destinatario" name="destinatario" type="name" placeholder="Escribe aquí">
-                    </div>
-                </div>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 
-    <!--            mensaje-->
-                <label>¡Dejá tu mensaje!</label>
-                <div class="editor">
-                    <div class="styles">
-                        <div class="row ml-1">
-                            <div class="col-lg-1 col-2">
-                                <p>Estilo</p>
-                            </div>
-                            <div class="col-lg-2 col-2">
-                                <select class="typo-picker" id="typo-picker" name="font">
-                                    <option class="typo typo1" value="typo1" selected="selected">Tipografía 1</option>
-                                    <option class="typo typo2" value="typo2">Tipografía 2</option>
-                                    <option class="typo typo3" value="typo3">Tipografía 3</option>
-                                    <option class="typo typo4" value="typo4">Tipografía 4</option>
+    <link rel="stylesheet" href="css/create_post.css">
+    {{> basics_styles}}
+
+</head>
+<body>
+    {{> navbar}}
+    <div class="container-fluid create-post">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <!--        main section-->
+            <div class="col-lg-8">
+                <!--            heading, photo and title-->
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-2 man-clapping">
+                        <img src="img/window_man_clap.png">
+                    </div>
+                    <div class="col-lg-7 heading-post">
+                        <h1>¡Es hora de agradecer!</h1>
+                        <p>
+                            Dale voz a los aplausos a través de una nota, una foto o un gif.
+                        </p>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+                <!--            end heading, photo and title-->
+                <!--            destinatario-->
+                <form action="/post" method="POST">
+                    <div class="row">
+                        <div class="col-12">
+                            <label>¿A quién o quienes le queres agradecer? (opcional)</label>
+                        </div>
+                        <div class="col-12">
+                            <input id="destinatario" name="destinatario" type="name" placeholder="Escribe aquí">
+                        </div>
+                    </div>
+
+                    <!--            mensaje-->
+                    <label>¡Dejá tu mensaje!</label>
+                    <div class="editor">
+                        <div class="styles">
+                            <div class="row ml-1">
+                                <div class="col-lg-1 col-2">
+                                    <p>Estilo</p>
+                                </div>
+                                <div class="col-lg-2 col-2">
+                                    <select class="typo-picker" id="typo-picker" name="font">
+                                        <option class="typo typo1" value="typo1" selected="selected">Tipografía 1</option>
+                                        <option class="typo typo2" value="typo2">Tipografía 2</option>
+                                        <option class="typo typo3" value="typo3">Tipografía 3</option>
+                                        <option class="typo typo4" value="typo4">Tipografía 4</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-1 col-2"></div>
+                                <div class="col-lg-1 col-2">
+                                    <p>Fondo</p>
+                                </div>
+                                <div class="col-lg-1 col-2">
+                                    <div class="color-picked"></div>
+                                </div>
+                                <select id="color-picker" name="color">
+                                    <option class="purple" value="light-purple" selected="selected"></option>
+                                    <option class="orange" value="light-orange"></option>
+                                    <option class="pink" value="light-pink"></option>
+                                    <option class="cyan" value="cyan"></option>
                                 </select>
                             </div>
-                            <div class="col-lg-1 col-2"></div>
-                            <div class="col-lg-1 col-2">
-                                <p>Fondo</p>
-                            </div>
-                            <div class="col-lg-1 col-2">
-                                <div class="color-picked"></div>
-                            </div>
-                            <select id="color-picker" name="color">
-                                <option class="purple" value="purple" selected="selected"></option>
-                                <option class="orange" value="orange"></option>
-                                <option class="pink" value="pink"></option>
-                                <option class="cyan" value="cyan"></option>
-                            </select>
                         </div>
-                    </div>
-    <!--                bloque de texto-->
-                    <textarea id="carta" name="text" placeholder="Escribe aquí"></textarea>
-    <!--                end bloque de texto-->
+                        <!--                bloque de texto-->
+                        <textarea id="carta" name="text" placeholder="Escribe aquí"></textarea>
+                        <!--                end bloque de texto-->
 
-    <!--                agregar una foto-->
-                    <div class="add-photo">
-                        <div class="row ml-1">
-                            <div class="col-lg-3 col-7">
-                                <p>Agrega a tu publicación</p>
-                            </div>
-                            <div class="col-1">
-                                <img src="img/add_photo.jpeg">
+                        <!--                agregar una foto-->
+                        <div class="add-photo">
+                            <div class="row ml-1">
+                                <div class="col-lg-3 col-7">
+                                    <p>Agrega a tu publicación</p>
+                                </div>
+                                <div class="col-1">
+                                    <img src="img/add_photo.jpeg">
+                                </div>
                             </div>
                         </div>
+                        <!--                end agregar una foto-->
                     </div>
-    <!--                end agregar una foto-->
-                </div>
-    <!--            end mensaje-->
+                    <!--            end mensaje-->
 
-    <!--            firma-->
-                <div class="row">
-                    <div class="col-12">
-                        <label>Firmá tu agradecimiento (opcional)</label>
+                    <!--            firma-->
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Firmá tu agradecimiento (opcional)</label>
+                        </div>
+                        <div class="col-12">
+                            <input id="firma" name="author" type="name" placeholder="Escribe aquí">
+                        </div>
                     </div>
-                    <div class="col-12">
-                        <input id="firma" name="author" type="name" placeholder="Escribe aquí">
+                    <!--            end firma-->
+
+                    <div class="send-btn">
+                        <button class="btn" type="submit" value="Submit">Enviar agradecimiento</button>
                     </div>
-                </div>
-    <!--            end firma-->
 
-                <div class="send-btn">
-                    <button class="btn" type="submit" value="Submit">Enviar agradecimiento</button>
-                </div>
-
-                <!-- ACA TERMINA EL FORM -->  
-            </form>
+                    <!-- ACA TERMINA EL FORM -->
+                </form>
+            </div>
+            <!--        end main section-->
+            <div class="col-lg-2"></div>
         </div>
-<!--        end main section-->
-        <div class="col-lg-2"></div>
     </div>
-</div>
+    {{> footer}}
+    <script type="text/javascript" src="js/create_post.js" defer></script>
+</body>
+</html>
+

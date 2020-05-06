@@ -19,8 +19,6 @@ db.authenticate()
 // Handlebars config
 app.engine('.hbs', hbs({
   extname:'.hbs',
-  defaultLayout: 'default',
-  layoutsDir: path.join(__dirname,'/src/views/layouts'),
 }));
 app.set('views','src/views/');
 app.set('view engine','.hbs');

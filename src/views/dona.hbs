@@ -1,40 +1,55 @@
-<div class="container-fluid donate">
-    <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8 col-sm-12">
-            <div class="hand_hearth-img">
-                <img src="img/hand_hearth.jpeg">
-            </div>
-            <h1>Ayudanos a ayudar</h1>
-            <div class="whole-team-img">
-                <img src="img/whole_team.png" >
-            </div>
-            <div class="description">
-                <p>
-                    Somos un grupo de voluntarios que nos unimos para  colaborar durante la pandemia.
-                    Creamos  proyectos de ayuda para que la sociedad se pueda expresar y agradecer a través de medios digitales.
-                </p>
-            </div>
-            <br>
-            <div class="to-whom-donate">
-                <div class="row">
-                    <div class="col-12 donate-to-us">
-                        <div class="row">
-                            <div class="col-1 col-lg-2">
-                                <img src="img/cruz_roja_logo.jpeg">
-                            </div>
-                            <div class="col-7 col-lg-6">
-                                <p> Colaborá con nuestra comunidad para mantener en
-                                    pie los canales de ayuda y agradecimiento</p>
-                            </div>
-                            <div class="col-3 col-lg-4">
-                                <button class="btn">Donar</button>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/dona.css">
+    {{> basics_styles}}
+
+</head>
+<body>
+    {{> navbar}}
+    <div class="container-fluid donate">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 col-sm-12">
+                <div class="hand_hearth-img">
+                    <img src="img/hand_hearth.jpeg">
+                </div>
+                <h1>Ayudanos a ayudar</h1>
+                <div class="whole-team-img">
+                    <img src="img/whole_team.png" >
+                </div>
+                <div class="description">
+                    <p>
+                        Somos un grupo de voluntarios que nos unimos para  colaborar durante la pandemia.
+                        Creamos  proyectos de ayuda para que la sociedad se pueda expresar y agradecer a través de medios digitales.
+                    </p>
+                </div>
+                <br>
+                <div class="to-whom-donate">
+                    <div class="row">
+                        <div class="col-12 donate-to-us">
+                            <div class="row">
+                                <div class="col-1 col-lg-2">
+                                    <img src="img/cruz_roja_logo.jpeg">
+                                </div>
+                                <div class="col-7 col-lg-6">
+                                    <p> Colaborá con nuestra comunidad para mantener en
+                                        pie los canales de ayuda y agradecimiento</p>
+                                </div>
+                                <div class="col-3 col-lg-4">
+                                    <button class="btn">Donar</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 other-orgs">
-                        <h5>Otras organizaciones con las que podés colaborar:</h5>
-                    </div>
+                        <div class="col-12 other-orgs">
+                            <h5>Otras organizaciones con las que podés colaborar:</h5>
+                        </div>
                         <div class="col-12 col-lg-5">
                             <div class="donate-to-other">
                                 <div class="row other">
@@ -69,4 +84,11 @@
         </div>
     </div>
     <div class="col-lg-2"></div>
-</div>
+    </div>
+    {{> footer}}
+
+
+
+</body>
+</html>
+

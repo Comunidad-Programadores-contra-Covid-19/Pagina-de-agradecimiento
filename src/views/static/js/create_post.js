@@ -1,5 +1,5 @@
 $('#color-picker').change(function(){
-    if($(this).val() == 'purple'){
+    if($(this).val() == 'light-purple'){
         $('.color-picked').removeClass("orange")
         $('.color-picked').removeClass("cyan")
         $('.color-picked').removeClass("pink")
@@ -7,7 +7,7 @@ $('#color-picker').change(function(){
         $('.color-picked').addClass("purple")
         $('.color-picked').addClass("important")
     }
-    if($(this).val() == 'orange'){
+    if($(this).val() == 'light-orange'){
         $('.color-picked').removeClass("purple")
         $('.color-picked').removeClass("pink")
         $('.color-picked').removeClass("cyan")
@@ -15,7 +15,7 @@ $('#color-picker').change(function(){
         $('.color-picked').addClass("orange")
         $('.color-picked').addClass("important")
     }
-    if($(this).val() == 'pink'){
+    if($(this).val() == 'light-pink'){
         $('.color-picked').removeClass("orange")
         $('.color-picked').removeClass("purple")
         $('.color-picked').removeClass("cyan")
