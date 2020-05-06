@@ -1,7 +1,6 @@
 let partials = {}
-
-
 let templates = {}
+
 postHTML = 
 `
 {{#if imgPath}}
@@ -20,5 +19,11 @@ postHTML =
 </div>
 `
 
+sliderHTML =
+`
+<div class="slider">{{imgPath}}hola</div>
+`
+
 templates.post = Handlebars.compile(postHTML)
+templates.slider = Handlebars.compile(sliderHTML)
 
