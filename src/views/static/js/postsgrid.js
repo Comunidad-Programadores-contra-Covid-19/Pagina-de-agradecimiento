@@ -1,4 +1,4 @@
-let postscontainer = document.querySelector(".postscontainer");
+const postscontainer = document.querySelector(".postscontainer");
 const loader = document.querySelector('.loader');
 let last_known_scroll_position = 0;
 let loading = false
@@ -29,10 +29,27 @@ async function getPosts (page){
 }
 
 
-function addDataToDOM(postsData) {
+function addDataToDOM(posts) {
   loader.classList.remove('show');
+  posts = addHeightWidthToPosts(posts)
+  
+  for (post of posts){
+    const postHTML = templates.post(post)
+    const postElement = CreateElementFromHTML(postHTML)
+    postscontainer.appendChild(postElement);  
+  }
+  
+  
+}
 
-  for (post of postsData){
+function CreateElementFromHTML(html){
+  let template = document.createElement('div')
+  template.innerHTML = html
+  return template.firstElementChild
+}
+
+function addHeightWidthToPosts (posts){
+  for (const post of posts) {
     post.height = 'height'
     post.width = 'width'
     if (!post.imgPath) {
@@ -58,15 +75,8 @@ function addDataToDOM(postsData) {
         }
       }
     }
-    
-    const postElement = document.createElement('div');
-    postElement.classList.add('item',post.color,post.height,post.width);
-    const innerHTML = templates.post(post)
-    postElement.innerHTML = innerHTML
-    postscontainer.appendChild(postElement);  
   }
-  
-  
+  return posts
 }
 
 function like(element,postId) {

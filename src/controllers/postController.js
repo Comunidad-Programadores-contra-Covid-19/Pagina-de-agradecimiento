@@ -2,6 +2,7 @@ const Sequelize = require("sequelize");
 const Post = require('../models').Post;
 const postValidator = require('../validators/postValidator');
 const config = require('../config/config.js');
+const postService = require('../services/postService')
 
 exports.new_post = function(req, res) {
   let {
@@ -45,25 +46,34 @@ exports.likePost = function(req, res) {
 }
 
 
-exports.get_posts = function(req, res) {
-  let {
-    tags
-  } = req.body;
+exports.get_posts = async function(req, res) {
   // TODO filtrar por tags tambien
-  let page = req.params.page
-  Post.findAll({
-      where: {
-        isActive: true,
-      },
-      order: [
-        ['likes', 'DESC'],
-      ],
-      limit: config.firstNPosts,
-      offset: (page * config.firstNPosts),
-    })
-    .then(function(posts) {
-      res.status(200).send(posts)
-    })
+  let tags = req.body.tags || 'all';
+  let page = req.params.page || 1
+  
+  try{
+    const posts = await postService.get_posts(page)
+    res.status(200).send(posts)  
+  }catch (e){
+    res.status(500).send(e)
+  }
+  
+}
+
+exports.get_posts_html = async (req,res) =>{
+  let tags = req.body.tags || 'all';
+  let page = req.params.page || 1
+  
+  try{
+    const posts = await postService.get_posts(page)
+    posts = postService.addHeightWidthToPosts(posts)
+    
+
+    res.status(200).send(posts)  
+
+  }catch (e){
+    res.status(500).send(e)
+  }
 }
 
 exports.new_post_from_hashtag = function(req, res) {
