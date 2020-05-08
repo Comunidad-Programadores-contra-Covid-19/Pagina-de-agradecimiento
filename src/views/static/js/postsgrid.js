@@ -1,8 +1,12 @@
-let postscontainer = document.querySelector(".postscontainer");
+const postscontainer = document.querySelector(".postscontainer");
 const loader = document.querySelector('.loader');
 let last_known_scroll_position = 0;
 let loading = false
 let page = 2
+let postList = []
+
+//get first page of posts
+getPosts(1)
 
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
@@ -22,17 +26,35 @@ function showLoading(page) {
   getPosts(page)
 }
 
-async function getPosts (page){
+async function getPosts (page = 1){
   const response = await fetch(`/posts/${page}`);
-  const postsData = await response.json();  
+  const postsData = await response.json();
   addDataToDOM(postsData)
 }
 
 
-function addDataToDOM(postsData) {
+function addDataToDOM(posts) {
   loader.classList.remove('show');
+  posts = addHeightWidthToPosts(posts)
+  postList.push(...posts)
+  for (post of posts){
+    const postHTML = templates.post(post)
+    const postElement = CreateElementFromHTML(postHTML)
+    postElement.style.fontFamily = post.font
+    postscontainer.appendChild(postElement);  
+  }
+  
+  
+}
 
-  for (post of postsData){
+function CreateElementFromHTML(html){
+  let template = document.createElement('div')
+  template.innerHTML = html
+  return template.firstElementChild
+}
+
+function addHeightWidthToPosts (posts){
+  for (const post of posts) {
     post.height = 'height'
     post.width = 'width'
     if (!post.imgPath) {
@@ -58,15 +80,8 @@ function addDataToDOM(postsData) {
         }
       }
     }
-    
-    const postElement = document.createElement('div');
-    postElement.classList.add('item',post.color,post.height,post.width);
-    const innerHTML = templates.post(post)
-    postElement.innerHTML = innerHTML
-    postscontainer.appendChild(postElement);  
   }
-  
-  
+  return posts
 }
 
 function like(element,postId) {

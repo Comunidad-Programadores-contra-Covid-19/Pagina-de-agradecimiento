@@ -1,12 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
+    <!-- meta -->
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Crea tu carta</title>
 
+    <!-- styles -->
     <link rel="stylesheet" href="css/create_post.css">
     {{> basics_styles}}
 
@@ -76,11 +78,11 @@
                             </div>
                         </div>
                         <!--                bloque de texto-->
-                        <textarea id="carta" name="text" placeholder="Escribe aquí"></textarea>
+                        <textarea id="carta" name="text" placeholder="Escribe aquí" required></textarea>
                         <!--                end bloque de texto-->
 
                         <!--                agregar una foto-->
-                        <div class="add-photo">
+                        <div class="add-photo" style="display:none">
                             <div class="row ml-1">
                                 <div class="col-lg-3 col-7">
                                     <p>Agrega a tu publicación</p>

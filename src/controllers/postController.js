@@ -2,6 +2,8 @@ const Sequelize = require("sequelize");
 const Post = require('../models').Post;
 const postValidator = require('../validators/postValidator');
 const config = require('../config/config.js');
+const mailer = require('../services/mailer')
+const postService = require('../services/postService')
 
 exports.new_post = function(req, res) {
   let {
@@ -45,25 +47,34 @@ exports.likePost = function(req, res) {
 }
 
 
-exports.get_posts = function(req, res) {
-  let {
-    tags
-  } = req.body;
+exports.get_posts = async function(req, res) {
   // TODO filtrar por tags tambien
-  let page = req.params.page
-  Post.findAll({
-      where: {
-        isActive: true,
-      },
-      order: [
-        ['likes', 'DESC'],
-      ],
-      limit: config.firstNPosts,
-      offset: (page * config.firstNPosts),
-    })
-    .then(function(posts) {
-      res.status(200).send(posts)
-    })
+  let tags = req.body.tags || 'all';
+  let page = req.params.page || 1
+  
+  try{
+    const posts = await postService.get_posts(page)
+    res.status(200).send(posts)  
+  }catch (e){
+    res.status(500).send(e)
+  }
+  
+}
+
+exports.get_posts_html = async (req,res) =>{
+  let tags = req.body.tags || 'all';
+  let page = req.params.page || 1
+  
+  try{
+    const posts = await postService.get_posts(page)
+    posts = postService.addHeightWidthToPosts(posts)
+    
+
+    res.status(200).send(posts)  
+
+  }catch (e){
+    res.status(500).send(e)
+  }
 }
 
 exports.new_post_from_hashtag = function(req, res) {
@@ -98,18 +109,26 @@ exports.create_post_page = function(req, res) {
   });
 }
 
-exports.congrats = function (req,res) {
-    // Post.findByPk(parseInt(req.params.id))
-    //     .then(post =>{
-    //         if(!post){} //TODO 404 page
-    //
-    //
-    //     })
-    //     .then(res.render('create_post_congrats'));
-    console.log(__dirname);
-    // res.render('create_post_congrats');
-}
 
-exports.test = function (req,res) {
-    res.render('create_post_congrats')
+exports.mail = function(req,res){  
+  let {url, author, text, to} = req.body;
+  
+   
+  mailOptions = {
+    from: config.mail_user,
+    to: req.body.to,
+    subject: author + ' te escribio una carta en graciasporcuidarnos.com.ar',
+    html: '<p>Te envio esta carta que escribi para vos en teagradezco.com.ar</p>' + 
+          '<a href="'+req.body.url+'">click aca para verla!</a>'
+  };
+
+  mailer.sendMail(mailOptions, function(error,info){
+    if (error) {
+      console.log(error);
+      res.status(500).send()
+    } else {
+      console.log('Email sent: ' + info.response);
+      res.status(200).send()
+    }
+  });
 }

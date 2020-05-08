@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'GaramondPro';
+  src: url("../fonts/AGaramondPro-Italic.otf") format("opentype"); }
+
 .navbar {
   margin-bottom: 0 !important;
   background-color: #96D293;
@@ -25,6 +29,12 @@
 @media (max-width: 768px) {
   .navbar {
     height: 57px; }
+    .navbar .navbar-collapse {
+      margin-top: 7px;
+      z-index: 10;
+      background-color: white; }
+      .navbar .navbar-collapse ul {
+        padding-left: 15px !important; }
     .navbar .navbar-brand {
       margin-top: -15px;
       margin-left: -20px; }

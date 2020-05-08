@@ -1,25 +1,26 @@
-.teagradezco .row {
-  max-width: 100%; }
+@font-face {
+  font-family: 'GaramondPro';
+  src: url("../fonts/AGaramondPro-Italic.otf") format("opentype"); }
 
-.teagradezco .main-section {
+.main-section {
   margin-top: 50px;
   margin-bottom: 42px;
   text-align: center; }
-  .teagradezco .main-section h1 {
+  .main-section h1 {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
     line-height: 54px;
     color: #263238; }
-  .teagradezco .main-section p {
+  .main-section p {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 27px;
     color: #263238; }
-  .teagradezco .main-section .btn {
+  .main-section .btn {
     width: 280px;
     height: 56px;
     font-family: "Poppins", sans-serif;
@@ -31,34 +32,38 @@
     background-color: #96D293;
     border-radius: 100px; }
 
-.teagradezco .main-img {
+.main-img {
   margin-top: 50px; }
-  .teagradezco .main-img img {
+  .main-img img {
     height: 215px;
     width: 130px; }
 
 @media (max-width: 768px) {
-  .teagradezco .main-section {
+  .main-section {
     margin-top: 32px;
     margin-bottom: 42px;
-    text-align: left; }
-    .teagradezco .main-section h1 {
+    text-align: center; }
+    .main-section h1 {
       font-weight: 600;
       font-size: 18px;
       line-height: 27px; }
-    .teagradezco .main-section p {
+    .main-section p {
       font-size: 12px;
       line-height: 18px; }
-    .teagradezco .main-section .button-agradecer .btn {
+    .main-section .button-agradecer .btn {
       width: 145px;
       height: 32px;
       font-size: 12px;
       line-height: 18px; }
-  .teagradezco .main-img {
-    text-align: left;
+  .main-img {
+    text-align: center;
     margin-top: 30px; }
-    .teagradezco .main-img img {
+    .main-img img {
       height: 100px;
       width: 70px;
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1); } }
+
+.lightbox-container {
+  position: absolute;
+  z-index: 3; }

@@ -1,88 +1,84 @@
 @import "config"; 
 
-
-.teagradezco{
-  .row{
-    max-width: 100%;
-  }
-
-	.main-section{
-		margin-top: 50px;
-		margin-bottom: 42px;
-		text-align: center;
-		h1{
-			font-family: $general;
-			font-style: normal;
-			font-weight: 600;
-			font-size: 36px;
-			line-height: 54px;
-			color: $light-black;
-		}
-		p{
-			font-family: $general;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 18px;
-			line-height: 27px;
-			color: $light-black;
-		}
-		.btn{
-			width: 280px;
-			height: 56px;
-			font-family: $general;
-			font-style: normal;
-			font-weight: 600;
-			font-size: 21px;
-			line-height: 31px;
-			color: $light-black;
-			background-color: $dark-green;
-			border-radius: 100px;
-		}
+.main-section{
+	margin-top: 50px;
+	margin-bottom: 42px;
+	text-align: center;
+	h1{
+		font-family: $general;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 36px;
+		line-height: 54px;
+		color: $light-black;
 	}
-	.main-img{
-		margin-top: 50px;
-		img{
-			height: 215px;
-			width: 130px;
-		}
+	p{
+		font-family: $general;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 27px;
+		color: $light-black;
+	}
+	.btn{
+		width: 280px;
+		height: 56px;
+		font-family: $general;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 21px;
+		line-height: 31px;
+		color: $light-black;
+		background-color: $dark-green;
+		border-radius: 100px;
+	}
+}
+.main-img{
+	margin-top: 50px;
+	img{
+		height: 215px;
+		width: 130px;
 	}
 }
 
 @media (max-width: 768px){
-	.teagradezco{
-		.main-section{
-			margin-top: 32px;
-			margin-bottom: 42px;
-			text-align: left;
-			h1{
-				font-weight: 600;
-				font-size: 18px;
-				line-height: 27px;
-			}
-			p{
-				//text-align: justify;
+	.main-section{
+		margin-top: 32px;
+		margin-bottom: 42px;
+		text-align: center;
+		h1{
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 27px;
+		}
+		p{
+			//text-align: justify;
+			font-size: 12px;
+			line-height: 18px;
+		}
+		.button-agradecer{
+			.btn{
+				width: 145px;
+				height: 32px;
 				font-size: 12px;
 				line-height: 18px;
 			}
-			.button-agradecer{
-				.btn{
-					width: 145px;
-					height: 32px;
-					font-size: 12px;
-					line-height: 18px;
-				}
-			}
-		}
-		.main-img{
-			text-align: left;
-			margin-top: 30px;
-			img{
-				height: 100px;
-				width: 70px;
-				-webkit-transform: scaleX(-1);
-				transform: scaleX(-1);
-			}
 		}
 	}
+	.main-img{
+		text-align: center;
+		margin-top: 30px;
+		img{
+			height: 100px;
+			width: 70px;
+			-webkit-transform: scaleX(-1);
+			transform: scaleX(-1);
+		}
+	}
+}
+
+.lightbox-container{
+  position:absolute;
+  z-index: 3;
 }
 

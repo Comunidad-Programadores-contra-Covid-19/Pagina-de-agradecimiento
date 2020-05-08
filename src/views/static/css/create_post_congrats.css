@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'GaramondPro';
+  src: url("../fonts/AGaramondPro-Italic.otf") format("opentype"); }
+
 .congrats {
   margin-top: 94px;
   margin-bottom: 91px; }
@@ -32,6 +36,49 @@
       height: 39px; }
     .congrats .share .mobile {
       display: none; }
+
+.modal .modal-title {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 50px;
+  color: #263238; }
+
+.modal label {
+  margin-top: 24px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #263238; }
+
+.modal input {
+  margin-top: -10px;
+  padding: 0;
+  width: 80%;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #a3e4a0; }
+
+.modal input::placeholder, .modal textarea::placeholder {
+  color: rgba(156, 156, 156, 0.6);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px; }
+
+.modal .send-btn {
+  border-radius: 100px;
+  border-color: transparent;
+  background-color: #96D293;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17.7876px;
+  line-height: 27px;
+  color: #263238; }
 
 @media (max-width: 768px) {
   .congrats {

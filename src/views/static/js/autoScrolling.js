@@ -5,7 +5,6 @@ let timeout
 
 if (autoScrollButton){
   autoScrollButton.addEventListener("click", function(){ 
-    console.log('click')
     autoScrolling = !autoScrolling
     changeIcon(this,autoScrolling)
     setTimeout(() => ToggleVisibility(autoScrollButton,false), 3000)
