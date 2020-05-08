@@ -3,6 +3,7 @@ const loader = document.querySelector('.loader');
 let last_known_scroll_position = 0;
 let loading = false
 let page = 2
+let postList = []
 
 //get first page of posts
 getPosts(1)
@@ -35,7 +36,7 @@ async function getPosts (page = 1){
 function addDataToDOM(posts) {
   loader.classList.remove('show');
   posts = addHeightWidthToPosts(posts)
-  
+  postList.push(...posts)
   for (post of posts){
     const postHTML = templates.post(post)
     const postElement = CreateElementFromHTML(postHTML)

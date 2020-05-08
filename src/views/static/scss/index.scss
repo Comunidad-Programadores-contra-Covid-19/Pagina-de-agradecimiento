@@ -41,7 +41,6 @@
 	}
 }
 
-
 @media (max-width: 768px){
 	.main-section{
 		margin-top: 32px;
@@ -76,5 +75,10 @@
 			transform: scaleX(-1);
 		}
 	}
+}
+
+.lightbox-container{
+  position:absolute;
+  z-index: 3;
 }
 
