@@ -5,12 +5,9 @@ const lightboxText = document.querySelector('.lightbox-text')
 const lightboxBox = document.querySelector('.lightbox-box')
 const lightboxLikes = document.querySelector('.lightbox-likes')
 const colors = ['light-green','grey','light-pink','cyan','light-orange','light-purple']
-
-
-
-
-
+ 
 const createLightbox = (postElement,postId) => {
+
   post = getPostByID(postId)
   lightboxContainer.style.display = 'flex'
   lightboxBackground.style.display = 'block'
@@ -47,3 +44,23 @@ const removeLightboxBackground = ()=>{
 
 
 
+/*lightboxBackground.onClick = function(e){
+  console.log('asd')
+}
+
+
+lightboxImg.onClick = function(e){
+  console.log('asd')
+}
+
+function testFunc(e){
+  console.log(e)
+}
+*/
+lightboxContainer.onclick = function(e){
+  for (var i = 0; i < e.target.classList.length; i++){
+      if (e.target.classList[i] === 'lightbox-container'){
+        removeLightboxBackground()
+    }    
+  }
+}
