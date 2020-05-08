@@ -8,6 +8,8 @@ const routes = require('./src/routes');
 const config = require('./src/config/config');
 const checkIp = require('./src/middlewares/checkIp')
 const err404 = require('./src/middlewares/404')
+const favicon = require('serve-favicon');
+
 
 
 // Init database
@@ -27,9 +29,11 @@ app.set('trust proxy',true);
 
 // Middlewares
 app.use(express.static(path.join(__dirname,'/src/views/static')))
+app.use(favicon(path.join(__dirname,'/src/views/static/img','clap-green-background.png')));
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
 app.use('/post', checkIp.ipChecker); // Check ip for post creating
+// app.use('/post', checkIp.ipChecker); // Check ip for post creating
 app.use('/',routes); // Init Routes
 app.use(err404.e404); // 404
 

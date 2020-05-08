@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'GaramondPro';
+  src: url("../fonts/AGaramondPro-Italic.otf") format("opentype"); }
+
 .main-section {
   margin-top: 50px;
   margin-bottom: 42px;

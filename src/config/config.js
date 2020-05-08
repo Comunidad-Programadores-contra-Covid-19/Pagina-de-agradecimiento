@@ -24,6 +24,14 @@ module.exports = {
  	  consumer_secret: process.env.consumer_secret || configTwitter.consumer_secret,
   	access_token: process.env.access_token || configTwitter.access_token,
   	access_token_secret: process.env.access_token_secret || configTwitter.access_token_secret,
+    
+    // Mail configs
+    mail_pool: true,
+    mail_tls: true,
+    mail_host: process.env.mail_host || priv.mail_host,
+    mail_port: 465,
+    mail_user: process.env.mail_user || priv.mail_user,
+    mail_password: process.env.mail_password || priv.mail_password,
 
     // App constants
     domain: process.env.domain || 'http://localhost:8000',

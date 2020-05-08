@@ -2,6 +2,7 @@ const Sequelize = require("sequelize");
 const Post = require('../models').Post;
 const postValidator = require('../validators/postValidator');
 const config = require('../config/config.js');
+const mailer = require('../services/mailer')
 const postService = require('../services/postService')
 
 exports.new_post = function(req, res) {
@@ -108,18 +109,26 @@ exports.create_post_page = function(req, res) {
   });
 }
 
-exports.congrats = function (req,res) {
-    // Post.findByPk(parseInt(req.params.id))
-    //     .then(post =>{
-    //         if(!post){} //TODO 404 page
-    //
-    //
-    //     })
-    //     .then(res.render('create_post_congrats'));
-    console.log(__dirname);
-    // res.render('create_post_congrats');
-}
 
-exports.test = function (req,res) {
-    res.render('create_post_congrats')
+exports.mail = function(req,res){  
+  let {url, author, text, to} = req.body;
+  
+   
+  mailOptions = {
+    from: config.mail_user,
+    to: req.body.to,
+    subject: author + ' te escribio una carta en graciasporcuidarnos.com.ar',
+    html: '<p>Te envio esta carta que escribi para vos en teagradezco.com.ar</p>' + 
+          '<a href="'+req.body.url+'">click aca para verla!</a>'
+  };
+
+  mailer.sendMail(mailOptions, function(error,info){
+    if (error) {
+      console.log(error);
+      res.status(500).send()
+    } else {
+      console.log('Email sent: ' + info.response);
+      res.status(200).send()
+    }
+  });
 }

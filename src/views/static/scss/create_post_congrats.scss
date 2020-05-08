@@ -33,7 +33,6 @@
   }
   .post-url{
     text-align: center;
-    p{}
   }
   .share{
     text-align: center;
@@ -44,6 +43,51 @@
     .mobile{
       display: none;
     }
+  }
+}
+.modal{
+  .modal-title{
+    font-family: $general;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 50px;
+    color: $light-black;
+  }
+  label{
+    margin-top: 24px;
+    font-family: $general;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: $light-black;
+  }
+  input{
+    margin-top: -10px;
+    padding: 0;
+    width: 80%;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: $light-green;
+  }
+  input::placeholder, textarea::placeholder{
+    color: $grey;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .send-btn{
+    border-radius: 100px;
+    border-color: transparent;
+    background-color: $dark-green;
+    font-family: $general;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17.7876px;
+    line-height: 27px;
+    color: $light-black;
   }
 }
 
@@ -78,7 +122,6 @@
     }
     .post-url{
       text-align: center;
-      p{}
     }
     .share{
       margin-top: 39px;

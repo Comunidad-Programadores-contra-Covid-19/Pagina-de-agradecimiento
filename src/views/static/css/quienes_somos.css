@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'GaramondPro';
+  src: url("../fonts/AGaramondPro-Italic.otf") format("opentype"); }
+
 .quienes-somos {
   text-align: center;
   margin-top: 110px; }

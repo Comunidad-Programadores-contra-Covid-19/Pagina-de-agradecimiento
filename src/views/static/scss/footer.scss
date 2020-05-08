@@ -1,18 +1,33 @@
-@import "config"; 
+@import "config";
 
-@media (max-width: 768px){
+.navbar {
+  .navbar-brand {
+    margin-left: 85px;
+    .imagen {
+      width: 26px;
+      height: 26px;
+      margin: -15px -10px 0px 0px;
+    }
+    .size{
+      font-family: $general; 
+      font-size: 23px;
+      margin: 0px 0px 0px 0px;
+    }
+  }
+}
 
-  .footer{
+@media (max-width: 768px) {
+  .footer {
     display: none;
   }
-  .responsive-footer{
+  .responsive-footer {
     //height: 104px;
     background-color: $dark-green;
-    .row{
-      .faq{
+    .row {
+      .faq {
         margin-top: 17px;
       }
-      p{
+      p {
         font-family: $general;
         font-style: normal;
         font-weight: normal;
@@ -20,7 +35,7 @@
         line-height: 18px;
         color: $light-black;
       }
-      a{
+      a {
         font-family: $general;
         font-style: normal;
         font-weight: normal;
@@ -30,23 +45,22 @@
       }
     }
   }
-
 }
-@media (min-width: 769px){
-  .footer{
+@media (min-width: 769px) {
+  .footer {
     height: 80px;
-    .navbar-brand{
+    .navbar-brand {
       margin-left: 40px;
       //background-color: $dark-green ;
-      img{
+      img {
         width: 160px;
         height: 45px;
       }
     }
-    .navigate-links{
-      .footer-pages{
-        li{
-          a{
+    .navigate-links {
+      .footer-pages {
+        li {
+          a {
             padding-top: 12px;
             font-family: $general;
             font-style: normal;
@@ -57,19 +71,21 @@
           }
         }
       }
-      .copyright{
-        li{
-          a{
+      .copyright {
+        li {
+          a {
             font-family: $general;
             font-style: normal;
             font-weight: normal;
-            font-size: 18.6667px!important;
-            line-height: 28px!important;
-            color: $light-black!important;
+            font-size: 18.6667px !important;
+            line-height: 28px !important;
+            color: $light-black !important;
           }
         }
       }
     }
   }
-  .responsive-footer{display: none;}
+  .responsive-footer {
+    display: none;
+  }
 }

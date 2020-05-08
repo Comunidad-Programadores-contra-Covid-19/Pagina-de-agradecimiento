@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'GaramondPro';
+  src: url("../fonts/AGaramondPro-Italic.otf") format("opentype"); }
+
 .navbar {
   margin-bottom: 0 !important;
   background-color: #96D293;
@@ -5,8 +9,13 @@
   .navbar .navbar-brand {
     margin-left: 85px; }
     .navbar .navbar-brand img {
-      width: 200px;
-      height: 50px; }
+      width: 35px;
+      height: 35px;
+      margin: -5px 15px 15px 0px; }
+    .navbar .navbar-brand p {
+      font-family: "Poppins", sans-serif;
+      font-size: 26px;
+      margin: 25px 15px 15px 0px; }
   .navbar .navigate-links ul {
     margin-right: 85px; }
     .navbar .navigate-links ul li a {
@@ -20,12 +29,23 @@
 @media (max-width: 768px) {
   .navbar {
     height: 57px; }
+    .navbar .navbar-collapse {
+      margin-top: 7px;
+      z-index: 10;
+      background-color: white; }
+      .navbar .navbar-collapse ul {
+        padding-left: 15px !important; }
     .navbar .navbar-brand {
       margin-top: -15px;
-      margin-left: 20px; }
+      margin-left: -20px; }
       .navbar .navbar-brand img {
-        width: 144px;
-        height: 37.5px; }
+        width: 25px;
+        height: 25.64px;
+        margin: 0px 15px 15px 0px; }
+      .navbar .navbar-brand p {
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        margin: 3px 0px 14px -60px; }
     .navbar .navbar-toggler {
-      margin-top: -10px;
+      margin-top: -30px;
       border-color: transparent; } }

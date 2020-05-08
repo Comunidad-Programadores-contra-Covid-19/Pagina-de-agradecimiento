@@ -5,6 +5,12 @@ let postController = require('./controllers/postController')
 let reportController = require('./controllers/reportController');
 let twitterController = require('./controllers/twitterController'); 
 
+//Robots
+router.get('/robots.txt', function (req, res) {
+    res.type('text/plain');
+    res.send("User-agent: *\nDisallow: /");
+});
+
 // Index page
 router.get('/', rootController.root);
 
@@ -27,9 +33,8 @@ router.post('/post', postController.new_post);
 // Like a post
 router.post('/like', postController.likePost);
 
-router.get('/carta_creada',postController.congrats);
+router.post('/mail',postController.mail);
 
-router.get('/test',postController.test);
 /***Report***/
 
 // Report a post
