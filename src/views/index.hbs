@@ -14,35 +14,44 @@
 
 </head>
 <body>
-    {{> navbar}}
-    <div class="teagradezco">
-      <div class="row">
-            <div class="col-lg-3 order-lg-1"></div>
-            <div class="col-lg-6 order-lg-2 col-8 order-2 main-section">
-              <h1>Te lo agradezco</h1>
-              <p>
-                Acompañá los aplausos con un mensaje de agradecimiento.
-              </p>
-              <div class="button-agradecer">
-                <a href="/nueva_carta">
-                  <button type="button" class="btn">¡Quiero agradecer!</button>
-                </a>
-              </div>
-            </div>
-            <div class="postscontainer">
-                {{#each posts as |post|}}
-                    {{> post}}
-                {{/each }}
-            </div>
-            {{> autoscroller}}
-            {{> loader}}
+  <div class='lightbox-background'></div>
+  <div class='lightbox lightbox-container' >
+    <div class='lightbox-box' >
+      <img class='lightbox-image' />
+      <span class='lightbox-text'></span>
+      <div class='lightbox-buttons'>
+        <div class="lightbox-buttons-1" onclick="like(this,${id})">
+          <img src="img/clap1.png" width="35" height="35">
+          <span class='lightbox-likes'></span>
+        </div>
+        <img class="lightbox-buttons-2" src="img/share.png" onclick="share(this,${id})" width="35" height="35">
+        <img class="lightbox-buttons-3" src="img/report1.png" onclick="report(this,${id})" width="35" height="35">
       </div>
     </div>
-    {{> footer}}
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/postsgrid.js"></script>
-    <script type="text/javascript" src="js/autoScrolling.js"></script>
-    <script src="https://use.fontawesome.com/b602b979b2.js"></script>
+  </div>
+  {{> navbar}}
+  <div class="main-section">
+    <h1>#GraciasPorCuidarnos Argentina</h1>
+    <p>
+      Acompañá los aplausos con un mensaje de agradecimiento.
+    </p>
+    <div class="button-agradecer">
+      <a href="/nueva_carta">
+        <button type="button" class="btn">¡Quiero agradecer!</button>
+      </a>
+    </div>
+  </div>
+  <div class="postscontainer">
+    {{> autoscroller}}
+    {{> loader}}
+  </div>
+  {{> footer}}
+
+  <script type="text/javascript" src="js/templates.js"></script>
+  <script type="text/javascript" src="js/postsgrid.js"></script>
+  <script type="text/javascript" src="js/autoScrolling.js"></script>
+  <script type="text/javascript" src="js/lightbox.js"></script>
+  <script src="https://use.fontawesome.com/b602b979b2.js"></script>
 
 </body>
 </html>

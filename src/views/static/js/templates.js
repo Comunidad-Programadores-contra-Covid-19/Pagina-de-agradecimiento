@@ -1,29 +1,45 @@
-let partials = {}
-let templates = {}
+const templates = {}
+const partials = {}
 
-postHTML = 
-`
-{{#if imgPath}}
-  <img class='image {{height}} {{width}}' src="{{imgPath}}">
-{{else}}
-  <span>{{text}}</span>
-{{/if}}
-<div class="overlay overlayFade {{color}}">
-  <div class="overlay-from">De: {{author}} </div>
-  <div class="overlay-buttons-1" onclick="like(this,{{id}})">
-      <img src="img/clap1.png" width="35" height="35">
-      <span>{{likes}}</span>
-  </div>
-  <img class="overlay-buttons-2" src="img/share.png" onclick="share(this,{{id}})" width="35" height="35">
-  <img class="overlay-buttons-3" src="img/report1.png" onclick="report(this,{{id}})" width="35" height="35">
-</div>
-`
+templates.post = (post) => {
+  const {color,height,width,text,author,id,likes,imgPath} = post
+  const html =
+  `<div class="item ${color} ${height} ${width}" onClick="createLightbox(this,${id})">
+    ${imgPath ? partials.imgTag(post) : partials.mainText(post)}
+    <div class="overlay overlayFade ${color}">
+      <div class="overlay-from">De: ${author} </div>
+      <div class="overlay-buttons-1" onclick="like(this,${id})">
+          <img src="img/clap1.png" width="35" height="35">
+          <span>${likes}</span>
+      </div>
+      <img class="overlay-buttons-2" src="img/share.png" onclick="share(this,${id})" width="35" height="35">
+      <img class="overlay-buttons-3" src="img/report1.png" onclick="report(this,${id})" width="35" height="35">
+    </div>
+  </div>  
+  `
+  return html
+}
 
-sliderHTML =
-`
-<div class="slider">{{imgPath}}hola</div>
-`
+partials.imgTag = ({height,width,imgPath}) => `<img class='image ${height} ${width}' src="${imgPath}">`
+partials.mainText = ({text}) => `<span>${text}</span>`
 
-templates.post = Handlebars.compile(postHTML)
-templates.slider = Handlebars.compile(sliderHTML)
+templates.testPost = (post) => {
+  const html =
+  `
+  <div class="item light-orange height width" onClick="createLightbox(this,${id})">
+    <span>testPost</span>
+    <div class="overlay overlayFade light-orange">
+    <div class="overlay-from">De: Julian </div>
+      <div class="overlay-buttons-1">
+          <img src="img/clap1.png" width="35" height="35">
+          <span>30</span>
+      </div>
+      <img class="overlay-buttons-2" src="img/share.png" width="35" height="35">
+      <img class="overlay-buttons-3" src="img/report1.png" width="35" height="35">
+    </div>  
+  `
+  return html
+}
+
+
 
