@@ -1,5 +1,4 @@
 @import "config";
-
 .navbar{
   margin-bottom: 0!important;
   background-color: $dark-green;
@@ -31,6 +30,14 @@
 @media (max-width: 768px) {
   .navbar{
     height: 57px;
+    .navbar-collapse{
+      ul{
+        padding-left: 15px!important;
+      }
+      margin-top: 7px;
+      z-index: 10;
+      background-color: white;
+    }
     .navbar-brand{
       margin-top: -15px;
       margin-left: 20px;

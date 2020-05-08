@@ -27,9 +27,8 @@ router.post('/post', postController.new_post);
 // Like a post
 router.post('/like', postController.likePost);
 
-router.get('/carta_creada',postController.congrats);
+router.post('/mail',postController.mail);
 
-router.get('/test',postController.test);
 /***Report***/
 
 // Report a post

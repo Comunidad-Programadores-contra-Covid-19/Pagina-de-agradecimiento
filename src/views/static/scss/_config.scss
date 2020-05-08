@@ -1,10 +1,16 @@
+@font-face {
+  font-family: 'GaramondPro';
+  src: url("../fonts/AGaramondPro-Italic.otf") format("opentype");
+}
+
 // fonts
 $fa-font-path:      '../fonts';
 $general:           'Poppins', sans-serif;
 $card1:             'Patrick Hand', cursive;
 $card2:             'Mali', sans-serif;
 $card3:             'Quicksand', sans-serif;
-//$card4: TODO garamond no se que hacemos
+$card4:             'GaramondPro', sans-serif;
+
 
 //sizes
 $grid-unit-width:   210px;

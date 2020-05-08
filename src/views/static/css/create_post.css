@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'GaramondPro';
+  src: url("../fonts/AGaramondPro-Italic.otf") format("opentype"); }
+
 .purple {
   background-color: #c0a5d6 !important; }
 
@@ -28,6 +32,10 @@
   font-family: "Quicksand", sans-serif;
   font-style: normal;
   font-weight: bold !important; }
+
+.typo4 {
+  font-family: "GaramondPro", sans-serif;
+  font-style: normal; }
 
 .create-post {
   margin-top: 30px; }

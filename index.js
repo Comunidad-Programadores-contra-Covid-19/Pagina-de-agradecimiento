@@ -10,6 +10,7 @@ const checkIp = require('./src/middlewares/checkIp')
 const err404 = require('./src/middlewares/404')
 
 
+
 // Init database
 db.authenticate()
   .then(() => console.log('Connection has been established successfully.'))
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname,'/src/views/static')))
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
 app.use('/post', checkIp.ipChecker); // Check ip for post creating
+// app.use('/post', checkIp.ipChecker); // Check ip for post creating
 app.use('/',routes); // Init Routes
 app.use(err404.e404); // 404
 
