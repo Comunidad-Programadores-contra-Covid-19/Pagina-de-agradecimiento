@@ -40,6 +40,7 @@ function addDataToDOM(posts) {
   for (post of posts){
     const postHTML = templates.post(post)
     const postElement = CreateElementFromHTML(postHTML)
+    postElement.style.fontFamily = post.font
     postscontainer.appendChild(postElement);  
   }
   
