@@ -25,6 +25,7 @@
     "pg-hstore": "^2.3.3",
     "popper.js": "^1.16.1",
     "sequelize": "^5.15.1",
+    "serve-favicon": "^2.5.0",
     "twit": "^2.2.11"
   },
   "devDependencies": {
