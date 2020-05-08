@@ -15,26 +15,20 @@
 </head>
 <body>
     {{> navbar}}
-    <div class="teagradezco">
-      <div class="row">
-            <div class="col-lg-3 order-lg-1"></div>
-            <div class="col-lg-6 order-lg-2 col-8 order-2 main-section">
-              <h1>Te lo agradezco</h1>
-              <p>
-                Acompañá los aplausos con un mensaje de agradecimiento.
-              </p>
-              <div class="button-agradecer">
-                <a href="/nueva_carta">
-                  <button type="button" class="btn">¡Quiero agradecer!</button>
-                </a>
-              </div>
-            </div>
-            <div class="postscontainer">
-              <!-- Load posts in front end here -->
-            </div>
-            {{> autoscroller}}
-            {{> loader}}
+    <div class="main-section">
+      <h1>#GraciasPorCuidarnos</h1>
+      <p>
+        Acompañá los aplausos con un mensaje de agradecimiento.
+      </p>
+      <div class="button-agradecer">
+        <a href="/nueva_carta">
+          <button type="button" class="btn">¡Quiero agradecer!</button>
+        </a>
       </div>
+    </div>
+    <div class="postscontainer">
+      {{> autoscroller}}
+      {{> loader}}
     </div>
     {{> footer}}
     <script type="text/javascript" src="js/templates.js"></script>

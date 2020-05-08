@@ -4,6 +4,9 @@ let last_known_scroll_position = 0;
 let loading = false
 let page = 2
 
+//get first page of posts
+getPosts(1)
+
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if(clientHeight + scrollTop >= scrollHeight - 300 & !loading ) {
@@ -22,9 +25,9 @@ function showLoading(page) {
   getPosts(page)
 }
 
-async function getPosts (page){
+async function getPosts (page = 1){
   const response = await fetch(`/posts/${page}`);
-  const postsData = await response.json();  
+  const postsData = await response.json();
   addDataToDOM(postsData)
 }
 
