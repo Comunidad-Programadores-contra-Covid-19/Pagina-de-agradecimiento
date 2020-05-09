@@ -40,7 +40,15 @@ function addDataToDOM(posts) {
   for (post of posts){
     const postHTML = templates.post(post)
     const postElement = CreateElementFromHTML(postHTML)
+    if (post.font === 'Adobe Garamond Pro' || post.font === 'Quicksand bold'){
+      post.font = 'Poppins'
+    } 
     postElement.style.fontFamily = post.font
+    if (!post.imgPath){
+      const NonLightcolor = post.color.split('-')[1] || 'purple'
+      postElement.classList.add(`border-${NonLightcolor}`)
+
+    }
     postscontainer.appendChild(postElement);  
   }
   
@@ -54,21 +62,24 @@ function CreateElementFromHTML(html){
 }
 
 function addHeightWidthToPosts (posts){
+  let selectedPosts = []
   for (const post of posts) {
     post.height = 'height'
     post.width = 'width'
     if (!post.imgPath) {
-      if (post.text.length > 175) {
+      if (post.text.length >= 125) {
         if (Math.random() < 0.5)
           post.height = 'height2'
         else
           post.width = 'width2'
+        selectedPosts.push(post)
       }
-      if (post.text.length > 350) {
-        post.text = post.text.substring(1, 350) + '...';
+      if (post.text.length >= 280) {
+        post.text = post.text.substring(1, 280) + '...';
+        selectedPosts.push(post)
       }
     } else {
-      if (post.imgWidth > 1000 && post.imgHeight > 1000) {
+      if (post.imgWidth > 750 && post.imgHeight > 750) {
         post.height = 'height2'
         post.width = 'width2'
       } else {
@@ -79,9 +90,10 @@ function addHeightWidthToPosts (posts){
           post.height = 'height2'
         }
       }
+      selectedPosts.push(post)
     }
   }
-  return posts
+  return selectedPosts
 }
 
 function like(element,postId) {

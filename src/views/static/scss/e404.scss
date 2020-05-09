@@ -5,42 +5,42 @@
   margin-bottom: 30px;
   .main-img{
     img{
-      width: 600px;
-      height: 600px;
+      width: 450px;
+      height: 450px;
     }
   }
   .header{
     text-align: center;
     img{
-      width: 132px;
-      height: 132px;
+      width: 115px;
+      height: 115px;
     }
     h1{
       font-family: $general;
       font-style: normal;
       font-weight: 500;
-      font-size: 120px;
-      line-height: 180px;
+      font-size: 80px;
+      line-height: 120px;
       color: $light-black;
     }
     p{
       font-family: $general;
       font-style: normal;
       font-weight: 500;
-      font-size: 47px;
-      line-height: 70px;
+      font-size: 35px;
+      line-height: 50px;
       color: $light-black;
     }
     .btn{
       background-color: $dark-green;
-      width: 234px;
+      width: 180px;
       height: 72px;
 
       font-family: $general;
       font-style: normal;
       font-weight: 500;
-      font-size: 26px;
-      line-height: 39px;
+      font-size: 20px;
+      line-height: 30px;
       color: $light-black;
     }
   }
