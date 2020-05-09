@@ -22,7 +22,6 @@ window.addEventListener('scroll', () => {
 
 function showLoading(page) {
   loader.classList.add('show');
-  
   getPosts(page)
 }
 
@@ -68,10 +67,12 @@ function addHeightWidthToPosts (posts){
     post.width = 'width'
     if (!post.imgPath) {
       if (post.text.length >= 125) {
-        if (Math.random() < 0.5)
+        if (Math.random() < 0.5){
           post.height = 'height2'
-        else
           post.width = 'width2'
+        }else{
+          post.width = 'width2'
+        }
         selectedPosts.push(post)
       }
       if (post.text.length >= 280) {
