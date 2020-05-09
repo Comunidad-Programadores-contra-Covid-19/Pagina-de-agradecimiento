@@ -4,6 +4,10 @@
 	margin-top: 50px;
 	margin-bottom: 42px;
 	text-align: center;
+  display:flex;
+  align-items: center;
+    justify-content: center;
+    padding-left: 10%;
 	h1{
 		font-family: $general;
 		font-style: normal;
@@ -31,13 +35,6 @@
 		color: $light-black;
 		background-color: $dark-green;
 		border-radius: 100px;
-	}
-}
-.main-img{
-	margin-top: 50px;
-	img{
-		height: 215px;
-		width: 130px;
 	}
 }
 
@@ -82,3 +79,13 @@
   z-index: 3;
 }
 
+.main-section-center{
+
+}
+
+
+.main-img{
+  height: 215px;
+  width: 130px;
+  margin-left: 5%
+}
