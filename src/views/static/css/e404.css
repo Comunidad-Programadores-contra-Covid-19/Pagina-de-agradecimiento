@@ -6,36 +6,41 @@
   margin-top: 30px;
   margin-bottom: 30px; }
   .e404 .main-img img {
-    width: 600px;
-    height: 600px; }
+    width: 450px;
+    height: 450px; }
   .e404 .header {
-    text-align: center; }
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
     .e404 .header img {
-      width: 132px;
-      height: 132px; }
+      width: 115px;
+      height: 115px; }
     .e404 .header h1 {
       font-family: "Poppins", sans-serif;
       font-style: normal;
       font-weight: 500;
-      font-size: 120px;
-      line-height: 180px;
+      font-size: 80px;
+      line-height: 120px;
       color: #263238; }
     .e404 .header p {
       font-family: "Poppins", sans-serif;
       font-style: normal;
       font-weight: 500;
-      font-size: 47px;
-      line-height: 70px;
+      font-size: 35px;
+      line-height: 50px;
       color: #263238; }
     .e404 .header .btn {
       background-color: #96D293;
-      width: 234px;
+      width: 180px;
       height: 72px;
       font-family: "Poppins", sans-serif;
       font-style: normal;
       font-weight: 500;
-      font-size: 26px;
-      line-height: 39px;
+      font-size: 20px;
+      line-height: 30px;
       color: #263238; }
 
 @media (max-width: 768px) {

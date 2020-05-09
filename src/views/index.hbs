@@ -7,6 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
+    
     <title>#GraciasPorCuidarnos</title>
 
     <!-- styles -->
@@ -17,11 +18,11 @@
 
 </head>
 <body>
-  <div class='lightbox-background'></div>
+  <div class='lightbox-background' ></div>
   <div class='lightbox lightbox-container' >
     <div class='lightbox-box' >
-      <img class='lightbox-image' />
       <span class='lightbox-text'></span>
+      <img class='lightbox-image' />
       <div class='lightbox-buttons'>
         <div class="lightbox-buttons-1" onclick="like(this,${id})">
           <img src="img/clap1.png" width="35" height="35">
@@ -46,16 +47,20 @@ data-text="Escribi este agradecimiento y me gustaria compartirtelo"
 data-hashtags="graciasporcuidarnos" data-lang="es" data-show-count="false">Tweet</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <div class="main-section">
-    <h1>#GraciasPorCuidarnos Argentina</h1>
-    <p>
-      Acompañá los aplausos con un mensaje de agradecimiento.
-    </p>
-    <div class="button-agradecer">
-      <a href="/nueva_carta">
-        <button type="button" class="btn">¡Quiero agradecer!</button>
-      </a>
+    <div class="main-section-center">
+      <h1>#GraciasPorCuidarnos</h1>
+      <p>
+        Acompañá los aplausos con un mensaje de agradecimiento.
+      </p>
+      <div class="button-agradecer">
+        <a href="/nueva_carta">
+          <button type="button" class="btn">¡Quiero agradecer!</button>
+        </a>
+      </div>
     </div>
+    <img src="img/woman_boy_clapping.png" class="main-img">
   </div>
+
   <div class="postscontainer">
     {{> autoscroller}}
     {{> loader}}

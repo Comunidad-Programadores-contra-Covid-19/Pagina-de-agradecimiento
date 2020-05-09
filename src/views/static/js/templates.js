@@ -3,10 +3,12 @@ const partials = {}
 
 templates.post = (post) => {
   const {color,height,width,text,author,id,likes,imgPath} = post
+  const NonLightcolor = post.color.split('-')[1] || 'purple'
+
   const html =
   `<div class="item ${color} ${height} ${width}" onClick="createLightbox(this,${id})">
     ${imgPath ? partials.imgTag(post) : partials.mainText(post)}
-    <div class="overlay overlayFade ${color}">
+    <div class="overlay overlayFade ${NonLightcolor}">
       <div class="overlay-from">De: ${author} </div>
       <div class="overlay-buttons-1" onclick="like(this,${id})">
           <img src="img/clap1.png" width="35" height="35">

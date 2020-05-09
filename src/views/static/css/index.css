@@ -5,7 +5,11 @@
 .main-section {
   margin-top: 50px;
   margin-bottom: 42px;
-  text-align: center; }
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10%; }
   .main-section h1 {
     font-family: "Poppins", sans-serif;
     font-style: normal;
@@ -31,12 +35,6 @@
     color: #263238;
     background-color: #96D293;
     border-radius: 100px; }
-
-.main-img {
-  margin-top: 50px; }
-  .main-img img {
-    height: 215px;
-    width: 130px; }
 
 @media (max-width: 768px) {
   .main-section {
@@ -67,3 +65,8 @@
 .lightbox-container {
   position: absolute;
   z-index: 3; }
+
+.main-img {
+  height: 215px;
+  width: 130px;
+  margin-left: 5%; }
