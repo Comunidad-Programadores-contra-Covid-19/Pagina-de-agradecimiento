@@ -1,5 +1,6 @@
 @import "config";
 
+
 .congrats{
   margin-top: 94px;
   margin-bottom: 91px;
@@ -32,6 +33,14 @@
     text-align: center;
   }
   .post-url{
+    p{
+      font-family: $general;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18.6829px;
+    line-height: 28px;
+    color: $light-black;
+    }
     text-align: center;
   }
   .share{
@@ -42,6 +51,9 @@
     }
     .mobile{
       display: none;
+    }
+    .twitterShare{
+      margin-top: 5px;
     }
   }
 }

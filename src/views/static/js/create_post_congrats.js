@@ -35,7 +35,7 @@ function send_email(text,author='Anonimo',url){
     let x = JSON.stringify(obj);
     console.log(x);
 
-    fetch('http://localhost:8000/mail',{
+    fetch('/mail',{
         method: 'POST', 
         body: x,
         headers: new Headers({
