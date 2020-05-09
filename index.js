@@ -30,12 +30,12 @@ app.set('trust proxy',true);
 // Middlewares
 app.use(express.static(path.join(__dirname,'/src/views/static')))
 app.use(favicon(path.join(__dirname,'/src/views/static/img','clap-green-background.png')));
-app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
-app.use('/post', checkIp.ipChecker); // Check ip for post creating
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/post', checkIp.ipChecker);
 // app.use('/post', checkIp.ipChecker); // Check ip for post creating
-app.use('/',routes); // Init Routes
-app.use(err404.e404); // 404
+app.use('/',routes);
+app.use(err404.e404);
 
 // Start the app
 app.listen(config.port, () => {
