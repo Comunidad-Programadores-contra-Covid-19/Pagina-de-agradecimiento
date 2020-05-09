@@ -66,6 +66,38 @@ data-hashtags="graciasporcuidarnos" data-lang="es" data-show-count="false">Tweet
     {{> loader}}
   </div>
 
+<!-- Sharing modal -->
+<div class="modal fade" id="emailSharingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Envia tu carta por email</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-12">
+                <label>Ingresa el email del destinatario de tu carta</label>
+            </div>
+            <div class="col-12">
+                <input id="email" name="email" type="email" placeholder="Escribe aquí">
+                <p id="email-empty" style="color:red; display: none;">El email no puede estar vacio</p>
+                <p id="email-error" style="color:red; display: none;">Formato invalido</p>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div id="loading" class="spinner-border text-success" style="display: none;" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <button type="button" class="btn send-btn btn-primary" onclick="send_email('{{card.text}}','{{card.author}}','{{url}}')">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sharing modal -->
 
   {{> footer}}
 
