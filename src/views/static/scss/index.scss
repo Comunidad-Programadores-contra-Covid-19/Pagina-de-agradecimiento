@@ -78,14 +78,63 @@
   position:absolute;
   z-index: 3;
 }
-
-.main-section-center{
-
-}
-
-
 .main-img{
   height: 215px;
   width: 130px;
   margin-left: 5%
+}
+
+//sharing modal
+.sharing-modal{
+	.modal-header{
+		background-color: $dark-green;
+		.modal-title{
+			font-family: $general;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 30px;
+			line-height: 50px;
+			color: $light-black;
+		  }
+  }
+  .modal-body{
+    
+  }
+
+	label{
+	  margin-top: 24px;
+	  font-family: $general;
+	  font-style: normal;
+	  font-weight: normal;
+	  font-size: 16px;
+	  line-height: 24px;
+	  color: $light-black;
+	}
+	input{
+	  margin-top: -10px;
+	  padding: 0;
+	  width: 40%;
+	  outline: 0;
+	  border-width: 0 0 1px;
+	  border-color: $light-green;
+	}
+	input::placeholder, textarea::placeholder{
+	  color: $grey;
+	  font-style: normal;
+	  font-weight: normal;
+	  font-size: 14px;
+	  line-height: 21px;
+	}
+	.send-btn{
+		height:  auto;
+	  border-radius: 100px;
+	  border-color: transparent;
+	  background-color: $dark-green;
+	  font-family: $general;
+	  font-style: normal;
+	  font-weight: 500;
+	  font-size: 12px;
+	  line-height: 12px;
+	  color: $light-black;
+	}
 }

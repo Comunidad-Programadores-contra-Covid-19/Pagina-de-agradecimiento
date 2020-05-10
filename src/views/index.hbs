@@ -18,6 +18,8 @@
 
 </head>
 <body>
+  <img src="img/email_logo.png" data-toggle="modal" data-target="#sharing-modal" style="width: 20px;height:20px;" >
+
   <div class='lightbox-background' ></div>
   <div class='lightbox lightbox-container' >
     <div class='lightbox-box' >
@@ -34,18 +36,6 @@
     </div>
   </div>
   {{> navbar}}
-  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" 
-  class="twitter-share-button" 
-  data-text="Escribi este agradecimiento y me gustaria compartirtelo" 
-  data-url=" " 
-  data-hashtags="graciasporcuidarnos" 
-  data-lang="es" data-show-count="false">Tweet</a>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" 
-class="twitter-share-button" 
-data-text="Escribi este agradecimiento y me gustaria compartirtelo" 
-data-hashtags="graciasporcuidarnos" data-lang="es" data-show-count="false">Tweet</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <div class="main-section">
     <div class="main-section-center">
       <h1>#GraciasPorCuidarnos</h1>
@@ -67,32 +57,33 @@ data-hashtags="graciasporcuidarnos" data-lang="es" data-show-count="false">Tweet
   </div>
 
 <!-- Sharing modal -->
-<div class="modal fade" id="emailSharingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="sharing-modal modal fade" id="sharing-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Envia tu carta por email</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Compartir</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="row">
-            <div class="col-12">
-                <label>Ingresa el email del destinatario de tu carta</label>
-            </div>
-            <div class="col-12">
-                <input id="email" name="email" type="email" placeholder="Escribe aquí">
-                <p id="email-empty" style="color:red; display: none;">El email no puede estar vacio</p>
-                <p id="email-error" style="color:red; display: none;">Formato invalido</p>
-            </div>
+          <div class="col-12" id="sharing-container">
+
+          </div>
+          <div class="col-12" id="share_email">
+              <label>Por email: </label>
+              <input id="email" name="email" type="email" placeholder="Escribe aquí">
+              <div id="loading" class="spinner-border text-success" style="display: none;" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              
+          </div>
+          <div class="col-12">
+              <p id="email-empty" style="color:red; display: none;">El email no puede estar vacio</p>
+              <p id="email-error" style="color:red; display: none;">Formato invalido</p>
+          </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <div id="loading" class="spinner-border text-success" style="display: none;" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-        <button type="button" class="btn send-btn btn-primary" onclick="send_email('{{card.text}}','{{card.author}}','{{url}}')">Enviar</button>
       </div>
     </div>
   </div>
@@ -105,6 +96,7 @@ data-hashtags="graciasporcuidarnos" data-lang="es" data-show-count="false">Tweet
   <script type="text/javascript" src="js/postsgrid.js"></script>
   <script type="text/javascript" src="js/autoScrolling.js"></script>
   <script type="text/javascript" src="js/lightbox.js"></script>
+  <script type="text/javascript" src="js/sharing.js"></script>
   <script src="https://use.fontawesome.com/b602b979b2.js"></script>
 
 </body>

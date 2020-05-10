@@ -70,3 +70,49 @@
   height: 215px;
   width: 130px;
   margin-left: 5%; }
+
+.sharing-modal .modal-header {
+  background-color: #96D293; }
+  .sharing-modal .modal-header .modal-title {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 50px;
+    color: #263238; }
+
+.sharing-modal label {
+  margin-top: 24px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #263238; }
+
+.sharing-modal input {
+  margin-top: -10px;
+  padding: 0;
+  width: 40%;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: rgba(163, 228, 160, 0.3); }
+
+.sharing-modal input::placeholder, .sharing-modal textarea::placeholder {
+  color: rgba(156, 156, 156, 0.6);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px; }
+
+.sharing-modal .send-btn {
+  height: auto;
+  border-radius: 100px;
+  border-color: transparent;
+  background-color: #96D293;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: #263238; }
