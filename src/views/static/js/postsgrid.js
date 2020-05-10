@@ -69,7 +69,6 @@ function addHeightWidthToPosts (posts){
       if (post.text.length >= 125) {
         if (Math.random() < 0.5){
           post.height = 'height2'
-          post.width = 'width2'
         }else{
           post.width = 'width2'
         }
