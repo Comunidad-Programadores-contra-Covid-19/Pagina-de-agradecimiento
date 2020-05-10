@@ -1,4 +1,3 @@
-import { template } from "handlebars"
 
 const templates = {}
 const partials = {}
