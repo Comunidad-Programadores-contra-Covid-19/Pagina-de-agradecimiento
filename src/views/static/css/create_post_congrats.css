@@ -3,7 +3,7 @@
   src: url("../fonts/AGaramondPro-Italic.otf") format("opentype"); }
 
 .congrats {
-  margin-top: 94px;
+  margin-top: 50px;
   margin-bottom: 91px; }
   .congrats .heading {
     text-align: center; }
@@ -29,6 +29,13 @@
     text-align: center; }
   .congrats .post-url {
     text-align: center; }
+    .congrats .post-url p {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18.6829px;
+      line-height: 28px;
+      color: #263238; }
   .congrats .share {
     text-align: center; }
     .congrats .share img {
@@ -36,6 +43,8 @@
       height: 39px; }
     .congrats .share .mobile {
       display: none; }
+    .congrats .share .twitterShare {
+      margin-top: 5px; }
 
 .modal .modal-title {
   font-family: "Poppins", sans-serif;

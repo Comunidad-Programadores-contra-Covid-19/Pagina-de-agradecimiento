@@ -9,7 +9,9 @@ const config = require('./src/config/config');
 const checkIp = require('./src/middlewares/checkIp')
 const err404 = require('./src/middlewares/404')
 const favicon = require('serve-favicon');
-
+// var sitemap = require('express-sitemap')();
+ 
+ 
 
 
 // Init database
@@ -36,6 +38,8 @@ app.use('/post', checkIp.ipChecker);
 // app.use('/post', checkIp.ipChecker); // Check ip for post creating
 app.use('/',routes);
 app.use(err404.e404);
+
+// sitemap.generate(app); TODO ver onda
 
 // Start the app
 app.listen(config.port, () => {
