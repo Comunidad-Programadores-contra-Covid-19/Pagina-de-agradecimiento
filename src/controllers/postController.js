@@ -61,6 +61,25 @@ exports.get_posts = async function(req, res) {
   
 }
 
+
+exports.get_post_by_id = async function(req, res) {
+  // TODO filtrar por tags tambien
+  let tags = req.body.tags || 'all';
+  let postId = req.params.id || 1
+  
+  try{
+    const Searchedpost = await postService.getpostByID(postId)
+    res.status(200).send(Searchedpost)  
+  }catch (e){
+    res.status(500).send(e)
+  }
+  
+}
+
+exports.getPostByIdView = function(req,res){
+  res.render('postById')
+}
+
 exports.get_posts_html = async (req,res) =>{
   let tags = req.body.tags || 'all';
   let page = req.params.page || 1
