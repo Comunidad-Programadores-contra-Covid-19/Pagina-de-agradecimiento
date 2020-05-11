@@ -91,8 +91,14 @@ async function getTweets(query, since, until,count) {
 
 async function createPosts(tweets) {
 	let tweet_posts = []
+  let imgPath
 	try {
 		for (data of tweets){
+        imgPath = null
+        if (data.entities.media){
+          imgPath = generateHttpsImgPath(data.entities.media[0].media_url)
+        }
+        
 				let tweet = await Tweet.create({
 						idFromTwitter: data.id_str,
 						tweetLikes: data.favorite_count,
@@ -102,7 +108,7 @@ async function createPosts(tweets) {
 				let post = await Post.create({
 						text: data.full_text,
 						likes: data.favorite_count,
-						imgPath:  data.entities.media ? data.entities.media[0].media_url : null,
+						imgPath:  imgPath,
 						imgWidth:  data.entities.media ? data.entities.media[0].sizes.large.w : null,
 						imgHeight:  data.entities.media ? data.entities.media[0].sizes.large.h : null,
 						author: '@'+data.user.screen_name,
@@ -111,10 +117,14 @@ async function createPosts(tweets) {
 						color: testColors[Math.floor(Math.random() * testColors.length)]
 				})
 				tweet_posts.push({tweet,post})
+        
 		}
 		return tweet_posts            
 	} catch (error) {
-		console.log(error)
-		return null
+		console.log(error);
 	}
+}
+
+function generateHttpsImgPath(origPath){
+  return 'https:'+origPath.split(':')[1]
 }
