@@ -46,14 +46,14 @@ templates.testPost = (post) => {
 templates.sharing_container = (post) => {
   const url = `Graciasporcuidarnos.com.ar/post/${post.id}` 
   const html = `
-  <a class="mobile" href="whatsapp://send?text=te%20envio%20carta%20de%20agradecimiento%20para%20vos%20${url}">
+  <a class="mobile" href="whatsapp://send?text=#GraciasPorCuidarnos%20Vos%20también%20podés%20crear%20tu%20mensaje%20de%20agradecimiento%20a%20los%20trabajadores%20esenciales.%20${url}">
       <img src="img/whatsapp_logo.png">
   </a>
-  <a class="large" href="https://web.whatsapp.com/send?text=te%20envio%20carta%20de%20agradecimiento%20para%20vos%20${url}" target="_blank">
+  <a class="large" href="https://web.whatsapp.com/send?text=#GraciasPorCuidarnos%20Vos%20también%20podés%20crear%20tu%20mensaje%20de%20agradecimiento%20a%20los%20trabajadores%20esenciales.%20${url}" target="_blank">
       <img src="img/whatsapp_logo.png">
   </a>
 
-  <a  href="https://twitter.com/intent/tweet?text=Escribi%20este%20agradecimiento%20en%20graciasporcuidarnos.com.ar%20y%20me%20gustaria%20compartirtelo&url=${url}&hashtags=graciasporcuidarnos" target="_blank">
+  <a  href="https://twitter.com/intent/tweet?text=Vos%20también%20podés%20crear%20tu%20mensaje%20de%20agradecimiento%20a%20los%20trabajadores%20esenciales.&url=${url}&hashtags=graciasporcuidarnos" target="_blank">
       <img src="img/twitter_logo.png">    
   </a>
   `
