@@ -5,9 +5,6 @@ let loading = false
 let page = 2
 let postList = []
 
-//get first page of posts
-getPosts(1)
-
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if(clientHeight + scrollTop >= scrollHeight - 300 & !loading ) {
@@ -101,10 +98,10 @@ function like(element,postId) {
   for (const childElem of element.childNodes){
     if (childElem.nodeName === "IMG"){
       if(childElem.src.slice(-5) == '1.png'){
-        childElem.src = 'img/clap-filled2.png'        
+        childElem.src = '/img/clap-filled2.png'        
       }else{
         like = false
-        childElem.src = 'img/clap1.png'
+        childElem.src = '/img/clap1.png'
       }
     }
     if (childElem.nodeName === "SPAN"){
@@ -126,11 +123,11 @@ function like(element,postId) {
 
 function report(element,postId){
   if(element.src.slice(-5) == '1.png'){
-    element.src = 'img/report-filled2.png'
+    element.src = '/img/report-filled2.png'
     overlay = element.parentElement
     overlay.style.opacity = 1
   }else{
-    element.src = 'img/report1.png'
+    element.src = '/img/report1.png'
     overlay = element.parentElement
     overlay.style.opacity = 0
   }

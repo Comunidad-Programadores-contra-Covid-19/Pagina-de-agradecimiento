@@ -27,6 +27,12 @@ router.get('/faq',rootController.faq);
 // Get list of posts
 router.get('/posts/:page',postController.get_posts)
 
+// show empty index when requesting a post
+router.get('/post/:id',postController.getPostByIdView)
+
+//api route to get a post json
+router.get('/api/post/:id',postController.get_post_by_id)
+
 // Create new post
 router.post('/post', postController.new_post);
 
