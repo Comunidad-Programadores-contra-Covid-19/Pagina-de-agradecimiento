@@ -30,10 +30,13 @@ async function getPosts (page = 1){
 
 
 function addDataToDOM(posts) {
+
   loader.classList.remove('show');
   posts = addHeightWidthToPosts(posts)
   postList.push(...posts)
+  
   for (post of posts){
+
     const postHTML = templates.post(post)
     const postElement = CreateElementFromHTML(postHTML)
     if (post.font === 'Adobe Garamond Pro' || post.font === 'Quicksand bold'){
@@ -44,7 +47,8 @@ function addDataToDOM(posts) {
       const NonLightcolor = post.color.split('-')[1] || 'purple'
       postElement.classList.add(`border-${NonLightcolor}`)
 
-    }
+    }    
+
     postscontainer.appendChild(postElement);  
   }
   
@@ -63,7 +67,10 @@ function addHeightWidthToPosts (posts){
     post.height = 'height'
     post.width = 'width'
     if (!post.imgPath) {
-      if (post.text.length >= 125) {
+      if (post.text.length >= 45 && post.text.length < 125 ){
+          selectedPosts.push(post)
+      }
+      if (post.text.length >= 125 ) {
         if (Math.random() < 0.5){
           post.height = 'height2'
         }else{

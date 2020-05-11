@@ -97,6 +97,8 @@ async function createPosts(tweets) {
         imgPath = null
         if (data.entities.media){
           imgPath = generateHttpsImgPath(data.entities.media[0].media_url)
+        }else if(data.full_text.length < 40){
+          break;
         }
         
 				let tweet = await Tweet.create({

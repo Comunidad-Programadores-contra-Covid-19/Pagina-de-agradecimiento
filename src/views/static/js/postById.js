@@ -1,6 +1,5 @@
 let postIdParam = parseInt(window.location.pathname.split('/').slice(-1))
-if (!postIdParam){
-  console.log('invalid post id')
+if (!postIdParam || postIdParam < 1){
   alert('invalid post id, must be a number')
 }else{
   getPost(postIdParam)
@@ -26,5 +25,7 @@ function clickFirstPost(){
       }
     }
   }
-  firstPost.click()
+  if(firstPost){
+      firstPost.click()
+  }
 }

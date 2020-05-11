@@ -8,8 +8,8 @@ post('http://localhost:8000/twitter/byQuery',data={'query':'gracias medicos'})
 '/posts/:page'
 get('http://localhost:8000/posts/1')
 
-'/post/:id'
-get('http://localhost:8000/post/63')
+'/api/post/:id'
+get('http://localhost:8000/api/post/2')
 
 
 PRODUCTION
