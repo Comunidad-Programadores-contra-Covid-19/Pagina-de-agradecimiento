@@ -1,5 +1,4 @@
-//let el = document.getElementById(postElement.id)
-
+let modal_sharing_div = document.getElementById("sharing-container")
 function share_social(postElement,postId){
-  console.log(postId);
+    $("sharing-modal").modal()
 }

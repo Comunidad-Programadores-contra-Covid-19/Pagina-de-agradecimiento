@@ -60,7 +60,14 @@
       height: 100px;
       width: 70px;
       -webkit-transform: scaleX(-1);
-      transform: scaleX(-1); } }
+      transform: scaleX(-1); }
+  .sharing-modal .modal-body .mobile {
+    display: inline !important; }
+  .sharing-modal .modal-body img {
+    width: 39px;
+    height: 39px; }
+  .sharing-modal .modal-body .large {
+    display: none; } }
 
 .lightbox-container {
   position: absolute;
@@ -80,6 +87,13 @@
     font-size: 30px;
     line-height: 50px;
     color: #263238; }
+
+.sharing-modal .modal-body .mobile {
+  display: none; }
+
+.sharing-modal .modal-body img {
+  width: 30px;
+  height: 30px; }
 
 .sharing-modal label {
   margin-top: 24px;

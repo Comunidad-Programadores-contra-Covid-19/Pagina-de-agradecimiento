@@ -1,189 +1,142 @@
 @import "config";
 
-.quienes-somos{
-  text-align: center;
-  margin-top: 110px;
-  .hand-shake-img{
-    img{
-      width: 87px;
-      height: 87px;
-    }
-  }
-  h1{
-    font-family: $general;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 60px;
-    color:$light-black;
-  }
-  .passion-led-us-img{
-    img{
-      width: 100%;
-    }
-  }
-  .description{
-    p{
-      font-family: $general;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 20px;
-      line-height: 38px;
-      color:$light-black;
-    }
-  }
-  h2{
-    font-family: $general;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 60px;
-    color:$light-black;
-  }
-  .team{
-    text-align: left;
-    h3{
-      font-family: $general;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 35px;
-      line-height: 52px;
-      color: $light-black;
-      margin-bottom: 26px;
-      margin-top: 19px;
-    }
-    .row{
-      .member{
-        text-align: center;
-        img{
-          width: 172px;
-          height: 172px;
-          //object-fit: contain;
-        }
-        h5{
-          font-family: $general;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 23px;
-          line-height: 34px;
-          color: $light-black;
-        }
-        .linkedin{
-          font-family: $general;
-          font-style: normal;
-          font-weight: 300;
-          font-size: 22px;
-          line-height: 33px;
-          color: $light-black;
-        }
-        .phrase{
-          font-family: $general;
-          font-style: italic;
-          font-weight: 300;
-          font-size: 20px;
-          line-height: 119.5%;
-          text-align: center;
-          letter-spacing: 0.02em;
-          color: $light-black;
-        }
-      }
-    }
-  }
+/*---Fonts--- */
+
+body{
+  background-color:white;
+  font-family: $general;
+  font-weight: 400;
+  color: $light-black;
+
 }
 
-@media (max-width: 768px){
-  margin-top: 42px;
-  .quienes-somos{
-    text-align: center;
-    .hand-shake-img{
-      img{
-        width: 56px;
-        height: 56px;
-      }
-    }
-    h1{
-      font-family: $general;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 25px;
-      line-height: 39px;
-      color:$light-black;
-    }
-    .passion-led-us-img{
-      img{
-        width: 90%;
-      }
-    }
-    .description{
-      margin-top: 15px;
-      p{
-        font-family: $general;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 24px;
-        color:$light-black;
-      }
-    }
-    h2{
-      font-family: $general;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 26px;
-      line-height: 39px;
-      color:$light-black;
-    }
-    .team{
+h1{
+  font-family: $general;
+  font-weight: 700;
+  color: $light-black;
+}
+
+h2, h3, h4, h6{
+  font-family: $general;
+  font-weight: 600;
+  color: $light-black;
+}
+
+.container{
+  max-width: 90%;
+}
+
+
+/* Solid separator */
+hr.solid {
+  border-top: 0.1rem solid #96D293;
+}
+.volver{
+  font-size: small;
+  color: #96D293 !important;
+}
+
+
+
+#content{
+  width: 65%;
+  text-align: center;
+  margin: 5rem auto 3rem;
+}
+
+.subtitulosQuienesSomos {
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+}
+
+
+#ntrosProyectos h2 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+#ntrosProyectos p {
+  margin-top: 1.2em;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box-line{
+  border: solid 2px #96D293;
+  border-radius: 0.5em;
+}
+
+#miembrosEquipo h3 {
+  text-align: center;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  font-weight: bold;
+}
+
+.card-member{
+  text-align: center;
+  position: relative;
+  border:none;
+  margin-bottom: 3rem;
+}
+
+.card-member h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-member p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#contactanos {
+  margin-top: 5em;
+  margin-bottom: 4em;
+}
+
+#contactanos h3 {
+  margin-bottom: 1.5em;
+}
+
+#contactanos p {
+  margin-bottom: 1.5em;
+}
+#contactanos img {
+  margin-right: 0.7em;
+}
+
+.avatar{
+  border-radius:50%;
+  width: 150px;
+}
+
+@media handheld, screen and (max-width:991px) {
+  #content {
+      width: 100%;
+      margin-top: 2em;
+      margin-bottom: 0em;
+  }
+
+  #content img {
+      width: 60px;
+  }
+
+  .subtitulosQuienesSomos {
+      margin-top: 1.7em;
+      margin-bottom: 1em;
       text-align: center;
-      h3{
-        font-family: $general;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 23px;
-        color: $light-black;
-        //margin-bottom: 26px;
-        //margin-top: 19px;
-      }
-      .row{
-        .member{
-          text-align: center;
-          margin-top: 22px;
-          img{
-            width: 90px;
-            height: 90px;
-            //object-fit: contain;
-          }
-          h5{
-            font-family: $general;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 15px;
-            line-height: 24px;
-            color: $light-black;
-            margin-bottom: 0;
-          }
-          .linkedin{
-            font-family: $general;
-            font-style: normal;
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 22px;
-            color: $light-black;
-            margin-bottom: 5px;
-          }
-          .phrase{
-            font-family: $general;
-            font-style: italic;
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 119.5%;
-            text-align: center;
-            letter-spacing: 0.02em;
-            color: $light-black;
-          }
-        }
-      }
-    }
+  }
+
+  #ntrosProyectos h2 {
+      margin-top: 1em;
+      font-size: 27px;
+  }
+
+  #ntrosProyectos p {
+      margin-top: 1em;
+      width: 90%;
   }
 }

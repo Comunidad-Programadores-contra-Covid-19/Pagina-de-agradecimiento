@@ -71,7 +71,21 @@
 			-webkit-transform: scaleX(-1);
 			transform: scaleX(-1);
 		}
-	}
+  }
+  .sharing-modal{
+    .modal-body{
+      .mobile{
+        display: inline!important;
+      } 
+      img{
+        width: 39px;
+        height: 39px;
+      }
+      .large{
+        display: none;
+      }
+    }
+  }
 }
 
 .lightbox-container{
@@ -98,7 +112,13 @@
 		  }
   }
   .modal-body{
-    
+    .mobile{
+      display: none;
+    }
+    img{
+      width: 30px;
+      height: 30px;
+    }
   }
 
 	label{
