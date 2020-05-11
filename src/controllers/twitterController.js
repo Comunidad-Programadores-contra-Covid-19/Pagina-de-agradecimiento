@@ -121,7 +121,7 @@ async function createPosts(tweets) {
 		}
 		return tweet_posts            
 	} catch (error) {
-		console.log(error)
+		console.log(error);
 	}
 }
 
