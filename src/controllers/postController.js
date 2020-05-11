@@ -118,7 +118,8 @@ exports.mail = function(req,res){
     from: config.mail_user,
     to: req.body.to,
     subject: author + ' te escribio una carta en graciasporcuidarnos.com.ar',
-    html: '<p>Te envio esta carta que escribi para vos en teagradezco.com.ar</p>' + 
+    html: '<p>¡Felicitaciones! Fuiste mencionad@ en la web GraciasPorCuidarnos.com</p>'+
+          '<p>Visita el sitio para ver los mensajes de agradecimiento.</p>' + 
           '<a href="'+req.body.url+'">click aca para verla!</a>'
   };
 
