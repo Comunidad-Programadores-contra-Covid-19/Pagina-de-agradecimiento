@@ -121,6 +121,11 @@
       text-align: center; }
       .congrats .share .large {
         display: none; }
+      .congrats .share .mobile {
+        display: inline; }
+        .congrats .share .mobile img {
+          width: 30px !important;
+          height: 30px !important; }
       .congrats .share img {
-        width: 30px;
-        height: 30px; } }
+        width: 30px !important;
+        height: 30px !important; } }
