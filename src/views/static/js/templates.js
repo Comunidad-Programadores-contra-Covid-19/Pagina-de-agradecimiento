@@ -1,5 +1,3 @@
-import { template } from "handlebars"
-
 const templates = {}
 const partials = {}
 
@@ -44,7 +42,7 @@ templates.testPost = (post) => {
   `
   return html
 }
-
+/*
 templates.sharing_container = (post) => {
   const url = `Graciasporcuidarnos.com.ar/post/${post.id}` 
   const html = `
@@ -61,7 +59,7 @@ templates.sharing_container = (post) => {
   `
 
   return html 
-}
+}*/
 
 templates.share_email = (post) => {
   const url = `Graciasporcuidarnos.com.ar/post/${post.id}`

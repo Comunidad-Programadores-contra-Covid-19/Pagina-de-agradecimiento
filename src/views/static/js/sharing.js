@@ -1,3 +1,5 @@
+//let el = document.getElementById(postElement.id)
+
 function share_social(postElement,postId){
-    let el = document.getElementById(postElement.id)
+  console.log(postId);
 }
