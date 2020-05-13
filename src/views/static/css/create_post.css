@@ -3,16 +3,16 @@
   src: url("../fonts/AGaramondPro-Italic.otf") format("opentype"); }
 
 .purple {
-  background-color: rgba(192, 165, 214, 0.3) !important; }
+  background-color: #C0A5D6 !important; }
 
 .orange {
-  background-color: rgba(243, 177, 99, 0.3) !important; }
+  background-color: #F3B163 !important; }
 
 .pink {
-  background-color: rgba(235, 162, 147, 0.3) !important; }
+  background-color: #EBA293 !important; }
 
 .cyan {
-  background-color: #6dd3c4 !important; }
+  background-color: #6DD3C4 !important; }
 
 .typo {
   font-weight: normal;
@@ -103,7 +103,7 @@
         margin-top: 7.5px;
         width: 27px;
         height: 27px;
-        background-color: rgba(192, 165, 214, 0.3); }
+        background-color: #C0A5D6; }
       .create-post .editor .styles select {
         margin-left: -45px;
         width: 50px;

@@ -1,9 +1,9 @@
 @import "config";
 
-.purple{background-color: $light-purple!important;}
-.orange{background-color: $light-orange!important;}
-.pink{background-color: $light-pink!important;}
-.cyan{background-color: $cyan!important;}
+.purple{background-color: #C0A5D6!important;}
+.orange{background-color: #F3B163!important;}
+.pink{background-color: #EBA293!important;}
+.cyan{background-color: #6DD3C4!important;}
 
 .typo{
   font-weight: normal;
@@ -92,7 +92,7 @@
         margin-top: 7.5px;
         width: 27px;
         height: 27px;
-        background-color: $light-purple;
+        background-color: #C0A5D6;
       }
       select{
         margin-left: -45px;
