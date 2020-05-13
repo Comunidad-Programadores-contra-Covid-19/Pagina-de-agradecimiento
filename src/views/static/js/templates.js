@@ -18,7 +18,7 @@ templates.post = (post) => {
           <span>${likes}</span>
       </div>
       <img class="overlay-buttons-2 id:${id}" src="/img/share.png" data-toggle="modal" data-target="#sharing-modal" onclick="share_social(this)"  width="35" height="35">
-      <img class="overlay-buttons-3 id:${id}" src="/img/report1.png" onclick="report(this,${id})" width="35" height="35">
+      <img class="overlay-buttons-3 id:${id}" src="/img/report1.png" onclick="report(this)" width="35" height="35">
     </div>
   </div>  
   `

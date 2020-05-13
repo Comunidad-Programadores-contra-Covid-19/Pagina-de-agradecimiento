@@ -127,7 +127,8 @@ function like(LikeElement) {
   })
 }
 
-function report(reportElement,postId){
+function report(reportElement){
+  alert('La carta fue reportada, gracias')
   if(reportElement.src.slice(-5) == '1.png'){
     reportElement.src = '/img/report-filled2.png'
     overlay = reportElement.parentElement
@@ -137,6 +138,15 @@ function report(reportElement,postId){
     overlay = reportElement.parentElement
     overlay.style.opacity = 0
   }
+
+  const postId = getPostIdFromElement(reportElement)
+  fetch('/report', {
+    method: 'post',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({postId:postId})
+  })
 }
 
 

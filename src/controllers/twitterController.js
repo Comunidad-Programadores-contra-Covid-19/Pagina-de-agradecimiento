@@ -49,8 +49,8 @@ exports.new_post_from_tweet = function(req, res) {
 
 exports.LatestPostsFromToday = async function(query,since,until,count) {
   query = query || '#GraciasPorCuidarnos'
-  since = since || new Date(Date.now() - 1 * millisecondsInADay )
-  until = until || new Date(Date.now())
+  since = since || new Date(Date.now() - 10 * millisecondsInADay )
+  until = until || new Date(Date.now() + 1 * millisecondsInADay)
   count = count || 100
   let tweet_posts = []
   let new_tweet_posts = []
@@ -93,7 +93,7 @@ exports.new_posts_from_query = async function(query,since,until,count) {
 }
 
 
-async function getTweets(query, since=Date.now(), until,count,since_id = 1) {
+async function getTweets(query, since, until,count,since_id = 1) {
 	options = {
 		q: `${query} -filter:retweets`,
 		count: count,
