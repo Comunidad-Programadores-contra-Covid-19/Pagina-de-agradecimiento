@@ -31,4 +31,6 @@ exports.ipChecker = function(req, res, next) {
                 res.redirect('/')
            })
     }
+
+    next();
 }
