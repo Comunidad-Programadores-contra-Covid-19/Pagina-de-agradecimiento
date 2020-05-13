@@ -111,6 +111,7 @@ hr.solid {
 .avatar{
   border-radius:50%;
   width: 150px;
+  object-fit: cover;
 }
 
 @media handheld, screen and (max-width:991px) {
