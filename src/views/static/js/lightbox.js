@@ -53,7 +53,6 @@ const createLightbox = (postElement,postId) => {
     lightboxBox.style.width = lightboxImg.style.width
     lightboxImg.style.display = 'block'
     lightboxText.style.margin = '2%'
-    lightboxBox.style.width = '60%'
   }
   else{
     lightboxText.style.marginTop = '4%'
@@ -61,7 +60,7 @@ const createLightbox = (postElement,postId) => {
     lightboxText.style.marginRight = '7%'
     lightboxText.style.marginBottom = '2%'
     lightboxImg.style.display = 'none'
-    lightboxBox.style.width = '40%'
+    
   }
   
   lightboxLikes.innerHTML = post.likes

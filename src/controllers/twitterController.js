@@ -2,6 +2,7 @@ const Tweet = require('../models').Tweet;
 const Post = require('../models').Post;
 const config = require('../config/config.js');
 var Twit = require('twit');
+var TweetService = require('../services/tweetService');
 
 var T = new Twit({
 	consumer_key: config.consumer_key,
@@ -46,6 +47,29 @@ exports.new_post_from_tweet = function(req, res) {
 }
 
 
+exports.LatestPostsFromToday = async function(query,since,until,count) {
+  query = query || '#GraciasPorCuidarnos'
+  since = since || new Date(Date.now() - 1 * millisecondsInADay )
+  until = until || new Date(Date.now())
+  count = count || 100
+  let tweet_posts = []
+  let new_tweet_posts = []
+  let tweets
+  try{
+    const since_id = await TweetService.getGreatestTweetID()
+    tweets = await getTweets(query, since, until,count,since_id)
+  }catch(e){
+    console.log(e)
+  }
+  if (tweets) {
+    tweet_posts = await createPosts(tweets)
+  }
+  console.log({count_created:tweet_posts.length})
+  
+}
+
+
+
 exports.new_posts_from_query = async function(query,since,until,count) {
 	query = query || '#GraciasPorCuidarnos'
 	since = since || new Date(Date.now() - 8 * millisecondsInADay) //8 days ago
@@ -69,14 +93,15 @@ exports.new_posts_from_query = async function(query,since,until,count) {
 }
 
 
-async function getTweets(query, since, until,count) {
+async function getTweets(query, since=Date.now(), until,count,since_id = 1) {
 	options = {
 		q: `${query} -filter:retweets`,
 		count: count,
 		include_entities: 1,
 		tweet_mode: 'extended',
 		since: since.toISOString().substring(0, 10),
-		until: until.toISOString().substring(0, 10)
+		until: until.toISOString().substring(0, 10),
+    since_id: since_id
 	}
 	try{
 		const response = await T.get('/search/tweets', options)
@@ -126,6 +151,8 @@ async function createPosts(tweets) {
 		console.log(error);
 	}
 }
+
+
 
 function generateHttpsImgPath(origPath){
   return 'https:'+origPath.split(':')[1]

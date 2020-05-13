@@ -48,10 +48,6 @@ router.post('/report', reportController.new_report);
 
 
 /***Twitter***/
-
-// Create posts from a hashtag
-/*router.post('/twitter/byQuery', twitterController.new_posts_from_query);*/
-
 // Create post from a tweet
 router.post('/twitter/byID', twitterController.new_post_from_tweet);
 
