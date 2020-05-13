@@ -29,7 +29,7 @@ router.get('/posts/:page',postController.get_posts)
 
 // show empty index when requesting a post
 //router.get('/post/:id',postController.getPostByIdView)
-router.get('/a/b',postController.test)
+router.get('/a/:id',postController.test)
 
 
 //api route to get a post json

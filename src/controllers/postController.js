@@ -156,6 +156,7 @@ exports.mail = function(req,res){
 }
 
 exports.test = function(req,res){
+  console.log(req.params.id)
   res.send('hola')
   res.end()
 }
