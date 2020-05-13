@@ -21,21 +21,19 @@
 
 </head>
 <body>
-  <img src="/img/email_logo.png" data-toggle="modal" data-target="#sharing-modal" style="width: 20px;height:20px" >
-
   <div class='lightbox-background' ></div>
   <div class='lightbox lightbox-container' >
     <div class='lightbox-box' >
       <span class='lightbox-text'></span>
       <img class='lightbox-image' />
-      <div class='lightbox-buttons'>
-        <div class="lightbox-buttons-1" onclick="like(this,${id})">
-          <img src="/img/clap1.png" width="35" height="35">
-          <span class='lightbox-likes'></span>
+        <div class='lightbox-buttons'>
+          <div class="lightbox-button-like" >
+            <img src="/img/clap1.png" width="35" height="35">
+            <span class='lightbox-likes'></span>
+          </div>
+          <img class="lightbox-button-share"  data-toggle="modal" data-target="#sharing-modal" src="/img/share.png" width="35" height="35">
+          <img class="lightbox-button-report" src="/img/report1.png" width="35" height="35">
         </div>
-        <img class="lightbox-buttons-2" src="/img/share.png" onclick="share(this,${id})" width="35" height="35">
-        <img class="lightbox-buttons-3" src="/img/report1.png" onclick="report(this,${id})" width="35" height="35">
-      </div>
     </div>
   </div>
   {{> navbar}}
@@ -73,16 +71,6 @@
         <div class="row">
           <div class="col-12 text-center" id="sharing-container">
             <p class="text-center">Comparti esta carta por el medio que mas te guste para que lo vean todos!</p>
-            <a class="mobile" href="whatsapp://send?text=te%20envio%20carta%20de%20agradecimiento%20para%20vos%20${url}">
-                  <img src="/img/whatsapp_logo.png">
-              </a>
-              <a class="large" href="https://web.whatsapp.com/send?text=te%20envio%20carta%20de%20agradecimiento%20para%20vos%20${url}" target="_blank">
-                  <img src="/img/whatsapp_logo.png">
-              </a>
-              <a  href="https://twitter.com/intent/tweet?text=Escribi%20este%20agradecimiento%20en%20graciasporcuidarnos.com.ar%20y%20me%20gustaria%20compartirtelo&url=${url}&hashtags=graciasporcuidarnos" target="_blank">
-                  <img src="/img/twitter_logo.png">    
-              </a>
-            
           </div>
           <div class="col-12 text-center" id="share_email">
               <label>Por email: </label>
@@ -90,7 +78,7 @@
               <div id="loading" class="spinner-border text-success" style="display: none;" role="status">
                 <span class="sr-only">Loading...</span>
               </div>
-              <button type="button" class="btn send-btn btn-primary" onclick="send_email('${post.text}','${post.author}','${url}')">Enviar</button>
+              <!-- buttons -->
           </div>
           <div class="col-12">
               <p id="email-empty" style="color:red; display: none;">El email no puede estar vacio</p>

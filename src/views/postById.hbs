@@ -28,14 +28,14 @@
     <div class='lightbox-box' >
       <span class='lightbox-text'></span>
       <img class='lightbox-image' />
-      <div class='lightbox-buttons'>
-        <div class="lightbox-buttons-1" onclick="like(this,${id})">
-          <img src="/img/clap1.png" width="35" height="35">
-          <span class='lightbox-likes'></span>
+        <div class='lightbox-buttons'>
+          <div class="lightbox-button-like" >
+            <img src="/img/clap1.png" width="35" height="35">
+            <span class='lightbox-likes'></span>
+          </div>
+          <img class="lightbox-button-share" data-toggle="modal" data-target="#sharing-modal" src="/img/share.png" width="35" height="35">
+          <img class="lightbox-button-report" src="/img/report1.png" width="35" height="35">
         </div>
-        <img class="lightbox-buttons-2" src="/img/share.png" onclick="share(this,${id})" width="35" height="35">
-        <img class="lightbox-buttons-3" src="/img/report1.png" onclick="report(this,${id})" width="35" height="35">
-      </div>
     </div>
   </div>
   {{> navbar}}

@@ -57,20 +57,20 @@
   display: flex;
 }
 
-.lightbox-buttons-1{
+.lightbox-button-like{
   display: flex;
   flex-direction: column;
-  align-self: start;
+  align-self: start; 
   align-items: center;
   margin-right: 15px;
   margin-left: 15px;
 }
-.lightbox-buttons-2{
+.lightbox-button-share{
   align-self: start;
   margin-right: 15px;
   margin-left: 15px;
 }
-.lightbox-buttons-3{
+.lightbox-button-report{
   align-self: start;
   margin-right: 15px;
   margin-left: 15px;

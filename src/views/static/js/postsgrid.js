@@ -2,7 +2,7 @@ const postscontainer = document.querySelector(".postscontainer");
 const loader = document.querySelector('.loader');
 let last_known_scroll_position = 0;
 let loading = false
-let page = 2
+let page = 1
 let postList = []
 
 window.addEventListener('scroll', () => {
@@ -22,7 +22,7 @@ function showLoading(page) {
   getPosts(page)
 }
 
-async function getPosts (page = 1){
+async function getPosts (page = 0){
   const response = await fetch(`/posts/${page}`);
   const postsData = await response.json();
   addDataToDOM(postsData)
@@ -51,8 +51,6 @@ function addDataToDOM(posts) {
 
     postscontainer.appendChild(postElement);  
   }
-  
-  
 }
 
 function CreateElementFromHTML(html){
@@ -100,9 +98,10 @@ function addHeightWidthToPosts (posts){
   return selectedPosts
 }
 
-function like(element,postId) {
+function like(LikeElement) {
+  const postId = getPostIdFromElement(LikeElement)
   let like = true
-  for (const childElem of element.childNodes){
+  for (const childElem of LikeElement.childNodes){
     if (childElem.nodeName === "IMG"){
       if(childElem.src.slice(-5) == '1.png'){
         childElem.src = '/img/clap-filled2.png'        
@@ -128,15 +127,25 @@ function like(element,postId) {
   })
 }
 
-function report(element,postId){
-  if(element.src.slice(-5) == '1.png'){
-    element.src = '/img/report-filled2.png'
-    overlay = element.parentElement
+function report(reportElement,postId){
+  if(reportElement.src.slice(-5) == '1.png'){
+    reportElement.src = '/img/report-filled2.png'
+    overlay = reportElement.parentElement
     overlay.style.opacity = 1
   }else{
-    element.src = '/img/report1.png'
-    overlay = element.parentElement
+    reportElement.src = '/img/report1.png'
+    overlay = reportElement.parentElement
     overlay.style.opacity = 0
   }
 }
 
+
+function getPostIdFromElement(element){
+  for (aClass of Array.from(element.classList)){
+    if (aClass.split(':')[0]==='id'){
+      return aClass.split(':')[1]
+    }
+  }
+  return null
+  
+}

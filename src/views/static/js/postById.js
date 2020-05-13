@@ -9,7 +9,7 @@ async function getPost(postIdParam){
   const response = await fetch(`/api/post/${postIdParam}`);
   const post = await response.json();
   addDataToDOM([post])
-  getPosts(1)
+  getPosts(0)
   clickFirstPost()
 }
 
