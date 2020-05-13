@@ -77,9 +77,7 @@ exports.get_post_by_id = async function(req, res) {
 }
 
 exports.getPostByIdView = function(req,res){
-  console.log('getPostByIdView')
-  console.log('id param', req.params.id)
-  res.render('index')
+  res.render('postById')
 }
 
 exports.get_posts_html = async (req,res) =>{

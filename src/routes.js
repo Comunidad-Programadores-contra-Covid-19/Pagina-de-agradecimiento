@@ -28,8 +28,7 @@ router.get('/faq',rootController.faq);
 router.get('/posts/:page',postController.get_posts)
 
 // show empty index when requesting a post
-//router.get('/post/:id',postController.getPostByIdView)
-router.get('/post/a',postController.test)
+router.get('/post/:id',postController.getPostByIdView) 
 
 
 //api route to get a post json
