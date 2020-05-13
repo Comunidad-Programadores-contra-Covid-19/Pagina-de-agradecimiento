@@ -154,3 +154,8 @@ exports.mail = function(req,res){
     }
   });
 }
+
+exports.test = function(req,res){
+  res.send('hola')
+  res.end()
+}
