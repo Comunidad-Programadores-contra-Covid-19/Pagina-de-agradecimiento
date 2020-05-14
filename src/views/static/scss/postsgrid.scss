@@ -22,17 +22,7 @@ body{
   font-size:1em;
 }
 
-@media only screen and (max-width: 600px) {
-  .postscontainer {
-    grid-template-columns: repeat(auto-fit,$grid-unit-width-mobile);
-    grid-gap: $grid-gap-mobile;
-    margin-left: 0;
-    margin-right: 0;
-    font-size:1em;
-    max-width: 100vw;
 
-  }
-}
 .item {
   display: flex;
   border-radius: 10px;
@@ -202,13 +192,14 @@ body{
   padding: 6px 0px;
   border-radius: 100%!important;
   text-align: center;
-  font-size: 12px;
+  font-size: 25px;
   line-height: 1.5;
   position: fixed;
   left: calc(95vw - #{$btn-circle-width}); 
-  bottom: 5vh;
+  bottom: 10vh;
   z-index:2;
   transition: opacity 0.5s ease-in;
+  background-color:$dark-green;
 }
 
 .btn-circle:focus {
@@ -220,4 +211,23 @@ body{
 }
 .btn-circle.hide {
   opacity: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .postscontainer {
+    grid-template-columns: repeat(auto-fit,$grid-unit-width-mobile);
+    grid-gap: $grid-gap-mobile;
+    margin-left: 0;
+    margin-right: 0;
+    font-size:1em;
+    max-width: 100vw;
+  }
+
+  .btn-circle{
+    width: $btn-circle-width-sm;
+    height: $btn-circle-width-sm;
+    font-size: 15px;
+    bottom: 5vh;
+    left: calc(100vw - #{$btn-circle-width-sm});
+  }
 }

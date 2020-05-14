@@ -8,9 +8,8 @@ let twitterController = require('./controllers/twitterController');
 //Robots
 router.get('/robots.txt', function (req, res) {
     res.type('text/plain');
-    res.send("User-agent: *\nDisallow: /");
+    res.send("User-agent: *\nDisallow:");
 });
-
 // Index page
 router.get('/', rootController.root);
 
@@ -28,7 +27,8 @@ router.get('/faq',rootController.faq);
 router.get('/posts/:page',postController.get_posts)
 
 // show empty index when requesting a post
-router.get('/post/:id',postController.getPostByIdView)
+router.get('/post/:id',postController.getPostByIdView) 
+
 
 //api route to get a post json
 router.get('/api/post/:id',postController.get_post_by_id)
@@ -50,5 +50,7 @@ router.post('/report', reportController.new_report);
 /***Twitter***/
 // Create post from a tweet
 router.post('/twitter/byID', twitterController.new_post_from_tweet);
+
+
 
 module.exports = router;

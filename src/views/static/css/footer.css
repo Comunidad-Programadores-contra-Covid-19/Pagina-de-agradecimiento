@@ -4,25 +4,19 @@
 
 .navbar .navbar-brand {
   margin-left: 85px; }
-  .navbar .navbar-brand .imagen {
-    width: 26px;
-    height: 26px;
-    margin: -15px -10px 0px 0px; }
   .navbar .navbar-brand .size {
     font-family: "Poppins", sans-serif;
     font-size: 100px; }
 
 footer {
   width: 100%;
-  background-color: #96D293;
+  background-color: #96d293;
   padding-top: 1px;
   font-size: small;
-  float: none;
-  margin-top: 2rem;
-  clear: both; }
+  float: none; }
 
-.ml-3, .mx-3 {
-  margin-left: 0 !important; }
+.ml-3.mx-3 {
+  margin-left: 0x !important; }
 
 footer .navbar-brand {
   font-size: 2rem; }
@@ -81,3 +75,11 @@ footer .navbar-brand {
       color: #263238 !important; }
   .responsive-footer {
     display: none; } }
+
+.footer-copyright {
+  background-color: #2e2c2c; }
+  .footer-copyright p {
+    margin: 0;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: mintcream; }

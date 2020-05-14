@@ -77,7 +77,8 @@ exports.get_post_by_id = async function(req, res) {
 }
 
 exports.getPostByIdView = function(req,res){
-  res.render('postById')
+  Post.findByPk(req.params.id)
+  .then(post => res.render('postById', post))
 }
 
 exports.get_posts_html = async (req,res) =>{
@@ -129,17 +130,12 @@ exports.create_post_page = function(req, res) {
 }
 
 
-exports.mail = function(req,res){  
-  let {url, author, text, to} = req.body;
-  
-   
+exports.mail = function(req,res){    
   mailOptions = {
     from: config.mail_user,
     to: req.body.to,
-    subject: author + ' te escribio una carta en graciasporcuidarnos.com.ar',
-    html: '<p>¡Felicitaciones! Fuiste mencionad@ en la web GraciasPorCuidarnos.com</p>'+
-          '<p>Visita el sitio para ver los mensajes de agradecimiento.</p>' + 
-          '<a href="'+req.body.url+'">click aca para verla!</a>'
+    subject: req.body.subject, 
+    html: req.body.text        
   };
 
   mailer.sendMail(mailOptions, function(error,info){
@@ -151,4 +147,10 @@ exports.mail = function(req,res){
       res.status(200).send()
     }
   });
+}
+
+exports.test = function(req,res){
+  console.log(req.params.id)
+  res.send('hola')
+  res.end()
 }

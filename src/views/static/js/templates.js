@@ -37,6 +37,9 @@ templates.sharing_container = (post) => {
       <a class="large" href="https://web.whatsapp.com/send?text=te%20envio%20carta%20de%20agradecimiento%20para%20vos%20${url}" target="_blank">
           <img src="/img/whatsapp_logo.png">
       </a>
+      <a href="https://www.facebook.com/sharer.php?u=${url}"  target="_blank">
+        <img src="img/facebook_logo.png">
+      </a>
       <a href="${twitter_url}" target="_blank">
           <img src="/img/twitter_logo.png">    
       </a>
@@ -47,8 +50,12 @@ templates.sharing_container = (post) => {
 }
 
 templates.share_email = (post) => {
-  const url = `https://GraciasPorCuidarnos.com.ar/post/${post.id}`
-  const html = `<button type="button" class="btn send-btn btn-primary" onclick="send_email('${post.text}','${post.author}','${url}')">Enviar</button>`
+  const url = `https://graciasporcuidarnos.com.ar/post/${post.id}`
+  const html = `
+  <div class="send_email_buttons">
+    <button type="button" class="btn send-btn btn-primary" onclick="send_email('${post.text}','${post.author}','${url}')">Enviar</button>
+  </div>
+  `
   return html;
 }
 
