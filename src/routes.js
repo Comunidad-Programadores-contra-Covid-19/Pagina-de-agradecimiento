@@ -8,9 +8,8 @@ let twitterController = require('./controllers/twitterController');
 //Robots
 router.get('/robots.txt', function (req, res) {
     res.type('text/plain');
-    res.send("User-agent: *\nDisallow: /");
+    res.send("User-agent: *\nDisallow:");
 });
-
 // Index page
 router.get('/', rootController.root);
 
