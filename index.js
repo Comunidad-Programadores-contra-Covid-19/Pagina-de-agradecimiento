@@ -9,6 +9,7 @@ const config = require('./src/config/config');
 const checkIp = require('./src/middlewares/checkIp')
 const err404 = require('./src/middlewares/404')
 const favicon = require('serve-favicon');
+var compression = require('compression')
 // var sitemap = require('express-sitemap')();
  
  
@@ -30,6 +31,7 @@ app.set('trust proxy',true);
 
 
 // Middlewares
+app.use(compression())
 app.use(express.static(path.join(__dirname,'/src/views/static')))
 app.use(favicon(path.join(__dirname,'/src/views/static/img','clap-green-background.png')));
 app.use(bodyParser.json());
@@ -37,6 +39,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/carta', checkIp.ipChecker);
 app.use('/',routes);
 app.use(err404.e404);
+
 
 // sitemap.generate(app); TODO ver onda
 
