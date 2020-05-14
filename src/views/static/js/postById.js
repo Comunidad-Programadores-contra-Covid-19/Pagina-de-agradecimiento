@@ -26,6 +26,7 @@ function clickFirstPost(){
     }
   }
   if(firstPost){
-      firstPost.click()
+      const overlayElement = Array.from(firstPost.children).filter((child)=>child.classList.contains('overlay'))[0]
+       overlayElement.click()
   }
 }
