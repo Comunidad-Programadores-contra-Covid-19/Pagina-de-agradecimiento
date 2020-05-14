@@ -5,11 +5,11 @@ post('http://localhost:8000/twitter/byID',data={'id':'1255205007802216449'})
 '/twitter/byQuery'
 post('http://localhost:8000/twitter/byQuery',data={'query':'gracias medicos'})
 
-'/posts/:page'
-get('http://localhost:8000/posts/1')
+'/cartas/:page'
+get('http://localhost:8000/cartas/1')
 
-'/api/post/:id'
-get('http://localhost:8000/api/post/2')
+'/api/carta/:id'
+get('http://localhost:8000/api/carta/2')
 
 
 PRODUCTION

@@ -7,7 +7,7 @@ if (!postIdParam || postIdParam < 1){
 
 async function getPost(postIdParam){
   try{
-    const response = await fetch(`/api/post/${postIdParam}`);
+    const response = await fetch(`/api/carta/${postIdParam}`);
     if (response.status === 200){
       const post = await response.json();
       if(post.text){

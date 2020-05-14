@@ -34,8 +34,7 @@ app.use(express.static(path.join(__dirname,'/src/views/static')))
 app.use(favicon(path.join(__dirname,'/src/views/static/img','clap-green-background.png')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/post', checkIp.ipChecker);
-// app.use('/post', checkIp.ipChecker); // Check ip for post creating
+app.use('/carta', checkIp.ipChecker);
 app.use('/',routes);
 app.use(err404.e404);
 
