@@ -123,13 +123,17 @@ async function createPosts(tweets) {
         if (existingTweetIds.includes(data.id_str)) {
           continue;
         }
+
+        data.full_text = removeLastWordIfIsTwitterLink(data.full_text)
+        
         imgPath = null
         if (data.entities.media){
           imgPath = generateHttpsImgPath(data.entities.media[0].media_url)
         }else if(data.full_text.length < 40){
           continue;
         }
-        
+
+
 				let tweet = await Tweet.create({
 						idFromTwitter: data.id_str,
 						tweetLikes: data.favorite_count,
@@ -160,3 +164,14 @@ async function createPosts(tweets) {
 function generateHttpsImgPath(origPath){
   return 'https:'+origPath.split(':')[1]
 }
+
+function removeLastWordIfIsTwitterLink(oldText){
+  let newText = oldText
+  const splittedWords = oldText.split(' ') 
+  const lastWord = splittedWords.slice(-1) 
+  if (lastWord.slice(0,6)[0] === 'https:'){
+    newText = splittedWords.slice(0,-1).join(' ')
+  }
+  return newText
+}
+
