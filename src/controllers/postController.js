@@ -81,8 +81,8 @@ exports.get_post_by_id = async function(req, res) {
 }
 
 exports.getPostByIdView = function(req,res){
-  Post.findByPk(req.params.id)
-  .then(post => res.render('postById', post))
+  Post.findByPk(parseInt(req.params.id))
+  .then(post => res.render('postById', {post: post}))
 }
 
 exports.get_posts_html = async (req,res) =>{
