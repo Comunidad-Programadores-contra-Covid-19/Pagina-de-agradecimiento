@@ -26,7 +26,7 @@ module.exports = (Sequelize, DataTypes) => {
   };
 
   Post.prototype.url = function () {
-    return config.domain.concat('/post/', this.id);
+    return config.domain.concat('/carta/', this.id);
   }
 
   return Post;

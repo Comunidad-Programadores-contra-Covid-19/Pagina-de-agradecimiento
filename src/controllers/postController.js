@@ -81,8 +81,8 @@ exports.get_post_by_id = async function(req, res) {
 }
 
 exports.getPostByIdView = function(req,res){
-  Post.findByPk(req.params.id)
-  .then(post => res.render('postById', post))
+  Post.findByPk(parseInt(req.params.id))
+  .then(post => res.render('postById', {post: post}))
 }
 
 exports.get_posts_html = async (req,res) =>{
@@ -129,7 +129,7 @@ exports.new_post_from_hashtag = function(req, res) {
 
 exports.create_post_page = function(req, res) {
   res.render('create_post', {
-    url: config.domain.concat('/post')
+    url: config.domain.concat('/carta')
   });
 }
 

@@ -24,17 +24,17 @@ router.get('/faq',rootController.faq);
 
 /***Post***/
 // Get list of posts
-router.get('/posts/:page',postController.get_posts)
+router.get('/cartas/:page',postController.get_posts)
 
 // show empty index when requesting a post
-router.get('/post/:id',postController.getPostByIdView) 
+router.get('/carta/:id',postController.getPostByIdView) 
 
 
 //api route to get a post json
-router.get('/api/post/:id',postController.get_post_by_id)
+router.get('/api/carta/:id',postController.get_post_by_id)
 
 // Create new post
-router.post('/post', postController.new_post);
+router.post('/carta', postController.new_post);
 
 // Like a post
 router.post('/like', postController.likePost);

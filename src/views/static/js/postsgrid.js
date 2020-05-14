@@ -23,7 +23,7 @@ function showLoading(page) {
 }
 
 async function getPosts (page = 0){
-  const response = await fetch(`/posts/${page}`);
+  const response = await fetch(`/cartas/${page}`);
   const postsData = await response.json();
   addDataToDOM(postsData)
 }
