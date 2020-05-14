@@ -124,7 +124,7 @@ async function createPosts(tweets) {
           continue;
         }
 
-        data.full_text = removeLastWordIfIsTwitterLink(data.full_text)
+        data.full_text = removeTwitterLink(data.full_text)
         
         imgPath = null
         if (data.entities.media){
@@ -165,13 +165,10 @@ function generateHttpsImgPath(origPath){
   return 'https:'+origPath.split(':')[1]
 }
 
-function removeLastWordIfIsTwitterLink(oldText){
+function removeTwitterLink(oldText){
   let newText = oldText
-  const splittedWords = oldText.split(' ') 
-  const lastWord = splittedWords.slice(-1) 
-  if (lastWord.slice(0,6)[0] === 'https:'){
-    newText = splittedWords.slice(0,-1).join(' ')
-  }
+  const regex = /https:\/\/t\.co\/(\w+) /g
+  newText = oldText.replace(regex,'')
   return newText
 }
 
