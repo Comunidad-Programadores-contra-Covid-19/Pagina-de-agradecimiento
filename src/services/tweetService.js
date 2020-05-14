@@ -11,3 +11,12 @@ exports.getGreatestTweetID = async function () {
   });
   return tweet.idFromTwitter
 }
+
+exports.getExistingTweetIdsFromDB = async function () {
+  const tweetIdsObject = await  Tweet.findAll({
+    attributes: ['idFromTwitter'],
+    raw: true
+  })
+  tweetIds = tweetIdsObject.map(e => e.idFromTwitter)
+  return tweetIds
+}

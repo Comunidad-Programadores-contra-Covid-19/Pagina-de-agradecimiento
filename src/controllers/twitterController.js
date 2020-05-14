@@ -1,10 +1,10 @@
 const Tweet = require('../models').Tweet;
 const Post = require('../models').Post;
 const config = require('../config/config.js');
-var Twit = require('twit');
-var TweetService = require('../services/tweetService');
+const Twit = require('twit');
+const TweetService = require('../services/tweetService');
 
-var T = new Twit({
+const T = new Twit({
 	consumer_key: config.consumer_key,
 	consumer_secret: config.consumer_secret,
 	access_token: config.access_token,
@@ -12,7 +12,7 @@ var T = new Twit({
 })
 const millisecondsInADay = 24 * 60 * 60 * 1000
 const fonts = ['Patrick Hand', 'Mali', 'Adobe Garamond Pro', 'Quicksand bold', 'Poppins']
-const testColors = ['light-green', 'light-pink', 'cyan', 'light-orange', 'light-purple']
+const COLORS = ['light-green', 'light-pink', 'light-cyan', 'light-orange', 'light-purple']
 
 exports.new_post_from_tweet = function(req, res) {
 	const tweet_id = req.body.id
@@ -117,13 +117,17 @@ async function getTweets(query, since, until,count,since_id = 1) {
 async function createPosts(tweets) {
 	let tweet_posts = []
   let imgPath
+  existingTweetIds = await TweetService.getExistingTweetIdsFromDB()
 	try {
 		for (data of tweets){
+        if (existingTweetIds.includes(data.id_str)) {
+          continue;
+        }
         imgPath = null
         if (data.entities.media){
           imgPath = generateHttpsImgPath(data.entities.media[0].media_url)
         }else if(data.full_text.length < 40){
-          break;
+          continue;
         }
         
 				let tweet = await Tweet.create({
@@ -141,17 +145,16 @@ async function createPosts(tweets) {
 						author: '@'+data.user.screen_name,
 						TweetId: tweet.id,
 						font: fonts[Math.floor(Math.random() * fonts.length)],
-						color: testColors[Math.floor(Math.random() * testColors.length)]
+						color: COLORS[Math.floor(Math.random() * COLORS.length)]
 				})
 				tweet_posts.push({tweet,post})
-        
 		}
 		return tweet_posts            
+
 	} catch (error) {
 		console.log(error);
 	}
 }
-
 
 
 function generateHttpsImgPath(origPath){
