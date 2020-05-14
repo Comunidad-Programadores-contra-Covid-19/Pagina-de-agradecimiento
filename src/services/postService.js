@@ -11,7 +11,7 @@ exports.get_posts = async function(page = 0) {
 
 exports.getpostByID = async function(postId = 1) {
   const post = await getPostFromDBById(postId)
-  return post
+  return post || {}
 }
 
 async function get_posts_from_db(page = 0) {
@@ -24,10 +24,11 @@ async function get_posts_from_db(page = 0) {
     ],
     limit: config.firstNPosts,
     offset: (page * config.firstNPosts),
+    raw:true
   })
 }
 
 async function getPostFromDBById(postId) {
-  let post = await Post.findAll({where:{id:postId}})
+  let post = await Post.findAll({where:{id:postId},raw:true})
   return post[0]
 }
