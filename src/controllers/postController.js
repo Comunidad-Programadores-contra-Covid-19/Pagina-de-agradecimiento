@@ -54,7 +54,11 @@ exports.get_posts = async function(req, res) {
   
   try{
     const posts = await postService.get_posts(page)
-    res.status(200).send(posts)  
+    if (posts){
+      res.status(200).send(posts)  
+    }else{
+      res.status(400).send({})  
+    }
   }catch (e){
     res.status(500).send(e)
   }

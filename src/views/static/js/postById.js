@@ -6,11 +6,23 @@ if (!postIdParam || postIdParam < 1){
 }
 
 async function getPost(postIdParam){
-  const response = await fetch(`/api/post/${postIdParam}`);
-  const post = await response.json();
-  addDataToDOM([post])
+  try{
+    const response = await fetch(`/api/post/${postIdParam}`);
+    if (response.status === 200){
+      const post = await response.json();
+      if(post.text){
+        addDataToDOM([post])  
+        clickFirstPost()
+      }else{
+        alert('post not found')
+      }
+    }else{
+        alert('post not found')
+  }
+  }catch(e){
+    console.log(e)
+  }
   getPosts(0)
-  clickFirstPost()
 }
 
 function clickFirstPost(){
@@ -26,6 +38,7 @@ function clickFirstPost(){
     }
   }
   if(firstPost){
-      firstPost.click()
+      const overlayElement = Array.from(firstPost.children).filter((child)=>child.classList.contains('overlay'))[0]
+       overlayElement.click()
   }
 }
