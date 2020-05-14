@@ -59,11 +59,12 @@ function send_email(text,author='Anonimo',url){
 
 
   const obj = {
-      text: text,
-      author: author,
-      to: email,
-      url: url
-  }
+    subject: 'Alguien quiere compartirte una carta de graciasporcuidarnos.com.ar',
+    text:   '<p>Te compartieron una carta de https://graciasporcuidarnos.com.ar</p>'+
+            '<p>Visita el sitio para verla</p>' + 
+            '<a href="'+url+'">click aca!</a>',
+    to: email
+}
   let x = JSON.stringify(obj);
   console.log(x);
 

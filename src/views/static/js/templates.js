@@ -50,7 +50,7 @@ templates.sharing_container = (post) => {
 }
 
 templates.share_email = (post) => {
-  const url = `https://GraciasPorCuidarnos.com.ar/post/${post.id}`
+  const url = `https://graciasporcuidarnos.com.ar/post/${post.id}`
   const html = `
   <div class="send_email_buttons">
     <button type="button" class="btn send-btn btn-primary" onclick="send_email('${post.text}','${post.author}','${url}')">Enviar</button>

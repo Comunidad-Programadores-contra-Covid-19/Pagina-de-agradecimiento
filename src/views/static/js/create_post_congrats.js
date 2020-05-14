@@ -27,10 +27,11 @@ function send_email(text,author='Anonimo',url){
 
 
     const obj = {
-        text: text,
-        author: author,
-        to: email,
-        url: url
+        subject: author + ' te escribio una carta en graciasporcuidarnos.com.ar',
+        text:   '<p>¡Felicitaciones! Fuiste mencionad@ en la web GraciasPorCuidarnos.com</p>'+
+                '<p>Visita el sitio para ver los mensajes de agradecimiento.</p>' + 
+                '<a href="'+url+'">click aca para verla!</a>',
+        to: email
     }
     let x = JSON.stringify(obj);
     console.log(x);
