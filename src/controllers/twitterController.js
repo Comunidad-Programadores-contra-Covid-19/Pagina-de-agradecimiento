@@ -77,7 +77,7 @@ exports.new_posts_from_query = async function(query,since,until,count) {
 	count = count || 100
 	let tweet_posts = []
 	let new_tweet_posts = []
-	for (let days = 0; days < 7; days++) {
+	for (let days = 0; days < 9; days++) {
 		let tweets = await getTweets(query, since, until,count)
 		if (tweets) {
 			new_tweet_posts = await createPosts(tweets)
@@ -167,8 +167,10 @@ function generateHttpsImgPath(origPath){
 
 function removeTwitterLink(oldText){
   let newText = oldText
-  const regex = /https:\/\/t\.co\/(\w+) /g
-  newText = oldText.replace(regex,'')
+  const regexLink = /http(s)?:\/\/t\.co\/(\w+)/g
+  const regexDoubleSpace = /  /g
+  newText = oldText.replace(regexLink,'')
+  newText = newText.replace(regexDoubleSpace,'')
   return newText
 }
 
