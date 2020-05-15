@@ -23,8 +23,7 @@ exports.ipChecker = function(req, res, next) {
                     })
                     next();
                 }else{
-                  //res.redirect('/')
-                  next();
+                  res.redirect('/')
                 }
 
            })

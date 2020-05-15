@@ -4,7 +4,6 @@ if (!postIdParam || postIdParam < 1){
 }else{
   getPost(postIdParam)
 }
-
 async function getPost(postIdParam){
   try{
     const response = await fetch(`/api/carta/${postIdParam}`);

@@ -30,7 +30,6 @@ async function getPosts (page = 0){
 
 
 function addDataToDOM(posts) {
-
   loader.classList.remove('show');
   posts = addHeightWidthToPosts(posts)
   postList.push(...posts)
@@ -65,7 +64,7 @@ function addHeightWidthToPosts (posts){
     post.height = 'height'
     post.width = 'width'
     if (!post.imgPath) {
-      if (post.text.length >= 45 && post.text.length < 125 ){
+      if (post.text.length < 125 ){
           selectedPosts.push(post)
       }
       if (post.text.length >= 125 ) {
