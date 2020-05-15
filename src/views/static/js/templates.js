@@ -27,7 +27,7 @@ templates.post = (post) => {
 
 
 templates.sharing_container = (post) => {
-  const url = `https://graciasporcuidarnos.com.ar/carta/${post.id}` 
+  const url = `https://www.graciasporcuidarnos.com.ar/carta/${post.id}` 
   const twitter_url = `https://twitter.com/intent/tweet?text=Escribi%20este%20agradecimiento%20en%20graciasporcuidarnos.com.ar%20y%20me%20gustaria%20compartirtelo&url=${url}&hashtags=graciasporcuidarnos`
   const html = `
     <div class="sharing_container_buttons">
@@ -50,7 +50,7 @@ templates.sharing_container = (post) => {
 }
 
 templates.share_email = (post) => {
-  const url = `https://graciasporcuidarnos.com.ar/carta/${post.id}`
+  const url = `https://www.graciasporcuidarnos.com.ar/carta/${post.id}`
   const html = `
   <div class="send_email_buttons">
     <button type="button" class="btn send-btn btn-primary" onclick="send_email('${post.text}','${post.author}','${url}')">Enviar</button>
