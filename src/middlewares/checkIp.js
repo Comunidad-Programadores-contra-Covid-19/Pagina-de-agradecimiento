@@ -17,18 +17,18 @@ exports.ipChecker = function(req, res, next) {
                         ip: req.ip.toString(),
                     });
                     next();
-                }
-
-                if(new Date().getTime() > requester.lastRequest.getTime() + config.minTimeToCreateAPost*60000){
+                }else if(new Date().getTime() > requester.lastRequest.getTime() + config.minTimeToCreateAPost*60000){
                     requester.update({
                         lastRequest: new Date()
                     })
                     next();
+                }else{
+                  res.redirect('/')
                 }
 
-                res.redirect('/')
            })
     }
-    if(req.method === 'get' || req.method === 'GET')
-        next();
+    if(req.method === 'get' || req.method === 'GET'){
+      next();
+    }
 }
