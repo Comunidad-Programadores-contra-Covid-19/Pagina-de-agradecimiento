@@ -17,24 +17,12 @@ const COLORS = ['light-green', 'light-pink', 'light-cyan', 'light-orange', 'ligh
 exports.new_post_from_tweet = function(req, res) {
 	const tweet_id = req.body.id
 
+
 	T.get('statuses/show/:id', {
 		id: tweet_id,
 		tweet_mode: 'extended'
 	}, async function(err, data, response) {
 		try {
-			/*let tweet = await Tweet.create({
-					idFromTwitter: data.id_str,
-					tweetLikes: data.favorite_count,
-					tweetDate: data.created_at,
-					tweetLink: `https://twitter.com/${data.user.screen_name}/status/${data.id_str}`                
-			})
-			let post = await Post.create({
-					text: data.full_text,
-					likes: data.favorite_count,
-					imgPath:  data.entities.media ? data.entities.media[0].media_url : null,
-					author: '@'+data.user.screen_name,
-					tweetId: tweet.id
-				})*/
 			res.json({
 				data
 			})

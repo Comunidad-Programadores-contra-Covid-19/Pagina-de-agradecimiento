@@ -4,10 +4,11 @@
 	margin-top: 50px;
 	margin-bottom: 42px;
 	text-align: center;
-  display:flex;
+  display:grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto 1fr auto;
   align-items: center;
-    justify-content: center;
-    padding-left: 10%;
+  justify-content: center;
 	h1{
 		font-family: $general;
 		font-style: normal;
@@ -39,67 +40,30 @@
 }
 
 .main-section-center{
-  max-width: 50%;
+  text-align: center;
+  grid-column-start: 2;
 }
 
-@media (max-width: 768px){
-	.main-section{
-		margin-top: 32px;
-		margin-bottom: 42px;
-		text-align: center;
-		h1{
-			font-weight: 600;
-			font-size: 18px;
-			line-height: 27px;
-		}
-		p{
-			//text-align: justify;
-			font-size: 12px;
-			line-height: 18px;
-		}
-		.button-agradecer{
-			.btn{
-				width: 145px;
-				height: 32px;
-				font-size: 12px;
-				line-height: 18px;
-			}
-		}
-	}
-	.main-img{
-		text-align: center;
-		margin-top: 30px;
-		img{
-			height: 100px;
-			width: 70px;
-			-webkit-transform: scaleX(-1);
-			transform: scaleX(-1);
-		}
-  }
-  .sharing-modal{
-    .modal-body{
-      .mobile{
-        display: inline!important;
-      } 
-      img{
-        width: 39px;
-        height: 39px;
-      }
-      .large{
-        display: none;
-      }
-    }
-  }
+.main-section-title{
+  grid-column-start: 2; 
 }
+
+.button-agradecer{
+  grid-column-start: span 3;
+}
+
+
 
 .lightbox-container{
   position:absolute;
   z-index: 3;
 }
 .main-img{
-  height: 215px;
-  width: 130px;
-  margin-left: 5%
+  height: 100%;
+  justify-self: start;
+  grid-row-end: span 3;
+  grid-row-start: 1;
+  grid-column: 3;
 }
 
 //sharing modal
@@ -161,4 +125,57 @@
 	  line-height: 12px;
 	  color: $light-black;
 	}
+}
+
+
+/////
+
+@media (max-width: 768px){
+  .main-section{
+    text-align: center;
+    padding: 0;
+    h1{
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      text-align: center;
+    }
+    p{
+      //text-align: justify;
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .button-agradecer{
+
+      .btn{
+        margin-top:10px;
+        line-height: 18px; 
+        width: 180px;
+        height: 40px;
+        font-size: 14px;
+      }
+    }
+  }
+  .main-img{
+    
+  }
+  .sharing-modal{
+    .modal-body{
+      .mobile{
+        display: inline!important;
+      } 
+      img{
+        width: 39px;
+        height: 39px;
+      }
+      .large{
+        display: none;
+      }
+    }
+  }
+
+
+  .main-section-center{
+    text-align: justify;
+  }
 }
