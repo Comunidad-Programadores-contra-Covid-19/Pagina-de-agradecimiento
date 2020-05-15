@@ -30,8 +30,7 @@ exports.ipChecker = function(req, res, next) {
 
                 res.redirect('/')
            })
-        //    return
     }
-
-    // next();
+    if(req.method === 'get' || req.method === 'GET')
+        next();
 }
