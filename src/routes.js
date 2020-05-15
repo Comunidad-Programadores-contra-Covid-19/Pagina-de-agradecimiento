@@ -10,6 +10,13 @@ router.get('/robots.txt', function (req, res) {
     res.type('text/plain');
     res.send("User-agent: *\nDisallow:");
 });
+
+//Sitemaps
+router.get('/sitemap.txt', function (req, res) {
+    res.type('text/plain');
+    res.send("https://www.graciasporcuidarnos.com.ar/\nhttps://www.graciasporcuidarnos.com.ar/faq\nhttps://www.graciasporcuidarnos.com.ar/quienes_somos\nhttps://www.graciasporcuidarnos.com.ar/dona\nhttps://www.graciasporcuidarnos.com.ar/nueva_carta\n");
+});
+
 // Index page
 router.get('/', rootController.root);
 
