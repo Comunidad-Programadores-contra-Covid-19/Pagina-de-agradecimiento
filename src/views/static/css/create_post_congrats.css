@@ -29,13 +29,15 @@
     text-align: center; }
   .congrats .post-url {
     text-align: center; }
-    .congrats .post-url p {
+    .post-url-input {
       font-family: "Poppins", sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 18.6829px;
       line-height: 28px;
-      color: #263238; }
+      color: #263238;
+      margin-bottom: 5px;
+      text-align: center; }
   .congrats .share {
     text-align: center; }
     .congrats .share img {
