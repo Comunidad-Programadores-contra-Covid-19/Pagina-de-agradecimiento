@@ -38,7 +38,7 @@ templates.sharing_container = (post) => {
           <img src="/img/whatsapp_logo.png">
       </a>
       <a href="https://www.facebook.com/sharer.php?u=${url}"  target="_blank">
-        <img src="img/facebook_logo.png">
+        <img src="/img/facebook_logo.png">
       </a>
       <a href="${twitter_url}" target="_blank">
           <img src="/img/twitter_logo.png">    
