@@ -31,7 +31,7 @@ app.set('trust proxy',true);
 
 
 // Middlewares
-// app.use(compression())
+app.use(compression())
 app.use(express.static(path.join(__dirname,'/src/views/static')))
 app.use(favicon(path.join(__dirname,'/src/views/static/img','clap-green-background.png')));
 app.use(bodyParser.json());

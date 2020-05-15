@@ -17,7 +17,6 @@ exports.ipChecker = function(req, res, next) {
                         ip: req.ip.toString(),
                     });
                     next();
-                    return
                 }
 
                 if(new Date().getTime() > requester.lastRequest.getTime() + config.minTimeToCreateAPost*60000){
@@ -25,7 +24,6 @@ exports.ipChecker = function(req, res, next) {
                         lastRequest: new Date()
                     })
                     next();
-                    return;
                 }
 
                 res.redirect('/')
