@@ -7,31 +7,31 @@ exports.ipChecker = function(req, res, next) {
         return;
     }
 
-    // if(req.method === 'POST'){
-    //    Requester.findOne({
-    //        where: {ip: req.ip.toString()},
-    //    })
-    //        .then(requester => {
-    //             if(!requester){
-    //                 Requester.create({
-    //                     ip: req.ip.toString(),
-    //                 });
-    //                 next();
-    //                 return
-    //             }
+    if(req.method === 'POST'){
+       Requester.findOne({
+           where: {ip: req.ip.toString()},
+       })
+           .then(requester => {
+                if(!requester){
+                    Requester.create({
+                        ip: req.ip.toString(),
+                    });
+                    next();
+                    return
+                }
 
-    //             if(new Date().getTime() > requester.lastRequest.getTime() + config.minTimeToCreateAPost*60000){
-    //                 requester.update({
-    //                     lastRequest: new Date()
-    //                 })
-    //                 next();
-    //                 return;
-    //             }
+                if(new Date().getTime() > requester.lastRequest.getTime() + config.minTimeToCreateAPost*60000){
+                    requester.update({
+                        lastRequest: new Date()
+                    })
+                    next();
+                    return;
+                }
 
-    //             res.redirect('/')
-    //             return
-    //        })
-    // }
+                res.redirect('/')
+           })
+        //    return
+    }
 
-    next();
+    // next();
 }
