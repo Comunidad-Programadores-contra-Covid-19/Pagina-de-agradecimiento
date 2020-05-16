@@ -3,12 +3,11 @@
 .main-section{
 	margin-top: 50px;
 	margin-bottom: 42px;
-	text-align: center;
   display:grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto 1fr auto;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
 	h1{
 		font-family: $general;
 		font-style: normal;
@@ -39,8 +38,10 @@
 	}
 }
 
+
+
 .main-section-center{
-  text-align: center;
+  text-align: justify;
   grid-column-start: 2;
 }
 
@@ -61,9 +62,11 @@
 .main-img{
   height: 100%;
   justify-self: start;
-  grid-row-end: span 3;
+  grid-row-end: span 2;
   grid-row-start: 1;
+  margin-left: 25px;
   grid-column: 3;
+
 }
 
 //sharing modal
@@ -146,7 +149,6 @@
       line-height: 18px;
     }
     .button-agradecer{
-
       .btn{
         margin-top:10px;
         line-height: 18px; 
@@ -157,7 +159,7 @@
     }
   }
   .main-img{
-    
+    display:none;
   }
   .sharing-modal{
     .modal-body{
@@ -175,7 +177,8 @@
   }
 
 
-  .main-section-center{
-    text-align: justify;
+  .main-section-center{    
+    grid-column-start: span 3;
+    padding: 0 10vw;
   }
 }
