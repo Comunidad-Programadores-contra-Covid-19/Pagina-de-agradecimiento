@@ -2,91 +2,96 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Donanos</title>
-     
-    {{> base_metaog}}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Donar</title>
 
-    <link rel="stylesheet" href="css/dona.css">
-    {{> basics_styles}}
-    
+  {{> base_metaog}}
+
+  <link rel="stylesheet" href="css/dona.css">
+  {{> basics_styles}}
+
 
 </head>
 
 
 <body>
-    <header>
-        <!--Inicio Navbar -->
-        {{> navbar}}
-        <!--Fin Navbar -->
-    </header>
+  <header>
+    <!--Inicio Navbar -->
+    {{> navbar}}
+    <!--Fin Navbar -->
+  </header>
 
-    <!-- Inicio contenedor -->
-    <div class="container">
+  <!-- Inicio contenedor -->
+  <div class="container">
 
-        <section id="contenedorDonar">
+    <section id="contenedorDonar">
 
-            <img src="/img/hand_hearth.jpeg" alt="logo" id="imgAyuda">
+      <img src="/img/hand_hearth.jpeg" alt="logo" id="imgAyuda">
 
-            <h1 id="tituloDonar">Ayudanos a ayudar</h1>
+      <h1 id="tituloDonar">Ayudanos a ayudar</h1>
 
-            <h5 id="subtituloDonar">
-                <p>Somos un grupo de voluntarios que nos unimos para colaborar durante la pandemia.</p> 
-                <p>Necesitamos de tu ayuda para que graciasporcuidarnos.com.ar se mantenga en línea y los agradecimientos no se los lleve el viento.</p>
-            </h5>
+      <h5 id="subtituloDonar">
+        <p>Somos un grupo de voluntarios que nos unimos para colaborar durante la pandemia.</p> 
+        <p>Necesitamos de tu ayuda para que GraciasPorCuidarnos.com.ar se mantenga en línea y los agradecimientos no se los lleve el viento.</p>
+      </h5>
 
-            <div id="donaciones">
-                <div id="donar">
-                    <p id="valorDonacion">$100</p>
-                    <p>equivalente a</p>
-                    <p id="tiempoDonacion">1 día</p>
-                    <p>en costos de mantenimiento</p>
-                    <button id="btnColaborar" class="btn-principal">Colaborar</button>
-                </div>
+      <div id="donaciones">
+        <div id="donar">
+          <p id="valorDonacion">$300</p>
+          <p>equivalente a</p>
+          <p id="tiempoDonacion">3 días</p>
+          <p>en costos de mantenimiento</p>
+          <a id="btnColaborar" mp-mode="dftl" href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=565635578-45556645-b5c8-4c13-809a-0401d5dc0c31" name="MP-payButton" class="btn-principal" target="">Colaborar</a>
+        </div>
 
-                <div id="donar">
-                    <p id="valorDonacion">$700</p>
-                    <p>equivalente a</p>
-                    <p id="tiempoDonacion">1 semana</p>
-                    <p>en costos de mantenimiento</p>
-                    <button id="btnColaborar" class="btn-principal">Colaborar</button>
-                </div>
+        <div id="donar">
+          <p id="valorDonacion">$700</p>
+          <p>equivalente a</p>
+          <p id="tiempoDonacion">1 semana</p>
+          <p>en costos de mantenimiento</p>
+          <a id="btnColaborar" mp-mode="dftl" href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=565635578-45556645-b5c8-4c13-809a-0401d5dc0c31" name="MP-payButton" class="btn-principal" target="">Colaborar</a>
+        </div>
 
-                <div id="donar">
-                    <p id="valorDonacion">$3.000</p>
-                    <p>equivalente a</p>
-                    <p id="tiempoDonacion">1 mes</p>
-                    <p>en costos de mantenimiento</p>
-                    <button id="btnColaborar" class="btn-principal">Colaborar</button>
-                </div>
+        <div id="donar">
+          <p id="valorDonacion">$3.000</p>
+          <p>equivalente a</p>
+          <p id="tiempoDonacion">1 mes</p>
+          <p>en costos de mantenimiento</p>
+          <a id="btnColaborar" mp-mode="dftl" href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=565635578-45556645-b5c8-4c13-809a-0401d5dc0c31" name="MP-payButton" class="btn-principal" target="">Colaborar</a>
+        </div>
 
-                <div id="donar">
-                    <p id="valorDonacion">$18.000</p>
-                    <p>equivalente a</p>
-                    <p id="tiempoDonacion">6 meses</p>
-                    <p>en costos de mantenimiento</p>
-                    <button id="btnColaborar" class="btn-principal">Colaborar</button>
-                </div>
-            </div>
+        <div id="donar">
+          <p id="valorDonacion">$18.000</p>
+          <p>equivalente a</p>
+          <p id="tiempoDonacion">6 meses</p>
+          <p>en costos de mantenimiento</p>
+          <a id="btnColaborar" mp-mode="dftl" href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=565635578-45556645-b5c8-4c13-809a-0401d5dc0c31" name="MP-payButton" class="btn-principal" target="">Colaborar</a>
+        </div>
+      </div>
 
-            <img src="/img/whole_team.png" alt="donar" id="imgDonar">
+      <img src="/img/whole_team.png" alt="donar" id="imgDonar">
 
-            <h2 id="graciasDonar">¡<b>Muchas gracias</b> por ser parte!</h2>
-
-
-        </section>
-
-    </div>
-    <!-- Fin contenedor -->
+      <h2 id="graciasDonar">¡<b>Muchas gracias</b> por ser parte!</h2>
 
 
-    <!-- Footer -->
-    {{> footer}}
-    <!-- Footer -->
+    </section>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </div>
+  <!-- Fin contenedor -->
+
+
+  <!-- Footer -->
+  {{> footer}}
+  <!-- Footer -->
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script type="text/javascript" async="" src="https://secure.mlstatic.com/mptools/render.js"></script>
+  <script type="text/javascript">
+    (function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
+  </script>
+
 
 </body>
 
