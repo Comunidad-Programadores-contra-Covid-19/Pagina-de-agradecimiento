@@ -2,12 +2,16 @@ let modal_sharing_div = document.getElementById("sharing-container")
 let share_email_div = document.getElementById("share-email")
 let modalCompleteElement = document.getElementById("sharing-modal")
 
+
+
+
 document.addEventListener("DOMContentLoaded", function(event) { 
   $(document).on('hidden.bs.modal', '#sharing-modal', function(e) {
-    let sharingContainerButtons = document.querySelectorAll(".sharing_container_buttons")
     let send_email_buttons = document.querySelectorAll(".send_email_buttons")
-    for (const sharingContainerButton of sharingContainerButtons){
-      modal_sharing_div.removeChild(sharingContainerButton) 
+    let sharingContainers = document.querySelectorAll(".sharing-container")
+
+    for (const sharingContainer of sharingContainers){
+      modal_sharing_div.removeChild(sharingContainer) 
     }
     for (const send_email_button of send_email_buttons){
       share_email_div.removeChild(send_email_button)
@@ -28,6 +32,15 @@ function share_social(shareElement){
   const sendEmailHTML = templates.share_email(post)
   const sendEmailButton = CreateElementFromHTML(sendEmailHTML)
   share_email_div.appendChild(sendEmailButton)
+
+  const postUrlButton = document.querySelector('.post-url-button')
+  const postUrlInput = document.querySelector('.post-url-input')
+
+  postUrlButton.addEventListener('click',()=>{
+    postUrlInput.select();
+    postUrlInput.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+  })
 }
 
 function wait(time) {

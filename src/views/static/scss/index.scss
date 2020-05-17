@@ -93,7 +93,6 @@
   }
 
 	label{
-	  margin-top: 24px;
 	  font-family: $general;
 	  font-style: normal;
 	  font-weight: normal;
@@ -101,15 +100,14 @@
 	  line-height: 24px;
 	  color: $light-black;
 	}
-	input{
-	  margin-top: -10px;
+	.email-input{
 	  padding: 0;
 	  width: 40%;
 	  outline: 0;
 	  border-width: 0 0 1px;
 	  border-color: $light-green;
 	}
-	input::placeholder, textarea::placeholder{
+	.email-input::placeholder, textarea::placeholder{
 	  color: $grey;
 	  font-style: normal;
 	  font-weight: normal;
@@ -181,4 +179,24 @@
     grid-column-start: span 3;
     padding: 0 10vw;
   }
+}
+
+.post-url-input{
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.post-url-button{
+  border-radius: 15px;
+  background-color:$dark-green; 
+  border: 1px solid $dark-green;
+}
+
+.email-container{
+  display:flex;
+  justify-content: space-evenly;
+  width:100%;
+  margin-top:10px;
 }

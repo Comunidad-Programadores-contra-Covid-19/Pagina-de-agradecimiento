@@ -2,7 +2,6 @@ const postUrlButton = document.querySelector('.post-url-button')
 const postUrlInput = document.querySelector('.post-url-input')
 
 postUrlButton.addEventListener('click',()=>{
-  console.log('asd')
   postUrlInput.select();
   postUrlInput.setSelectionRange(0, 99999)
   document.execCommand("copy");

@@ -76,7 +76,6 @@
   height: 30px; }
 
 .sharing-modal label {
-  margin-top: 24px;
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -84,15 +83,14 @@
   line-height: 24px;
   color: #263238; }
 
-.sharing-modal input {
-  margin-top: -10px;
+.sharing-modal .email-input {
   padding: 0;
   width: 40%;
   outline: 0;
   border-width: 0 0 1px;
   border-color: rgba(163, 228, 160, 0.3); }
 
-.sharing-modal input::placeholder, .sharing-modal textarea::placeholder {
+.sharing-modal .email-input::placeholder, .sharing-modal textarea::placeholder {
   color: rgba(156, 156, 156, 0.6);
   font-style: normal;
   font-weight: normal;
@@ -141,3 +139,20 @@
   .main-section-center {
     grid-column-start: span 3;
     padding: 0 10vw; } }
+
+.post-url-input {
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: 10px; }
+
+.post-url-button {
+  border-radius: 15px;
+  background-color: #96D293;
+  border: 1px solid #96D293; }
+
+.email-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 10px; }
