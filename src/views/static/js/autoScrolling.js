@@ -1,4 +1,5 @@
 let autoScrollButton = document.querySelector(".autoScrollButton");
+let autoScrolIcon = document.querySelector(".autoScrollIcon");
 let body = document.querySelector("body");
 var autoScrolling = false
 let timeout
@@ -41,17 +42,10 @@ function scrollEvent(){
 }
 
 function changeIcon(element,autoScrolling){
-  for (const childElem of element.childNodes){
-    if (childElem.nodeName == "I"){
-      iconElement = childElem
-    }
-  }
   if(autoScrolling){
-    iconElement.classList.remove('fa-play')
-    iconElement.classList.add('fa-pause')
+    autoScrolIcon.src = '/img/pause_icon.png'
   }else{
-    iconElement.classList.add('fa-play')
-    iconElement.classList.remove('fa-pause')
+    autoScrolIcon.src = '/img/play_icon.png'
   }
 }
 

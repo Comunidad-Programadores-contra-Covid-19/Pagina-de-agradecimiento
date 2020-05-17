@@ -4,5 +4,5 @@ const Report = require('../models').Report;
 const TweetService = require('../services/tweetService');
 const TweetController = require('../controllers/twitterController');
 
-Report.sync({force:true})
+//Report.sync({force:true})
 
