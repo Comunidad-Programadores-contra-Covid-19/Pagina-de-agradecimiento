@@ -37,7 +37,7 @@ function send_email(text,author='Anonimo',url){
 
     const obj = {
         subject: author + ' te escribio una carta en graciasporcuidarnos.com.ar',
-        text:   '<p>¡Felicitaciones! Fuiste mencionad@ en la web graciasporcuidarnos.com.ar.com.ar</p>'+
+        text:   '<p>¡Felicitaciones! Fuiste mencionad@ en la web graciasporcuidarnos.com.ar</p>'+
                 '<p>Visita el sitio para ver los mensajes de agradecimiento.</p>' + 
                 '<a href="'+url+'">click aca para verla!</a>',
         to: email
