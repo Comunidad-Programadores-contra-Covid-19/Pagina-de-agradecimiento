@@ -11,6 +11,9 @@ get('http://localhost:8000/cartas/1')
 '/api/carta/:id'
 get('http://localhost:8000/api/carta/2')
 
+//reports
+get('http://localhost:8000/api/reportedPostIDsByIP')
+
 
 PRODUCTION
 '/twitter/byQuery'

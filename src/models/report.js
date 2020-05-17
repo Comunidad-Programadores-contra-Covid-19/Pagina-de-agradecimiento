@@ -3,6 +3,7 @@ module.exports = (Sequelize, DataTypes) => {
   const Report = Sequelize.define('Report', {
     id: {allowNull: false, autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER},
     details: {type:DataTypes.STRING, allowNull: true,},
+    userIP: {type:DataTypes.STRING, allowNull: true,},
 
   }, {
     freezeTableName: true ,

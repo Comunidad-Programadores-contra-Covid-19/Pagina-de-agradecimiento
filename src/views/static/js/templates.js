@@ -9,7 +9,7 @@ templates.post = (post) => {
   const NonLightcolor = post.color.split('-')[1] || 'purple'
 
   const html =
-  `<div class="item ${color} ${height} ${width}" >
+  `<div class="item ${color} ${height} ${width} id:${id}" >
     ${imgPath ? partials.imgTag(post) : partials.mainText(post)}
     <div class="overlay overlayFade ${NonLightcolor}" onClick="createLightbox(this,${id})">
       <div class="overlay-from">De: ${author} </div>

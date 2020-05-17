@@ -22,11 +22,8 @@ router.get('/', rootController.root);
 
 // Create post page
 router.get('/nueva_carta/', postController.create_post_page);
-
 router.get('/quienes_somos',rootController.quienes_somos);
-
 router.get('/dona',rootController.dona);
-
 router.get('/faq',rootController.faq);
 
 /***Post***/
@@ -36,7 +33,6 @@ router.get('/cartas/:page',postController.get_posts)
 // show empty index when requesting a post
 router.get('/carta/:id',postController.getPostByIdView) 
 
-
 //api route to get a post json
 router.get('/api/carta/:id',postController.get_post_by_id)
 
@@ -45,19 +41,14 @@ router.post('/carta', postController.new_post);
 
 // Like a post
 router.post('/like', postController.likePost);
-
 router.post('/mail',postController.mail);
 
 /***Report***/
-
-// Report a post
 router.post('/report', reportController.new_report);
-
+router.get('/api/reportedPostIDsByIP', reportController.getReportedPostIDsByIP);
 
 /***Twitter***/
 // Create post from a tweet
 router.post('/twitter/byID', twitterController.new_post_from_tweet);
-
-
 
 module.exports = router;

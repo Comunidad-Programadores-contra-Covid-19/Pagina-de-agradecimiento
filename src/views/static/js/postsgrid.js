@@ -26,6 +26,7 @@ async function getPosts (page = 0){
   const response = await fetch(`/cartas/${page}`);
   const postsData = await response.json();
   addDataToDOM(postsData)
+  removeReportedPosts()
 }
 
 
@@ -45,10 +46,35 @@ function addDataToDOM(posts) {
     if (!post.imgPath){
       const NonLightcolor = post.color.split('-')[1] || 'purple'
       postElement.classList.add(`border-${NonLightcolor}`)
-
     }    
-
     postscontainer.appendChild(postElement);  
+  }
+}
+
+async function removeReportedPosts(){
+  const repornse = await getReportedPosts()
+  const reportedPostIDs = await repornse.json()
+  removeReportedPostsFromGrid(reportedPostIDs)
+}
+
+async function getReportedPosts(){
+  const reportedPosts = await fetch('/api/reportedPostIDsByIP', {
+    method: 'get',
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  return reportedPosts
+}
+
+function removeReportedPostsFromGrid(reportedPostIDs){
+  const elements = Array.from(postscontainer.children)
+  const itemElements = elements.filter((element)=>element.classList.contains('item'))
+  for (const itemElement of itemElements){
+    const postId = getPostIdFromElement(itemElement) 
+    if(reportedPostIDs.includes(postId)){
+      itemElement.parentNode.removeChild(itemElement);
+    }
   }
 }
 
@@ -152,7 +178,7 @@ function report(reportElement){
 function getPostIdFromElement(element){
   for (aClass of Array.from(element.classList)){
     if (aClass.split(':')[0]==='id'){
-      return aClass.split(':')[1]
+      return parseInt(aClass.split(':')[1])
     }
   }
   return null
