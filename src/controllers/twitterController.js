@@ -13,6 +13,7 @@ const T = new Twit({
 const millisecondsInADay = 24 * 60 * 60 * 1000
 const fonts = ['Patrick Hand', 'Mali', 'Adobe Garamond Pro', 'Quicksand bold', 'Poppins']
 const COLORS = ['light-green', 'light-pink', 'light-cyan', 'light-orange', 'light-purple']
+let intervalID
 
 exports.new_post_from_tweet = function(req, res) {
 	const tweet_id = req.body.id
@@ -161,4 +162,5 @@ function removeTwitterLink(oldText){
   newText = newText.replace(regexDoubleSpace,'')
   return newText
 }
+
 
