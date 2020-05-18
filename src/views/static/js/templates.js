@@ -32,10 +32,10 @@ templates.sharing_container = (post) => {
   const html = `
     <div class="sharing-container">
       <div class="post-url">
-        <button class="post-url-button">copiar</button>
         <input class="post-url-input" value="${url}" size="46" readonly></input>
       </div>
       <div class="sharing_container_buttons">
+        <button class="post-url-button"><img src="/img/icons8-copy-52.png" width=''><br>copiar</button>
         <a class="mobile" href="whatsapp://send?text=te%20envio%20carta%20de%20agradecimiento%20para%20vos%20${url}">
             <img src="/img/whatsapp_logo.png">
         </a>

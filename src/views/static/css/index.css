@@ -110,6 +110,8 @@
   color: #263238; }
 
 @media (max-width: 768px) {
+  .modal-dialog {
+    margin: .2rem; }
   .main-section {
     text-align: center;
     padding: 0; }
@@ -129,27 +131,35 @@
       font-size: 14px; }
   .main-img {
     display: none; }
-  .sharing-modal .modal-body .mobile {
-    display: inline !important; }
-  .sharing-modal .modal-body img {
-    width: 39px;
-    height: 39px; }
-  .sharing-modal .modal-body .large {
-    display: none; }
+  .sharing-modal {
+    padding-right: 0px; }
+    .sharing-modal .modal-body {
+      padding: 5px; }
+      .sharing-modal .modal-body .mobile {
+        display: inline !important; }
+      .sharing-modal .modal-body img {
+        width: 39px;
+        height: 39px; }
+      .sharing-modal .modal-body .large {
+        display: none; }
   .main-section-center {
     grid-column-start: span 3;
-    padding: 0 10vw; } }
+    padding: 0 10vw; }
+  .post-url-input {
+    direction: rtl; } }
 
 .post-url-input {
   text-align: center;
   border-radius: 5px;
   border: 1px solid black;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  width: auto;
+  max-width: 100%; }
 
 .post-url-button {
-  border-radius: 15px;
-  background-color: #96D293;
-  border: 1px solid #96D293; }
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid transparent; }
 
 .email-container {
   display: flex;
