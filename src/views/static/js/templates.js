@@ -36,10 +36,10 @@ templates.sharing_container = (post) => {
       </div>
       <div class="sharing_container_buttons">
         <button class="post-url-button"><img src="/img/icons8-copy-52.png" width=''><br>copiar</button>
-        <a class="mobile" href="whatsapp://send?text=te%20envio%20carta%20de%20agradecimiento%20para%20vos%20${url}">
+        <a class="mobile" href="whatsapp://send?text=te%20envio%20esta%20carta%20de%20agradecimiento%20${url}">
             <img src="/img/whatsapp_logo.png">
         </a>
-        <a class="large" href="https://web.whatsapp.com/send?text=te%20envio%20carta%20de%20agradecimiento%20para%20vos%20${url}" target="_blank">
+        <a class="large" href="https://web.whatsapp.com/send?text=te%20envio%20esta%20carta%20de%20agradecimiento%20${url}" target="_blank">
             <img src="/img/whatsapp_logo.png">
         </a>
         <a href="https://www.facebook.com/sharer.php?u=${url}"  target="_blank">
