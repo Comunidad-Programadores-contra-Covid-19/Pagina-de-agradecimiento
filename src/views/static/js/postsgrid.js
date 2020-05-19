@@ -1,9 +1,16 @@
 const postscontainer = document.querySelector(".postscontainer");
+const orderSelector = document.querySelector(".order-selector");
 const loader = document.querySelector('.loader');
 let last_known_scroll_position = 0;
 let loading = false
 let page = 1
 let postList = []
+
+orderSelector.addEventListener('change', (event) => {
+  removeAllPostsFromGrid()
+  page = 0
+  showLoading(page)
+});
 
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
@@ -19,11 +26,11 @@ window.addEventListener('scroll', () => {
 
 function showLoading(page) {
   loader.classList.add('show');
-  getPosts(page)
+  getPosts(page,orderSelector.value)
 }
 
-async function getPosts (page = 0){
-  const response = await fetch(`/cartas/${page}`);
+async function getPosts (page = 0,order){
+  const response = await fetch(`/cartas/${page}/${order}`);
   const postsData = await response.json();
   addDataToDOM(postsData)
   removeReportedPosts()
@@ -75,6 +82,14 @@ function removeReportedPostsFromGrid(reportedPostIDs){
     if(reportedPostIDs.includes(postId)){
       itemElement.parentNode.removeChild(itemElement);
     }
+  }
+}
+
+function removeAllPostsFromGrid(){
+  const elements = Array.from(postscontainer.children)
+  const itemElements = elements.filter((element)=>element.classList.contains('item'))
+  for (const itemElement of itemElements){
+    itemElement.parentNode.removeChild(itemElement);
   }
 }
 

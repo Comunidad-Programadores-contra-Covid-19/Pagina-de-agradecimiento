@@ -228,4 +228,27 @@ body{
     bottom: 5vh;
     left: calc(95vw - #{$btn-circle-width-sm});
   }
+
+
+  .order-selector-container{
+  }
+  .order-selector{
+    width:auto;
+    margin-left: 5px;
+    font-size: 0.8em;
+    padding: .2rem .5rem;
+    
+  }
+}
+
+.order-selector-container{
+  display: flex;
+  margin-left: 8vw;
+  align-items:center;
+
+}
+.order-selector{
+  width:auto;
+  margin-left: 10px;
+  border: solid 1px $dark-green;
 }
