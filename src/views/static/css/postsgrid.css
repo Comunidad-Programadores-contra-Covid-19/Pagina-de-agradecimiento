@@ -268,7 +268,7 @@ body {
     width: auto;
     margin-left: 5px;
     font-size: 0.8em;
-    padding: .2rem .5rem; } }
+    padding: 0 0.2em; } }
 
 .order-selector-container {
   display: flex;
