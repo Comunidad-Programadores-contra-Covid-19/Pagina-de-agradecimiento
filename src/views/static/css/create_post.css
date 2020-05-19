@@ -181,6 +181,8 @@
       padding-left: 30px;
       margin-top: 10px;
       width: auto; }
+    .create-post .editor .styles .purple {
+      background-color: #C0A5D6 !important; }
     .create-post .send-btn {
       margin-top: 18px;
       margin-bottom: 20px;
