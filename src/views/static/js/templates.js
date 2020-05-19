@@ -3,6 +3,12 @@ const partials = {}
 
 partials.imgTag = ({height,width,imgPath}) => `<img class='image ${height} ${width}' src="${imgPath}">`
 partials.mainText = ({text}) => `<span>${text}</span>`
+partials.overlayFrom = (author) => {
+  if(author)
+    return `<div class="overlay-from">De: ${author} </div>`
+  else
+    return `<div class="overlay-from"></div>`
+}
 
 templates.post = (post) => {
   const {color,height,width,text,author,id,likes,imgPath} = post
@@ -12,7 +18,7 @@ templates.post = (post) => {
   `<div class="item ${color} ${height} ${width} id:${id}" >
     ${imgPath ? partials.imgTag(post) : partials.mainText(post)}
     <div class="overlay overlayFade ${NonLightcolor}" onClick="createLightbox(this,${id})">
-      <div class="overlay-from">De: ${author} </div>
+      ${partials.overlayFrom(author)}
       <div class="overlay-buttons-1 id:${id}" onclick="like(this)">
           <img src="/img/clap1.png" width="35" height="35">
           <span>${likes}</span>
