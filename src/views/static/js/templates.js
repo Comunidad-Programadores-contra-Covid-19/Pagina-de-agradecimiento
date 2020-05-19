@@ -28,7 +28,7 @@ templates.post = (post) => {
 
 templates.sharing_container = (post) => {
   const url = `https://www.graciasporcuidarnos.com.ar/carta/${post.id}` 
-  const twitter_url = `https://twitter.com/intent/tweet?text=Escribi%20este%20agradecimiento%20en%20graciasporcuidarnos.com.ar%20y%20me%20gustaria%20compartirtelo&url=${url}&hashtags=graciasporcuidarnos`
+  const twitter_url = `https://twitter.com/intent/tweet?text=ETe%20envio%20esta%20carta%20de%20agradecimiento%20&url=${url}&hashtags=graciasporcuidarnos`
   const html = `
     <div class="sharing-container">
       <div class="post-url">
@@ -36,10 +36,10 @@ templates.sharing_container = (post) => {
       </div>
       <div class="sharing_container_buttons">
         <button class="post-url-button"><img src="/img/icons8-copy-52.png" width=''><br>copiar</button>
-        <a class="mobile" href="whatsapp://send?text=te%20envio%20esta%20carta%20de%20agradecimiento%20${url}">
+        <a class="mobile" href="whatsapp://send?text=Te%20envio%20esta%20carta%20de%20agradecimiento%20${url}">
             <img src="/img/whatsapp_logo.png">
         </a>
-        <a class="large" href="https://web.whatsapp.com/send?text=te%20envio%20esta%20carta%20de%20agradecimiento%20${url}" target="_blank">
+        <a class="large" href="https://web.whatsapp.com/send?text=Te%20envio%20esta%20carta%20de%20agradecimiento%20${url}" target="_blank">
             <img src="/img/whatsapp_logo.png">
         </a>
         <a href="https://www.facebook.com/sharer.php?u=${url}"  target="_blank">
