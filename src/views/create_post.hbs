@@ -80,7 +80,9 @@
                             </div>
                         </div>
                         <!--                bloque de texto-->
-                        <textarea id="carta" name="text" placeholder="Escribe aquí" required></textarea>
+                        <textarea id="carta" name="text" placeholder="Escribe aquí"  minlength="25" required
+                          oninvalid="this.setCustomValidity('debes ingresar al menos 25 caracteres')"
+                          oninput="this.setCustomValidity('')"></textarea>
                         <!--                end bloque de texto-->
 
                         <!--                agregar una foto-->
