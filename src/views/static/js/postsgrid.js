@@ -105,10 +105,10 @@ function addHeightWidthToPosts (posts){
     post.height = 'height'
     post.width = 'width'
     if (!post.imgPath) {
-      if (post.text.length < 125 ){
+      if (post.text.length < 25 ){
           selectedPosts.push(post)
       }
-      if (post.text.length >= 125 ) {
+      if (post.text.length >= 25 ) {
         if (Math.random() < 0.5){
           post.height = 'height2'
         }else{
