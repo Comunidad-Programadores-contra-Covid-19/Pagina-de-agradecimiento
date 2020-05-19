@@ -16,6 +16,13 @@
 .typo3{font-family: $card3; font-style: normal; font-weight: bold!important;}
 .typo4{font-family: $card4; font-style: normal;}
 
+.color-picker{
+  color: transparent;
+}
+.color-picker select{
+  color: black;
+}
+
 .create-post{
   margin-top: 30px;
   .man-clapping{
@@ -194,6 +201,7 @@
           margin-top: 10px;
           width: auto;
         }
+        .purple{background-color: #C0A5D6!important;}
       }
     }
     .send-btn{
