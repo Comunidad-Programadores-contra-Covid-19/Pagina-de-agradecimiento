@@ -1,5 +1,5 @@
 const TweetController = require('../controllers/twitterController');
-const INTERVAL_MS = 1000 * 60 * 5 //5 minutes
+const INTERVAL_MS = 1000 * 60 * 2 //2 minutes
 let intervalID
 
 if(process.argv[2] == 'start'){
