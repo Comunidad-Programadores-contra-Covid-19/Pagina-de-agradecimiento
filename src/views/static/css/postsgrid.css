@@ -263,4 +263,19 @@ body {
     height: 50px;
     font-size: 15px;
     bottom: 5vh;
-    left: calc(95vw - 50px); } }
+    left: calc(95vw - 50px); }
+  .order-selector {
+    width: auto;
+    margin-left: 5px;
+    font-size: 0.8em;
+    padding: 0 0.2em; } }
+
+.order-selector-container {
+  display: flex;
+  margin-left: 8vw;
+  align-items: center; }
+
+.order-selector {
+  width: auto;
+  margin-left: 10px;
+  border: solid 1px #96D293; }

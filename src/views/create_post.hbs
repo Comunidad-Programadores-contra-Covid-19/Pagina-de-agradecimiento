@@ -82,11 +82,14 @@
                                     <option value="light-orange">Naranja</option>
                                     <option value="light-pink">Rosa</option>
                                     <option value="cyan">Celeste</option>
+
                                 </select>
                             </div>
                         </div>
                         <!--                bloque de texto-->
-                        <textarea id="carta" name="text" placeholder="Escribe aquí" required></textarea>
+                        <textarea id="carta" name="text" placeholder="Escribe aquí"  minlength="15" required
+                          oninvalid="this.setCustomValidity('debes ingresar al menos 15 caracteres')"
+                          oninput="this.setCustomValidity('')"></textarea>
                         <!--                end bloque de texto-->
 
                         <!--                agregar una foto-->

@@ -51,9 +51,9 @@ exports.get_posts = async function(req, res) {
   // TODO filtrar por tags tambien
   let tags = req.body.tags || 'all';
   let page = req.params.page || 1
-  
+  let order = req.params.order || 'likes'
   try{
-    const posts = await postService.get_posts(page)
+    const posts = await postService.get_posts(page,order)
     if (posts){
       res.status(200).send(posts)  
     }else{

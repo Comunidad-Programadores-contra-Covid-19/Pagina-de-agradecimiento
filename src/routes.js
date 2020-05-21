@@ -28,7 +28,7 @@ router.get('/faq',rootController.faq);
 
 /***Post***/
 // Get list of posts
-router.get('/cartas/:page',postController.get_posts)
+router.get('/cartas/:page/:order',postController.get_posts)
 
 // show empty index when requesting a post
 router.get('/carta/:id',postController.getPostByIdView) 
