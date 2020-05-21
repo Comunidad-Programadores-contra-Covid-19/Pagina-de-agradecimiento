@@ -5,7 +5,8 @@ module.exports = (Sequelize, DataTypes) => {
     idFromTwitter: {type: DataTypes.STRING},
     tweetLikes: {type: DataTypes.INTEGER},
     tweetLink: {type: DataTypes.STRING},
-    tweetDate: {type: DataTypes.DATE}
+    tweetDate: {type: DataTypes.DATE},
+    answered: {type: DataTypes.BOOLEAN, defaultValue: false}
   }, {
     freezeTableName: true,
   });

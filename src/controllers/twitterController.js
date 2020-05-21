@@ -54,7 +54,6 @@ exports.LatestPostsFromToday = async function(query,since,until,count) {
     tweet_posts = await createPosts(tweets)
   }
   console.log({count_created:tweet_posts.length})
-  
 }
 
 
@@ -164,3 +163,7 @@ function removeTwitterLink(oldText){
 }
 
 
+
+exports.RepondToTweets = () => {
+  console.log('asd')
+}
