@@ -1,3 +1,4 @@
+// color picker large
 $('#color-picker').change(function(){
     if($(this).val() == 'light-purple'){
         $('.color-picked').removeClass("orange")
@@ -34,6 +35,45 @@ $('#color-picker').change(function(){
 
 });
 
+// color picker mobile
+$('#color-picker-mobile').change(function(){
+    if($(this).val() == 'light-purple'){
+        $('.color-picked').removeClass("orange")
+        $('.color-picked').removeClass("cyan")
+        $('.color-picked').removeClass("pink")
+
+        $('.color-picked').addClass("purple")
+        $('.color-picked').addClass("important")
+    }
+    if($(this).val() == 'light-orange'){
+        $('.color-picked').removeClass("purple")
+        $('.color-picked').removeClass("pink")
+        $('.color-picked').removeClass("cyan")
+
+        $('.color-picked').addClass("orange")
+        $('.color-picked').addClass("important")
+    }
+    if($(this).val() == 'light-pink'){
+        $('.color-picked').removeClass("orange")
+        $('.color-picked').removeClass("purple")
+        $('.color-picked').removeClass("cyan")
+
+        $('.color-picked').addClass("pink")
+        $('.color-picked').addClass("important");
+    }
+    if($(this).val() == 'cyan'){
+        $('.color-picked').removeClass("orange")
+        $('.color-picked').removeClass("purple")
+        $('.color-picked').removeClass("pink")
+
+        $('.color-picked').addClass("cyan")
+        $('.color-picked').addClass("important");
+    }
+
+});
+
+
+// typo picker
 $('.typo-picker').addClass("typo");
 $('.typo-picker').addClass("typo1");
 $('.typo-picker').addClass("important");

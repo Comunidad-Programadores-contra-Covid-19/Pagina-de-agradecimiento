@@ -16,11 +16,8 @@
 .typo3{font-family: $card3; font-style: normal; font-weight: bold!important;}
 .typo4{font-family: $card4; font-style: normal;}
 
-.color-picker{
-  color: transparent;
-}
-.color-picker select{
-  color: black;
+.color-picker-mobile{
+  display: none;
 }
 
 .create-post{
@@ -167,6 +164,13 @@
 }
 
 @media (max-width: 768px) {
+  .color-picker{
+    display: none;
+  }
+  .color-picker-mobile{
+    display: inline;
+    color: transparent;
+  }
   .create-post{
     margin-top: 38px;
     .man-clapping{
