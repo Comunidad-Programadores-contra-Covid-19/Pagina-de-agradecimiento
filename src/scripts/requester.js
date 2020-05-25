@@ -24,3 +24,9 @@ PRODUCTION
 '/twitter/byQuery'
 post('https://teagradezco.herokuapp.com/twitter/byQuery',data={'query':'gracias medicos'})
  
+
+
+//cron
+post('https://www.graciasporcuidarnos.com.ar/api/cron/readTweets/start')
+post('https://www.graciasporcuidarnos.com.ar/api/cron/readTweets/stop')
+post('https://www.graciasporcuidarnos.com.ar/api/cron/all')

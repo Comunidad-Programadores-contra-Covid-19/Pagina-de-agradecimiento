@@ -20,9 +20,9 @@ function readTweets(){
 
 
 exports.getCurrentlyRunningJobs_ = ()=>{
-  tasks = Object.keys(tasks) 
-  if (!tasks){
+  let runningTasks = Object.keys(tasks) 
+  if (!runningTasks){
     return 'no running tasks'
   }
-  return tasks
+  return runningTasks
 }
