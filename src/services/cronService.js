@@ -2,13 +2,16 @@ const cron = require('node-cron')
 const tweetService = require('../services/tweetService');
 
 const tasks = {};
+const cronTimeSchedule = '*/30 * * * *'
 
-module.exports.startReadTweets = ()=>{
-  tasks['readTweets'] = cron.schedule('* * * * * *',readTweets)
+exports.startReadTweets = ()=>{
+  tweetService.LatestPostsFromToday()
+  tasks['readTweets'] = cron.schedule(cronTimeSchedule,readTweets)
 }
 
-module.exports.stopReadTweets = ()=>{
+exports.stopReadTweets = ()=>{
   tasks['readTweets'].stop()
+  tasks['readTweets'] = null
 }
 
 function readTweets(){
@@ -16,6 +19,10 @@ function readTweets(){
 } 
 
 
-module.exports.getCurrentlyRunningJobs = ()=>{
+exports.getCurrentlyRunningJobs_ = ()=>{
+  tasks = Object.keys(tasks) 
+  if (!tasks){
+    return 'no running tasks'
+  }
   return tasks
 }

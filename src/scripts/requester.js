@@ -15,8 +15,9 @@ get('http://localhost:8000/api/carta/2')
 get('http://localhost:8000/api/reportedPostIDsByIP')
 
 //cron
-post('http://localhost:8000/api/cron/start')
-post('http://localhost:8000/api/cron/stop')
+post('http://localhost:8000/api/cron/readTweets/start')
+post('http://localhost:8000/api/cron/readTweets/stop')
+post('http://localhost:8000/api/cron/all')
 
 
 PRODUCTION

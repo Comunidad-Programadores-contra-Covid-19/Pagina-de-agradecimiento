@@ -50,9 +50,10 @@ router.get('/api/reportedPostIDsByIP', reportController.getReportedPostIDsByIP);
 
 /***Twitter***/
 // Create post from a tweet
-router.post('/twitter/byID', twitterController.new_post_from_tweet);
+//router.post('/twitter/byID', twitterController.new_post_from_tweet);
 
 //CRON
-router.post('/api/cron/:action', cronController.toggleCron);
+router.post('/api/cron/readTweets/:action', cronController.toggleCronReadTweets);
+router.post('/api/cron/all', cronController.getCurrentlyRunningJobs);
 
 module.exports = router;
