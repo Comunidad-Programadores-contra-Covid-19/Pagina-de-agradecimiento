@@ -9,10 +9,12 @@ const config = require('./src/config/config');
 const checkIp = require('./src/middlewares/checkIp')
 const err404 = require('./src/middlewares/404')
 const favicon = require('serve-favicon');
-var compression = require('compression')
+const compression = require('compression')
 // var sitemap = require('express-sitemap')();
- 
- 
+
+
+
+
 
 
 // Init database

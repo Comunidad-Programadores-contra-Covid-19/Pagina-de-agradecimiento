@@ -4,6 +4,7 @@ let rootController = require('./controllers/rootController');
 let postController = require('./controllers/postController')
 let reportController = require('./controllers/reportController');
 let twitterController = require('./controllers/twitterController'); 
+let cronController = require('./controllers/cronController'); 
 
 //Robots
 router.get('/robots.txt', function (req, res) {
@@ -50,5 +51,8 @@ router.get('/api/reportedPostIDsByIP', reportController.getReportedPostIDsByIP);
 /***Twitter***/
 // Create post from a tweet
 router.post('/twitter/byID', twitterController.new_post_from_tweet);
+
+//CRON
+router.post('/api/cron/:action', cronController.toggleCron);
 
 module.exports = router;

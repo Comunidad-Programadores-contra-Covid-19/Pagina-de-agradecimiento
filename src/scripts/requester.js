@@ -14,6 +14,10 @@ get('http://localhost:8000/api/carta/2')
 //reports
 get('http://localhost:8000/api/reportedPostIDsByIP')
 
+//cron
+post('http://localhost:8000/api/cron/start')
+post('http://localhost:8000/api/cron/stop')
+
 
 PRODUCTION
 '/twitter/byQuery'
